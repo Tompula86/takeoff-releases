@@ -1,0 +1,221 @@
+{
+  "format": "pquant-calculation-template",
+  "version": "1.0",
+  "name": "INFRA 2015 — Perustarjousrivit",
+  "locale": "fi",
+  "description": "23 määrästä tyhjää tarjousriviä INFRA 2015 -reseptien pohjalta.",
+  "resource_folders": [],
+  "resources": [],
+  "assembly_folders": [],
+  "assemblies": [],
+  "littera_nodes": [],
+  "estimate_items": [
+    {
+      "code": "1613",
+      "name": "Maaleikkaus ja läjitys / vastaanotto",
+      "unit": "m3_ktr",
+      "assembly_code": "1613",
+      "littera_code": "1610",
+      "sort_order": 0,
+      "group_label": "Maanleikkaus"
+    },
+    {
+      "code": "1612",
+      "name": "Maaleikkaus penkereeseen / täyttöön",
+      "unit": "m3_ktr",
+      "assembly_code": "1612",
+      "littera_code": "1610",
+      "sort_order": 1,
+      "group_label": "Maanleikkaus"
+    },
+    {
+      "code": "1621",
+      "name": "Putki- ja johtokaivanto maassa",
+      "unit": "m",
+      "assembly_code": "1621",
+      "littera_code": "1620",
+      "sort_order": 2,
+      "group_label": "Putkikaivannot"
+    },
+    {
+      "code": "1831",
+      "name": "Putken asennusalusta",
+      "unit": "m",
+      "assembly_code": "1831",
+      "littera_code": "1830",
+      "sort_order": 3,
+      "group_label": "Putkikaivannot"
+    },
+    {
+      "code": "1837",
+      "name": "Johtokaivannon virtaussulku",
+      "unit": "kpl",
+      "assembly_code": "1837",
+      "littera_code": "1830",
+      "sort_order": 4,
+      "group_label": "Putkikaivannot"
+    },
+    {
+      "code": "3121",
+      "name": "Hulevesiviemäri muovia (asennus)",
+      "unit": "m",
+      "assembly_code": "3121",
+      "littera_code": "3120",
+      "sort_order": 5,
+      "group_label": "Putkiasennus"
+    },
+    {
+      "code": "3111",
+      "name": "Jätevesiviemäri muovia (asennus)",
+      "unit": "m",
+      "assembly_code": "3111",
+      "littera_code": "3110",
+      "sort_order": 6,
+      "group_label": "Putkiasennus"
+    },
+    {
+      "code": "3131",
+      "name": "Vesijohto PE (asennus ja koestus)",
+      "unit": "m",
+      "assembly_code": "3131",
+      "littera_code": "3130",
+      "sort_order": 7,
+      "group_label": "Putkiasennus"
+    },
+    {
+      "code": "1832",
+      "name": "Putkikaivannon alku- ja lopputäyttö",
+      "unit": "m",
+      "assembly_code": "1832",
+      "littera_code": "1830",
+      "sort_order": 8,
+      "group_label": "Täytöt"
+    },
+    {
+      "code": "3122",
+      "name": "Hulevesi- tai tarkastuskaivon asennus",
+      "unit": "kpl",
+      "assembly_code": "3122",
+      "littera_code": "3120",
+      "sort_order": 9,
+      "group_label": "Kaivot"
+    },
+    {
+      "code": "2111",
+      "name": "Suodatinkangas ja suodatinkerros",
+      "unit": "m2",
+      "assembly_code": "2111",
+      "littera_code": "2110",
+      "sort_order": 10,
+      "group_label": "Rakennekerrokset"
+    },
+    {
+      "code": "2121",
+      "name": "Jakava kerros murskeesta",
+      "unit": "m2",
+      "assembly_code": "2121",
+      "littera_code": "2120",
+      "sort_order": 11,
+      "group_label": "Rakennekerrokset"
+    },
+    {
+      "code": "2131",
+      "name": "Sitomaton kantava kerros",
+      "unit": "m2",
+      "assembly_code": "2131",
+      "littera_code": "2130",
+      "sort_order": 12,
+      "group_label": "Rakennekerrokset"
+    },
+    {
+      "code": "2141",
+      "name": "Asfalttipäällyste AB / ABK",
+      "unit": "m2",
+      "assembly_code": "2141",
+      "littera_code": "2140",
+      "sort_order": 13,
+      "group_label": "Päällysteet"
+    },
+    {
+      "code": "1811",
+      "name": "Louhepenger / louhetäyttö",
+      "unit": "m3_rtr",
+      "assembly_code": "1811",
+      "littera_code": "1810",
+      "sort_order": 14,
+      "group_label": "Täytöt"
+    },
+    {
+      "code": "1625",
+      "name": "Massanvaihto: kaivanto ja täyttö",
+      "unit": "m3_rtr",
+      "assembly_code": "1625",
+      "littera_code": "1620",
+      "sort_order": 15,
+      "group_label": "Massanvaihto"
+    },
+    {
+      "code": "1711",
+      "name": "Kallioavoleikkaus / louhinta",
+      "unit": "m3_ktr",
+      "assembly_code": "1711",
+      "littera_code": "1700",
+      "sort_order": 16,
+      "group_label": "Louhinta"
+    },
+    {
+      "code": "1721",
+      "name": "Kalliokanaali putkelle/johdolle",
+      "unit": "m",
+      "assembly_code": "1721",
+      "littera_code": "1700",
+      "sort_order": 17,
+      "group_label": "Louhinta"
+    },
+    {
+      "code": "1431",
+      "name": "Salaojaputki ja salaojasepeli",
+      "unit": "m",
+      "assembly_code": "1431",
+      "littera_code": "1400",
+      "sort_order": 18,
+      "group_label": "Kuivatusrakenteet"
+    },
+    {
+      "code": "1435",
+      "name": "Rumpuputki ja rumpukaivanto",
+      "unit": "m",
+      "assembly_code": "1435",
+      "littera_code": "1400",
+      "sort_order": 19,
+      "group_label": "Kuivatusrakenteet"
+    },
+    {
+      "code": "3321",
+      "name": "Kaapelisuojaputket kaivantoon",
+      "unit": "m",
+      "assembly_code": "3321",
+      "littera_code": "3300",
+      "sort_order": 20,
+      "group_label": "Kaapelirakenteet"
+    },
+    {
+      "code": "2112",
+      "name": "Suodatinkangas erillisenä työnä",
+      "unit": "m2",
+      "assembly_code": "2112",
+      "littera_code": "2110",
+      "sort_order": 21,
+      "group_label": "Rakennekerrokset"
+    },
+    {
+      "code": "2143",
+      "name": "Reunakiven asennus",
+      "unit": "m",
+      "assembly_code": "2143",
+      "littera_code": "2140",
+      "sort_order": 22,
+      "group_label": "Pintarakenteet"
+    }
+  ]
+}

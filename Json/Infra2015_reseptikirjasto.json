@@ -1,0 +1,3441 @@
+{
+  "version": "1.0",
+  "locale": "fi",
+  "infra_code_group": "1000-3999",
+  "name": "INFRA 2015 — Maanrakennuksen reseptikirjasto",
+  "description": "Panospohjainen resurssi- ja reseptikirjasto infra- ja maanrakennukseen. Parametriset reseptit (syvyys, leveys, tuottavuus). Viitehinnat 2025 — tarkista urakkakohtaisesti.",
+  "resources": [
+    {
+      "code": "T01",
+      "name": "Maanrakennustyöntekijä / Perämies",
+      "type": "labor",
+      "unit": "h",
+      "cost_price": 32,
+      "sell_price": 44,
+      "category": "Työtehtävät"
+    },
+    {
+      "code": "T02",
+      "name": "Putkiasentaja / Putkimies",
+      "type": "labor",
+      "unit": "h",
+      "cost_price": 36,
+      "sell_price": 49,
+      "category": "Työtehtävät"
+    },
+    {
+      "code": "T03",
+      "name": "Mittaemies / Kartoittaja",
+      "type": "labor",
+      "unit": "h",
+      "cost_price": 42,
+      "sell_price": 58,
+      "category": "Työtehtävät"
+    },
+    {
+      "code": "T04",
+      "name": "Koneenkuljettaja (Raskas kalusto)",
+      "type": "labor",
+      "unit": "h",
+      "cost_price": 35,
+      "sell_price": 48,
+      "category": "Työtehtävät"
+    },
+    {
+      "code": "T05",
+      "name": "Panostaja / Räjäyttäjä",
+      "type": "labor",
+      "unit": "h",
+      "cost_price": 45,
+      "sell_price": 62,
+      "category": "Työtehtävät"
+    },
+    {
+      "code": "T06",
+      "name": "Kivityöntekijä / Reunakiviasentaja",
+      "type": "labor",
+      "unit": "h",
+      "cost_price": 34,
+      "sell_price": 46,
+      "category": "Työtehtävät"
+    },
+    {
+      "code": "T51",
+      "name": "Työnjohtaja",
+      "type": "labor",
+      "unit": "h",
+      "cost_price": 45,
+      "sell_price": 65,
+      "category": "Työnjohto"
+    },
+    {
+      "code": "T52",
+      "name": "Työmaapäällikkö / Vastaava mestari",
+      "type": "labor",
+      "unit": "h",
+      "cost_price": 55,
+      "sell_price": 78,
+      "category": "Työnjohto"
+    },
+    {
+      "code": "K01",
+      "name": "Telakaivukone 16t (3D-koneohjaus)",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 75,
+      "sell_price": 95,
+      "category": "Kaivukoneet"
+    },
+    {
+      "code": "K02",
+      "name": "Telakaivukone 21-25t (3D-koneohjaus)",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 85,
+      "sell_price": 110,
+      "category": "Kaivukoneet"
+    },
+    {
+      "code": "K03",
+      "name": "Telakaivukone 30-35t (Raskas murtotyö)",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 105,
+      "sell_price": 135,
+      "category": "Kaivukoneet"
+    },
+    {
+      "code": "K04",
+      "name": "Pyöräalustainen kaivukone 15t",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 72,
+      "sell_price": 92,
+      "category": "Kaivukoneet"
+    },
+    {
+      "code": "K05",
+      "name": "Minikaivukone 3.5t - 5t",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 45,
+      "sell_price": 60,
+      "category": "Kaivukoneet"
+    },
+    {
+      "code": "K21",
+      "name": "Kuorma-auto 4-akselinen (Maansiirto)",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 68,
+      "sell_price": 88,
+      "category": "Kuljetuskalusto"
+    },
+    {
+      "code": "K22",
+      "name": "Nuppi + Puoliperävaunu (Murskekuljetus)",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 75,
+      "sell_price": 98,
+      "category": "Kuljetuskalusto"
+    },
+    {
+      "code": "K23",
+      "name": "Kiviauto / Dumpperi (Työmaasiirto)",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 90,
+      "sell_price": 120,
+      "category": "Kuljetuskalusto"
+    },
+    {
+      "code": "K41",
+      "name": "Valssijyrä 12t (Rakennekerrokset)",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 60,
+      "sell_price": 80,
+      "category": "Tiivistyskalusto"
+    },
+    {
+      "code": "K42",
+      "name": "Tärylevy / Maatäry 400-500kg (Diesel)",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 9.5,
+      "sell_price": 16,
+      "category": "Tiivistyskalusto"
+    },
+    {
+      "code": "K43",
+      "name": "Tärylevy / Tärytin 70-100kg (Kaivanto)",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 5,
+      "sell_price": 10,
+      "category": "Tiivistyskalusto"
+    },
+    {
+      "code": "K61",
+      "name": "Putkilaser ja tasolaserit",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 4,
+      "sell_price": 8,
+      "category": "Pienkalusto"
+    },
+    {
+      "code": "K62",
+      "name": "Uppopumppu 3\" + poistoletkut",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 3.5,
+      "sell_price": 7,
+      "category": "Pienkalusto"
+    },
+    {
+      "code": "K63",
+      "name": "Aggregaatti 5-10 kVA (Sähköistys)",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 4.5,
+      "sell_price": 9,
+      "category": "Pienkalusto"
+    },
+    {
+      "code": "K64",
+      "name": "Kompressori ja paineilmatyökalut",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 8,
+      "sell_price": 15,
+      "category": "Pienkalusto"
+    },
+    {
+      "code": "M01",
+      "name": "Kalliomurske # 0-16 mm (Pintakerros)",
+      "type": "material",
+      "unit": "tn",
+      "cost_price": 15.5,
+      "sell_price": 20,
+      "category": "Kiviainekset"
+    },
+    {
+      "code": "M02",
+      "name": "Kalliomurske # 0-32 mm (Sidottu/Kantava)",
+      "type": "material",
+      "unit": "tn",
+      "cost_price": 14.5,
+      "sell_price": 19,
+      "category": "Kiviainekset"
+    },
+    {
+      "code": "M03",
+      "name": "Kalliomurske # 0-63 mm (Jakava kerros)",
+      "type": "material",
+      "unit": "tn",
+      "cost_price": 13.5,
+      "sell_price": 18,
+      "category": "Kiviainekset"
+    },
+    {
+      "code": "M04",
+      "name": "Kalliomurske # 0-90 mm (Suodattava/Pohjat)",
+      "type": "material",
+      "unit": "tn",
+      "cost_price": 12.5,
+      "sell_price": 17,
+      "category": "Kiviainekset"
+    },
+    {
+      "code": "M05",
+      "name": "Pesty sepeli # 8-16 mm (Kapillaarikatko)",
+      "type": "material",
+      "unit": "tn",
+      "cost_price": 18,
+      "sell_price": 24,
+      "category": "Kiviainekset"
+    },
+    {
+      "code": "M06",
+      "name": "Pesty sepeli # 16-32 mm (Salaojitus)",
+      "type": "material",
+      "unit": "tn",
+      "cost_price": 17,
+      "sell_price": 23,
+      "category": "Kiviainekset"
+    },
+    {
+      "code": "M07",
+      "name": "Putkinalus- ja asennushiekka # 0-8 mm",
+      "type": "material",
+      "unit": "tn",
+      "cost_price": 14,
+      "sell_price": 19.5,
+      "category": "Kiviainekset"
+    },
+    {
+      "code": "M21",
+      "name": "Sadevesiputki PVC 110mm SN8 (m)",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 4.8,
+      "sell_price": 7.2,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M22",
+      "name": "Sadevesiputki PVC 160mm SN8 (m)",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 9.1,
+      "sell_price": 13.5,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M23",
+      "name": "Sadevesiputki PVC 200mm SN8 (m)",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 13.5,
+      "sell_price": 19,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M24",
+      "name": "Sadevesiputki Tuplaseinämä PE 315mm SN8",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 24.5,
+      "sell_price": 34,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M25",
+      "name": "Salaojaputki 110mm tuplaseinämä SN8 uritettu",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 3.9,
+      "sell_price": 5.8,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M26",
+      "name": "Painevesiputki PE100 SDR11 40mm PN16",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 2.2,
+      "sell_price": 3.4,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M27",
+      "name": "Painevesiputki PE100 SDR11 110mm PN16",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 14.8,
+      "sell_price": 21,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M28",
+      "name": "Kaapelinsuojaputki Telat 100mm keltainen",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 3.1,
+      "sell_price": 4.8,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M51",
+      "name": "Sadevesikaivo SVK 400 säädettävä pullopesä",
+      "type": "material",
+      "unit": "kpl",
+      "cost_price": 195,
+      "sell_price": 255,
+      "category": "Kaivot ja kannet"
+    },
+    {
+      "code": "M52",
+      "name": "Tarkastuskaivo TKV 400 (suora teleskooppi)",
+      "type": "material",
+      "unit": "kpl",
+      "cost_price": 135,
+      "sell_price": 180,
+      "category": "Kaivot ja kannet"
+    },
+    {
+      "code": "M53",
+      "name": "Perusvesikaivo PVK 400 padotusventtiilillä",
+      "type": "material",
+      "unit": "kpl",
+      "cost_price": 240,
+      "sell_price": 320,
+      "category": "Kaivot ja kannet"
+    },
+    {
+      "code": "M54",
+      "name": "Valurautakehys + umpikansi 400mm 40t",
+      "type": "material",
+      "unit": "kpl",
+      "cost_price": 110,
+      "sell_price": 145,
+      "category": "Kaivot ja kannet"
+    },
+    {
+      "code": "M55",
+      "name": "Betonikaivo halkaisija 1000mm pohjaosa",
+      "type": "material",
+      "unit": "kpl",
+      "cost_price": 380,
+      "sell_price": 490,
+      "category": "Kaivot ja kannet"
+    },
+    {
+      "code": "M71",
+      "name": "Suodatinkangas N1 (Kevyt piha/viherurakka)",
+      "type": "material",
+      "unit": "m2",
+      "cost_price": 0.45,
+      "sell_price": 0.65,
+      "category": "Geotekstiilit"
+    },
+    {
+      "code": "M72",
+      "name": "Suodatinkangas N2 (Normaali katurakenne)",
+      "type": "material",
+      "unit": "m2",
+      "cost_price": 0.58,
+      "sell_price": 0.85,
+      "category": "Geotekstiilit"
+    },
+    {
+      "code": "M73",
+      "name": "Suodatinkangas N3 (Raskaat pohjarakenteet)",
+      "type": "material",
+      "unit": "m2",
+      "cost_price": 0.72,
+      "sell_price": 1.05,
+      "category": "Geotekstiilit"
+    },
+    {
+      "code": "M74",
+      "name": "Suodatinkangas N4 (Rata ja silta-alueet)",
+      "type": "material",
+      "unit": "m2",
+      "cost_price": 0.95,
+      "sell_price": 1.4,
+      "category": "Geotekstiilit"
+    },
+    {
+      "code": "M81",
+      "name": "Muovinen rumpuputki 400mm SN4 (m)",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 29,
+      "sell_price": 39,
+      "category": "Rumpuputket"
+    },
+    {
+      "code": "M82",
+      "name": "Muovinen rumpuputki 500mm SN4 (m)",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 42,
+      "sell_price": 56,
+      "category": "Rumpuputket"
+    },
+    {
+      "code": "A01",
+      "name": "Asfaltointi AB 20/120 (Ajorata raskaampi)",
+      "type": "subcontract",
+      "unit": "m2",
+      "cost_price": 14.5,
+      "sell_price": 19,
+      "category": "Alihankintatyöt"
+    },
+    {
+      "code": "A02",
+      "name": "Asfaltointi AB 11/80 (Kevyt väylä / piha)",
+      "type": "subcontract",
+      "unit": "m2",
+      "cost_price": 11,
+      "sell_price": 15,
+      "category": "Alihankintatyöt"
+    },
+    {
+      "code": "A03",
+      "name": "Kallion avolouhinta (Isot massat)",
+      "type": "subcontract",
+      "unit": "m3_rtr",
+      "cost_price": 18,
+      "sell_price": 25,
+      "category": "Alihankintatyöt"
+    },
+    {
+      "code": "A04",
+      "name": "Kanaali- ja ojaluohinta (Kapeat kaivannot)",
+      "type": "subcontract",
+      "unit": "m3_rtr",
+      "cost_price": 38,
+      "sell_price": 52,
+      "category": "Alihankintatyöt"
+    },
+    {
+      "code": "A05",
+      "name": "Kallion kiilaus ja hydraulinen särkeminen",
+      "type": "subcontract",
+      "unit": "m3_rtr",
+      "cost_price": 95,
+      "sell_price": 130,
+      "category": "Alihankintatyöt"
+    },
+    {
+      "code": "A06",
+      "name": "Putkiston TV-kuvaus ja raportointi",
+      "type": "subcontract",
+      "unit": "m",
+      "cost_price": 3.5,
+      "sell_price": 5.5,
+      "category": "Alihankintatyöt"
+    },
+    {
+      "code": "A07",
+      "name": "Putkiston painekoe ja desinfiointi",
+      "type": "subcontract",
+      "unit": "kpl",
+      "cost_price": 350,
+      "sell_price": 480,
+      "category": "Alihankintatyöt"
+    },
+    {
+      "code": "A08",
+      "name": "Ylimääräisen maan läjitysmaksu (Puhdas maa)",
+      "type": "subcontract",
+      "unit": "m3",
+      "cost_price": 4.5,
+      "sell_price": 6,
+      "category": "Alihankintatyöt"
+    },
+    {
+      "code": "A09",
+      "name": "Kannonjyrsintä ja raivaustyöt alihankintana",
+      "type": "subcontract",
+      "unit": "h",
+      "cost_price": 65,
+      "sell_price": 85,
+      "category": "Alihankintatyöt"
+    },
+    {
+      "code": "A10",
+      "name": "Työmaan tärinämittaus ja katselmukset",
+      "type": "subcontract",
+      "unit": "kpl",
+      "cost_price": 450,
+      "sell_price": 580,
+      "category": "Alihankintatyöt"
+    },
+    {
+      "code": "T07",
+      "name": "Apumies / kaivanto- ja täyttötyö",
+      "type": "labor",
+      "unit": "h",
+      "cost_price": 30,
+      "sell_price": 41,
+      "category": "Työtehtävät"
+    },
+    {
+      "code": "T08",
+      "name": "Liikenteenohjaaja",
+      "type": "labor",
+      "unit": "h",
+      "cost_price": 33,
+      "sell_price": 48,
+      "category": "Työtehtävät"
+    },
+    {
+      "code": "T09",
+      "name": "Asfaltti- ja päällystetyöntekijä",
+      "type": "labor",
+      "unit": "h",
+      "cost_price": 34,
+      "sell_price": 47,
+      "category": "Työtehtävät"
+    },
+    {
+      "code": "T10",
+      "name": "Kiveys- ja vihertyöntekijä",
+      "type": "labor",
+      "unit": "h",
+      "cost_price": 33,
+      "sell_price": 45,
+      "category": "Työtehtävät"
+    },
+    {
+      "code": "T11",
+      "name": "Kirvesmies / muottityöntekijä infra",
+      "type": "labor",
+      "unit": "h",
+      "cost_price": 38,
+      "sell_price": 52,
+      "category": "Työtehtävät"
+    },
+    {
+      "code": "T12",
+      "name": "Hitsari / PE-putkihitsaaja",
+      "type": "labor",
+      "unit": "h",
+      "cost_price": 46,
+      "sell_price": 64,
+      "category": "Työtehtävät"
+    },
+    {
+      "code": "T13",
+      "name": "Sähkö-/kaapeliasentaja",
+      "type": "labor",
+      "unit": "h",
+      "cost_price": 43,
+      "sell_price": 61,
+      "category": "Työtehtävät"
+    },
+    {
+      "code": "T14",
+      "name": "Kairaus-/porausapumies",
+      "type": "labor",
+      "unit": "h",
+      "cost_price": 36,
+      "sell_price": 50,
+      "category": "Työtehtävät"
+    },
+    {
+      "code": "T53",
+      "name": "Laatuinsinööri / dokumentointi",
+      "type": "labor",
+      "unit": "h",
+      "cost_price": 48,
+      "sell_price": 68,
+      "category": "Työnjohto"
+    },
+    {
+      "code": "T54",
+      "name": "Suunnittelu- ja BIM-koordinaattori",
+      "type": "labor",
+      "unit": "h",
+      "cost_price": 55,
+      "sell_price": 78,
+      "category": "Työnjohto"
+    },
+    {
+      "code": "T55",
+      "name": "Työturvallisuus- ja liikennejärjestelyvastaava",
+      "type": "labor",
+      "unit": "h",
+      "cost_price": 48,
+      "sell_price": 68,
+      "category": "Työnjohto"
+    },
+    {
+      "code": "K06",
+      "name": "Telakaivukone 8-12t (ahtaat kohteet)",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 62,
+      "sell_price": 82,
+      "category": "Kaivukoneet"
+    },
+    {
+      "code": "K07",
+      "name": "Telakaivukone 40-50t (louhe ja massansiirto)",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 135,
+      "sell_price": 175,
+      "category": "Kaivukoneet"
+    },
+    {
+      "code": "K08",
+      "name": "Pyöräkuormaaja 12-16t",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 70,
+      "sell_price": 92,
+      "category": "Kaivukoneet"
+    },
+    {
+      "code": "K09",
+      "name": "Puskutraktori D6-D8",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 105,
+      "sell_price": 138,
+      "category": "Kaivukoneet"
+    },
+    {
+      "code": "K10",
+      "name": "Tiehöylä / grader",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 88,
+      "sell_price": 118,
+      "category": "Kaivukoneet"
+    },
+    {
+      "code": "K11",
+      "name": "Kaivukone iskuvasaralla 21-25t",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 105,
+      "sell_price": 138,
+      "category": "Kaivukoneet"
+    },
+    {
+      "code": "K12",
+      "name": "Seulakauha / murskaava kauha kaivukoneeseen",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 28,
+      "sell_price": 42,
+      "category": "Kaivukoneet"
+    },
+    {
+      "code": "K24",
+      "name": "Kuorma-auto 5-akselinen kasetti",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 82,
+      "sell_price": 108,
+      "category": "Kuljetuskalusto"
+    },
+    {
+      "code": "K25",
+      "name": "Traktori + perävaunu työmaasiirto",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 58,
+      "sell_price": 78,
+      "category": "Kuljetuskalusto"
+    },
+    {
+      "code": "K26",
+      "name": "Dumpperi A25-A30",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 78,
+      "sell_price": 105,
+      "category": "Kuljetuskalusto"
+    },
+    {
+      "code": "K27",
+      "name": "Dumpperi A35-A40",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 95,
+      "sell_price": 128,
+      "category": "Kuljetuskalusto"
+    },
+    {
+      "code": "K28",
+      "name": "Tela-alustainen dumper / minidumpperi",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 32,
+      "sell_price": 48,
+      "category": "Kuljetuskalusto"
+    },
+    {
+      "code": "K29",
+      "name": "Lavetti / siirtokalusto",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 95,
+      "sell_price": 125,
+      "category": "Kuljetuskalusto"
+    },
+    {
+      "code": "K30",
+      "name": "Vesakko- ja raivauskalusto",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 55,
+      "sell_price": 75,
+      "category": "Kuljetuskalusto"
+    },
+    {
+      "code": "K44",
+      "name": "Jyrä 3-5t (kaivanto ja kevyet rakenteet)",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 42,
+      "sell_price": 60,
+      "category": "Tiivistyskalusto"
+    },
+    {
+      "code": "K45",
+      "name": "Kumipyöräjyrä",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 72,
+      "sell_price": 95,
+      "category": "Tiivistyskalusto"
+    },
+    {
+      "code": "K46",
+      "name": "Tandemjyrä asfaltille",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 65,
+      "sell_price": 88,
+      "category": "Tiivistyskalusto"
+    },
+    {
+      "code": "K47",
+      "name": "Juntta / täryjalka 60-80kg",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 4.5,
+      "sell_price": 9,
+      "category": "Tiivistyskalusto"
+    },
+    {
+      "code": "K48",
+      "name": "Käsitäry / tärylevy 150-250kg",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 7,
+      "sell_price": 13,
+      "category": "Tiivistyskalusto"
+    },
+    {
+      "code": "K49",
+      "name": "Dynaaminen levykuormituslaite / laadunvarmistus",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 12,
+      "sell_price": 24,
+      "category": "Tiivistyskalusto"
+    },
+    {
+      "code": "K65",
+      "name": "GNSS-mittalaite + maastotallennin",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 12,
+      "sell_price": 22,
+      "category": "Pienkalusto"
+    },
+    {
+      "code": "K66",
+      "name": "Takymetri / robottitakymetri",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 16,
+      "sell_price": 30,
+      "category": "Pienkalusto"
+    },
+    {
+      "code": "K67",
+      "name": "Putken hitsaus- ja kuorintakalusto PE",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 18,
+      "sell_price": 32,
+      "category": "Pienkalusto"
+    },
+    {
+      "code": "K68",
+      "name": "Timanttipora / läpivientikalusto",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 12,
+      "sell_price": 22,
+      "category": "Pienkalusto"
+    },
+    {
+      "code": "K69",
+      "name": "Moottorisaha ja raivaussaha",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 5,
+      "sell_price": 10,
+      "category": "Pienkalusto"
+    },
+    {
+      "code": "K70",
+      "name": "Liikennejärjestelykalusto, aidat ja merkit",
+      "type": "equipment",
+      "unit": "d",
+      "cost_price": 65,
+      "sell_price": 95,
+      "category": "Pienkalusto"
+    },
+    {
+      "code": "K71",
+      "name": "Työmaa-aita ja suojauskalusto",
+      "type": "equipment",
+      "unit": "d",
+      "cost_price": 45,
+      "sell_price": 70,
+      "category": "Pienkalusto"
+    },
+    {
+      "code": "K72",
+      "name": "Valaisinmasto / työmaavalaistus",
+      "type": "equipment",
+      "unit": "d",
+      "cost_price": 18,
+      "sell_price": 32,
+      "category": "Pienkalusto"
+    },
+    {
+      "code": "K73",
+      "name": "Porausvaunu / avolouhinnan porauskalusto",
+      "type": "equipment",
+      "unit": "h",
+      "cost_price": 145,
+      "sell_price": 195,
+      "category": "Pienkalusto"
+    },
+    {
+      "code": "M08",
+      "name": "Kalliomurske # 0-5 mm (tasaus/sirote)",
+      "type": "material",
+      "unit": "tn",
+      "cost_price": 18.5,
+      "sell_price": 24.5,
+      "category": "Kiviainekset"
+    },
+    {
+      "code": "M09",
+      "name": "Kalliomurske # 0-11 mm",
+      "type": "material",
+      "unit": "tn",
+      "cost_price": 16.5,
+      "sell_price": 22,
+      "category": "Kiviainekset"
+    },
+    {
+      "code": "M10",
+      "name": "Kalliomurske # 0-45 mm",
+      "type": "material",
+      "unit": "tn",
+      "cost_price": 14,
+      "sell_price": 18.5,
+      "category": "Kiviainekset"
+    },
+    {
+      "code": "M11",
+      "name": "Kalliomurske # 0-56 mm",
+      "type": "material",
+      "unit": "tn",
+      "cost_price": 13.8,
+      "sell_price": 18.2,
+      "category": "Kiviainekset"
+    },
+    {
+      "code": "M12",
+      "name": "Kalliomurske # 0-125 mm",
+      "type": "material",
+      "unit": "tn",
+      "cost_price": 12.8,
+      "sell_price": 17.2,
+      "category": "Kiviainekset"
+    },
+    {
+      "code": "M13",
+      "name": "Louhe # 0-300 mm",
+      "type": "material",
+      "unit": "m3_rtr",
+      "cost_price": 9.5,
+      "sell_price": 14,
+      "category": "Kiviainekset"
+    },
+    {
+      "code": "M14",
+      "name": "Louhe # 0-500 mm",
+      "type": "material",
+      "unit": "m3_rtr",
+      "cost_price": 8.8,
+      "sell_price": 13.2,
+      "category": "Kiviainekset"
+    },
+    {
+      "code": "M15",
+      "name": "Sepeli # 5-16 mm",
+      "type": "material",
+      "unit": "tn",
+      "cost_price": 18.5,
+      "sell_price": 24.5,
+      "category": "Kiviainekset"
+    },
+    {
+      "code": "M16",
+      "name": "Sepeli # 8-32 mm",
+      "type": "material",
+      "unit": "tn",
+      "cost_price": 17.5,
+      "sell_price": 23.5,
+      "category": "Kiviainekset"
+    },
+    {
+      "code": "M17",
+      "name": "Hiekka # 0-4 mm",
+      "type": "material",
+      "unit": "tn",
+      "cost_price": 10.5,
+      "sell_price": 15.5,
+      "category": "Kiviainekset"
+    },
+    {
+      "code": "M18",
+      "name": "Sora # 0-32 mm",
+      "type": "material",
+      "unit": "tn",
+      "cost_price": 11.5,
+      "sell_price": 16.5,
+      "category": "Kiviainekset"
+    },
+    {
+      "code": "M19",
+      "name": "Luonnonkivi / maisemointikivi",
+      "type": "material",
+      "unit": "tn",
+      "cost_price": 22,
+      "sell_price": 32,
+      "category": "Kiviainekset"
+    },
+    {
+      "code": "M20",
+      "name": "Murskeen kuljetuslisä / tonnikilometri",
+      "type": "material",
+      "unit": "tnkm",
+      "cost_price": 0.12,
+      "sell_price": 0.2,
+      "category": "Kiviainekset"
+    },
+    {
+      "code": "M29",
+      "name": "Kaapelinsuojaputki TEL A 50mm keltainen",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 1.6,
+      "sell_price": 2.6,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M30",
+      "name": "Kaapelinsuojaputki TEL A 110mm keltainen",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 4.2,
+      "sell_price": 6.5,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M31",
+      "name": "Kaapelinsuojaputki TEL A 160mm punainen/keltainen",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 8.5,
+      "sell_price": 12.5,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M32",
+      "name": "Jätevesiputki PVC 160mm SN8",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 10.2,
+      "sell_price": 15,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M33",
+      "name": "Jätevesiputki PVC 200mm SN8",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 15,
+      "sell_price": 21.5,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M34",
+      "name": "Jätevesiputki PVC 250mm SN8",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 24,
+      "sell_price": 34,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M35",
+      "name": "Hulevesiputki PE/PP 400mm SN8",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 42,
+      "sell_price": 58,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M36",
+      "name": "Hulevesiputki PE/PP 500mm SN8",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 68,
+      "sell_price": 92,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M37",
+      "name": "Hulevesiputki PE/PP 560mm SN8",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 88,
+      "sell_price": 118,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M38",
+      "name": "Painevesiputki PE100 SDR11 63mm PN16",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 5.2,
+      "sell_price": 8.2,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M39",
+      "name": "Painevesiputki PE100 SDR11 160mm PN16",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 29,
+      "sell_price": 41,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M40",
+      "name": "Painevesiputki PE100 SDR17 225mm PN10",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 48,
+      "sell_price": 68,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M41",
+      "name": "Putkiliitin / muhvi PVC/PP 160mm",
+      "type": "material",
+      "unit": "kpl",
+      "cost_price": 7,
+      "sell_price": 11,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M42",
+      "name": "Putkiliitin / muhvi PVC/PP 200mm",
+      "type": "material",
+      "unit": "kpl",
+      "cost_price": 12,
+      "sell_price": 18,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M43",
+      "name": "Kulmayhde / haarayhde DN160-DN200",
+      "type": "material",
+      "unit": "kpl",
+      "cost_price": 45,
+      "sell_price": 68,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M44",
+      "name": "Varoitusnauha kaapeli-/putkikaivantoon",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 0.12,
+      "sell_price": 0.25,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M45",
+      "name": "Kaapelinsuoja- / varoitusverkko",
+      "type": "material",
+      "unit": "m2",
+      "cost_price": 0.75,
+      "sell_price": 1.2,
+      "category": "Putkitustuotteet"
+    },
+    {
+      "code": "M56",
+      "name": "Betonikaivo halkaisija 800mm pohjaosa",
+      "type": "material",
+      "unit": "kpl",
+      "cost_price": 290,
+      "sell_price": 390,
+      "category": "Kaivot ja kannet"
+    },
+    {
+      "code": "M57",
+      "name": "Betonikaivo halkaisija 1200mm pohjaosa",
+      "type": "material",
+      "unit": "kpl",
+      "cost_price": 540,
+      "sell_price": 690,
+      "category": "Kaivot ja kannet"
+    },
+    {
+      "code": "M58",
+      "name": "Betonikaivon korokerengas 1000mm",
+      "type": "material",
+      "unit": "kpl",
+      "cost_price": 95,
+      "sell_price": 135,
+      "category": "Kaivot ja kannet"
+    },
+    {
+      "code": "M59",
+      "name": "Muovikaivo 560/600mm teleskoopilla",
+      "type": "material",
+      "unit": "kpl",
+      "cost_price": 360,
+      "sell_price": 480,
+      "category": "Kaivot ja kannet"
+    },
+    {
+      "code": "M60",
+      "name": "Ritiläkansi + kehys 40t",
+      "type": "material",
+      "unit": "kpl",
+      "cost_price": 135,
+      "sell_price": 180,
+      "category": "Kaivot ja kannet"
+    },
+    {
+      "code": "M61",
+      "name": "Teleskooppi ja kansisto, muovikaivo",
+      "type": "material",
+      "unit": "kpl",
+      "cost_price": 95,
+      "sell_price": 135,
+      "category": "Kaivot ja kannet"
+    },
+    {
+      "code": "M62",
+      "name": "Sulkuventtiili DN110 vesijohdolle",
+      "type": "material",
+      "unit": "kpl",
+      "cost_price": 230,
+      "sell_price": 315,
+      "category": "Kaivot ja kannet"
+    },
+    {
+      "code": "M63",
+      "name": "Paloposti / hydrantti varusteineen",
+      "type": "material",
+      "unit": "kpl",
+      "cost_price": 720,
+      "sell_price": 980,
+      "category": "Kaivot ja kannet"
+    },
+    {
+      "code": "M75",
+      "name": "Suodatinkangas N5 (erittäin vaativa pohjarakenne)",
+      "type": "material",
+      "unit": "m2",
+      "cost_price": 1.25,
+      "sell_price": 1.8,
+      "category": "Geotekstiilit"
+    },
+    {
+      "code": "M76",
+      "name": "Lujiteverkko / geoverkko 30-40 kN/m",
+      "type": "material",
+      "unit": "m2",
+      "cost_price": 1.8,
+      "sell_price": 2.8,
+      "category": "Geotekstiilit"
+    },
+    {
+      "code": "M77",
+      "name": "Bentoniittimatto / tiivistematto",
+      "type": "material",
+      "unit": "m2",
+      "cost_price": 6.5,
+      "sell_price": 9.5,
+      "category": "Geotekstiilit"
+    },
+    {
+      "code": "M78",
+      "name": "Salaojamatto / patolevy",
+      "type": "material",
+      "unit": "m2",
+      "cost_price": 3.2,
+      "sell_price": 5,
+      "category": "Geotekstiilit"
+    },
+    {
+      "code": "M83",
+      "name": "Muovinen rumpuputki 600mm SN4/SN8",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 62,
+      "sell_price": 82,
+      "category": "Rumpuputket"
+    },
+    {
+      "code": "M84",
+      "name": "Teräsrumpuputki 600mm",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 92,
+      "sell_price": 125,
+      "category": "Rumpuputket"
+    },
+    {
+      "code": "M85",
+      "name": "Rumpuputken viistepää / päätyrakenne",
+      "type": "material",
+      "unit": "kpl",
+      "cost_price": 180,
+      "sell_price": 250,
+      "category": "Rumpuputket"
+    },
+    {
+      "code": "M91",
+      "name": "Maakostea betoni / S30 pienet valutyöt",
+      "type": "material",
+      "unit": "m3",
+      "cost_price": 145,
+      "sell_price": 205,
+      "category": "Betoni ja rakenteet"
+    },
+    {
+      "code": "M92",
+      "name": "Betoni C25/30 valmisbetoni",
+      "type": "material",
+      "unit": "m3",
+      "cost_price": 135,
+      "sell_price": 190,
+      "category": "Betoni ja rakenteet"
+    },
+    {
+      "code": "M93",
+      "name": "Raudoitus B500B",
+      "type": "material",
+      "unit": "kg",
+      "cost_price": 1.15,
+      "sell_price": 1.8,
+      "category": "Betoni ja rakenteet"
+    },
+    {
+      "code": "M94",
+      "name": "Muottitarvike ja lauta infra",
+      "type": "material",
+      "unit": "m2",
+      "cost_price": 18,
+      "sell_price": 28,
+      "category": "Betoni ja rakenteet"
+    },
+    {
+      "code": "M95",
+      "name": "Solumuovieriste XPS 300",
+      "type": "material",
+      "unit": "m3",
+      "cost_price": 155,
+      "sell_price": 220,
+      "category": "Eristeet ja routasuojaus"
+    },
+    {
+      "code": "M96",
+      "name": "EPS-kevennys / routaeriste",
+      "type": "material",
+      "unit": "m3",
+      "cost_price": 95,
+      "sell_price": 145,
+      "category": "Eristeet ja routasuojaus"
+    },
+    {
+      "code": "M97",
+      "name": "Routaeristelevy XPS 100mm",
+      "type": "material",
+      "unit": "m2",
+      "cost_price": 8.5,
+      "sell_price": 12.5,
+      "category": "Eristeet ja routasuojaus"
+    },
+    {
+      "code": "M101",
+      "name": "Betonireunakivi 170x300",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 16.5,
+      "sell_price": 24,
+      "category": "Reunakivet ja pintarakenteet"
+    },
+    {
+      "code": "M102",
+      "name": "Graniittireunakivi 220x300",
+      "type": "material",
+      "unit": "m",
+      "cost_price": 45,
+      "sell_price": 62,
+      "category": "Reunakivet ja pintarakenteet"
+    },
+    {
+      "code": "M103",
+      "name": "Betonikivi 60mm",
+      "type": "material",
+      "unit": "m2",
+      "cost_price": 16,
+      "sell_price": 24,
+      "category": "Reunakivet ja pintarakenteet"
+    },
+    {
+      "code": "M104",
+      "name": "Betonikivi 80mm",
+      "type": "material",
+      "unit": "m2",
+      "cost_price": 19,
+      "sell_price": 28,
+      "category": "Reunakivet ja pintarakenteet"
+    },
+    {
+      "code": "M105",
+      "name": "Kivituhka / asennushiekka kiveykselle",
+      "type": "material",
+      "unit": "tn",
+      "cost_price": 16.5,
+      "sell_price": 23,
+      "category": "Reunakivet ja pintarakenteet"
+    },
+    {
+      "code": "M106",
+      "name": "Nurmetusmulta / kasvualusta",
+      "type": "material",
+      "unit": "m3",
+      "cost_price": 18,
+      "sell_price": 28,
+      "category": "Viherrakenteet"
+    },
+    {
+      "code": "M107",
+      "name": "Siemennys ja lannoite",
+      "type": "material",
+      "unit": "m2",
+      "cost_price": 0.28,
+      "sell_price": 0.45,
+      "category": "Viherrakenteet"
+    },
+    {
+      "code": "M108",
+      "name": "Luiskaverhous / eroosiosuojausmatto",
+      "type": "material",
+      "unit": "m2",
+      "cost_price": 2.4,
+      "sell_price": 3.8,
+      "category": "Viherrakenteet"
+    },
+    {
+      "code": "A11",
+      "name": "Murskaus työmaalla, louheesta murskeeksi",
+      "type": "subcontract",
+      "unit": "tn",
+      "cost_price": 3.8,
+      "sell_price": 5.5,
+      "category": "Alihankintatyöt"
+    },
+    {
+      "code": "A12",
+      "name": "Seulonta ja materiaalin jalostus",
+      "type": "subcontract",
+      "unit": "tn",
+      "cost_price": 2.2,
+      "sell_price": 3.6,
+      "category": "Alihankintatyöt"
+    },
+    {
+      "code": "A13",
+      "name": "Massojen vastaanottomaksu, pilaantumaton maa",
+      "type": "subcontract",
+      "unit": "tn",
+      "cost_price": 7.5,
+      "sell_price": 10.5,
+      "category": "Alihankintatyöt"
+    },
+    {
+      "code": "A14",
+      "name": "Pilaantuneen maan vastaanotto, lievästi pilaantunut",
+      "type": "subcontract",
+      "unit": "tn",
+      "cost_price": 38,
+      "sell_price": 52,
+      "category": "Alihankintatyöt"
+    },
+    {
+      "code": "A15",
+      "name": "Liikennejärjestelysuunnitelma ja hyväksyntä",
+      "type": "subcontract",
+      "unit": "kpl",
+      "cost_price": 650,
+      "sell_price": 950,
+      "category": "Alihankintatyöt"
+    },
+    {
+      "code": "A16",
+      "name": "Koekuoppa / johtonäyttö alihankintana",
+      "type": "subcontract",
+      "unit": "kpl",
+      "cost_price": 320,
+      "sell_price": 460,
+      "category": "Alihankintatyöt"
+    },
+    {
+      "code": "A17",
+      "name": "Pudotuspainolaite- tai levykuormituskoe",
+      "type": "subcontract",
+      "unit": "kpl",
+      "cost_price": 250,
+      "sell_price": 390,
+      "category": "Alihankintatyöt"
+    },
+    {
+      "code": "A18",
+      "name": "As-built mittaus ja kartoitus",
+      "type": "subcontract",
+      "unit": "h",
+      "cost_price": 62,
+      "sell_price": 88,
+      "category": "Alihankintatyöt"
+    },
+    {
+      "code": "A19",
+      "name": "Putkilinjan huuhtelu",
+      "type": "subcontract",
+      "unit": "m",
+      "cost_price": 1.2,
+      "sell_price": 2,
+      "category": "Alihankintatyöt"
+    },
+    {
+      "code": "A20",
+      "name": "Vesijohdon koeponnistus / tiiveyskoe",
+      "type": "subcontract",
+      "unit": "kpl",
+      "cost_price": 420,
+      "sell_price": 620,
+      "category": "Alihankintatyöt"
+    },
+    {
+      "code": "A21",
+      "name": "Louhintakatselmukset, ennakko ja jälki",
+      "type": "subcontract",
+      "unit": "kpl",
+      "cost_price": 850,
+      "sell_price": 1250,
+      "category": "Alihankintatyöt"
+    },
+    {
+      "code": "A22",
+      "name": "Poraus ja panostus pienlouhinta",
+      "type": "subcontract",
+      "unit": "m3_rtr",
+      "cost_price": 55,
+      "sell_price": 78,
+      "category": "Alihankintatyöt"
+    },
+    {
+      "code": "A23",
+      "name": "Jyrsintä asfaltille",
+      "type": "subcontract",
+      "unit": "m2",
+      "cost_price": 2.2,
+      "sell_price": 3.4,
+      "category": "Alihankintatyöt"
+    },
+    {
+      "code": "A24",
+      "name": "Asfaltin kuljetus ja levitys lisätyö",
+      "type": "subcontract",
+      "unit": "tn",
+      "cost_price": 18,
+      "sell_price": 26,
+      "category": "Alihankintatyöt"
+    }
+  ],
+  "folders": [
+    {
+      "path": "INFRA 2015"
+    },
+    {
+      "path": "INFRA 2015 / Kaapelirakenteet"
+    },
+    {
+      "path": "INFRA 2015 / Kaivot"
+    },
+    {
+      "path": "INFRA 2015 / Kuivatusrakenteet"
+    },
+    {
+      "path": "INFRA 2015 / Louhinta"
+    },
+    {
+      "path": "INFRA 2015 / Maanleikkaus"
+    },
+    {
+      "path": "INFRA 2015 / Massanvaihto"
+    },
+    {
+      "path": "INFRA 2015 / Pintarakenteet"
+    },
+    {
+      "path": "INFRA 2015 / Putkiasennus"
+    },
+    {
+      "path": "INFRA 2015 / Putkikaivannot"
+    },
+    {
+      "path": "INFRA 2015 / Päällysteet"
+    },
+    {
+      "path": "INFRA 2015 / Rakennekerrokset"
+    },
+    {
+      "path": "INFRA 2015 / Täytöt"
+    }
+  ],
+  "assemblies": [
+    {
+      "code": "1613",
+      "name": "Maaleikkaus ja läjitys / vastaanotto",
+      "unit": "m3_ktr",
+      "input_type": "manual",
+      "description": "Maan poisto, kuormaus, kuljetus ja vastaanotto/läjitys. Syötä leikkausmäärä (m³ ktr). Vastaanotto-osuutta säädetään parametrilla.",
+      "folder_path": "INFRA 2015 / Maanleikkaus",
+      "tags": [
+        "1613",
+        "leikkaus",
+        "läjitys"
+      ],
+      "parameters": [
+        {
+          "key": "excavator_productivity_m3_h",
+          "label": "Kaivun tuottavuus",
+          "unit": "m3/h",
+          "default": 70,
+          "min": 1
+        },
+        {
+          "key": "truck_productivity_m3_h",
+          "label": "Kuljetuksen tuottavuus",
+          "unit": "m3/h",
+          "default": 55,
+          "min": 1
+        },
+        {
+          "key": "survey_hours_per_1000m3",
+          "label": "Mittaus h / 1000 m³",
+          "unit": "h",
+          "default": 2,
+          "min": 0
+        },
+        {
+          "key": "disposal_share",
+          "label": "Vastaanottoon menevä osuus",
+          "unit": "0-1",
+          "default": 1,
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "components": [
+        {
+          "resource_code": "K02",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 0,
+          "note": "Kaivu ja kuormaus",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1 / excavator_productivity_m3_h"
+        },
+        {
+          "resource_code": "K21",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 1,
+          "note": "Kuljetus",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1 / truck_productivity_m3_h"
+        },
+        {
+          "resource_code": "T01",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 2,
+          "note": "Perämies / avustava työ",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "0.35 / excavator_productivity_m3_h"
+        },
+        {
+          "resource_code": "T03",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 3,
+          "note": "Mittaus",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "survey_hours_per_1000m3 / 1000"
+        },
+        {
+          "resource_code": "A08",
+          "quantity_unit": "m3",
+          "output_unit": "m3",
+          "sort_order": 4,
+          "note": "Vastaanotto / läjitys (m³ per leikkaus-m³)",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "disposal_share"
+        }
+      ]
+    },
+    {
+      "code": "1612",
+      "name": "Maaleikkaus penkereeseen / täyttöön",
+      "unit": "m3_ktr",
+      "input_type": "manual",
+      "description": "Leikkaus ja käyttö suoraan penkereeseen. Syötä leikkausmäärä (m³ ktr). fill_ratio = täyttöön kelpaava osuus.",
+      "folder_path": "INFRA 2015 / Maanleikkaus",
+      "tags": [
+        "1612",
+        "1811",
+        "leikkaus",
+        "penger"
+      ],
+      "parameters": [
+        {
+          "key": "excavator_productivity_m3_h",
+          "label": "Kaivun tuottavuus",
+          "unit": "m3/h",
+          "default": 75,
+          "min": 1
+        },
+        {
+          "key": "transport_productivity_m3_h",
+          "label": "Kuljetuksen tuottavuus",
+          "unit": "m3/h",
+          "default": 70,
+          "min": 1
+        },
+        {
+          "key": "spreading_productivity_m3_h",
+          "label": "Levityksen tuottavuus",
+          "unit": "m3/h",
+          "default": 140,
+          "min": 1
+        },
+        {
+          "key": "compaction_productivity_m3_h",
+          "label": "Tiivistyksen tuottavuus",
+          "unit": "m3/h",
+          "default": 180,
+          "min": 1
+        },
+        {
+          "key": "fill_ratio",
+          "label": "Penkereeseen kelpaava osuus",
+          "unit": "0-1",
+          "default": 0.85,
+          "min": 0,
+          "max": 1
+        }
+      ],
+      "components": [
+        {
+          "resource_code": "K02",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 0,
+          "note": "Kaivu ja kuormaus",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1 / excavator_productivity_m3_h"
+        },
+        {
+          "resource_code": "K21",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 1,
+          "note": "Kuljetus",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1 / transport_productivity_m3_h"
+        },
+        {
+          "resource_code": "K09",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 2,
+          "note": "Levitys penkereeseen",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "fill_ratio / spreading_productivity_m3_h"
+        },
+        {
+          "resource_code": "K41",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 3,
+          "note": "Tiivistys",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "fill_ratio / compaction_productivity_m3_h"
+        },
+        {
+          "resource_code": "T01",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 4,
+          "note": "Perämies / avustava työ",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "0.25 / excavator_productivity_m3_h + 0.15 * fill_ratio / spreading_productivity_m3_h"
+        }
+      ]
+    },
+    {
+      "code": "1621",
+      "name": "Putki- ja johtokaivanto maassa",
+      "unit": "m",
+      "input_type": "line_length",
+      "description": "Trapetsikaivanto maahan. Poikkileikkaus lasketaan parametreista (syvyys, pohjaleveys, luiskat). Tuet pystysuoraksi: aseta luiskat 0.",
+      "folder_path": "INFRA 2015 / Putkikaivannot",
+      "tags": [
+        "1621",
+        "kaivanto",
+        "putki"
+      ],
+      "parameters": [
+        {
+          "key": "avg_depth_m",
+          "label": "Keskisyvyys",
+          "unit": "m",
+          "default": 2,
+          "min": 0
+        },
+        {
+          "key": "bottom_width_m",
+          "label": "Pohjaleveys",
+          "unit": "m",
+          "default": 1.2,
+          "min": 0
+        },
+        {
+          "key": "slope_left",
+          "label": "Vasen luiska (h/v)",
+          "unit": "-",
+          "default": 0.5,
+          "min": 0
+        },
+        {
+          "key": "slope_right",
+          "label": "Oikea luiska (h/v)",
+          "unit": "-",
+          "default": 0.5,
+          "min": 0
+        },
+        {
+          "key": "excavator_productivity_m3_h",
+          "label": "Kaivun tuottavuus",
+          "unit": "m3/h",
+          "default": 35,
+          "min": 1
+        }
+      ],
+      "components": [
+        {
+          "resource_code": "K02",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 0,
+          "note": "Kaivu kaivukoneella",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "(avg_depth_m * (bottom_width_m + bottom_width_m + avg_depth_m * (slope_left + slope_right)) / 2) / excavator_productivity_m3_h"
+        },
+        {
+          "resource_code": "T01",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 1,
+          "note": "Perämies ja käsityö",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "0.8 * (avg_depth_m * (bottom_width_m + bottom_width_m + avg_depth_m * (slope_left + slope_right)) / 2) / excavator_productivity_m3_h"
+        },
+        {
+          "resource_code": "K62",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 2,
+          "note": "Pumppausvaraus",
+          "quantity": 0.04
+        },
+        {
+          "resource_code": "T03",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 3,
+          "note": "Mittaus ja korkojen tarkistus",
+          "quantity": 0.02
+        }
+      ]
+    },
+    {
+      "code": "1831",
+      "name": "Putken asennusalusta",
+      "unit": "m",
+      "input_type": "line_length",
+      "description": "Putken asennusalusta (hiekka/murske) annetulla leveydellä ja paksuudella.",
+      "folder_path": "INFRA 2015 / Putkikaivannot",
+      "tags": [
+        "1831",
+        "asennusalusta",
+        "putki"
+      ],
+      "parameters": [
+        {
+          "key": "bedding_width_m",
+          "label": "Alustan leveys",
+          "unit": "m",
+          "default": 1,
+          "min": 0
+        },
+        {
+          "key": "bedding_thickness_m",
+          "label": "Alustan paksuus",
+          "unit": "m",
+          "default": 0.15,
+          "min": 0
+        },
+        {
+          "key": "density_tn_m3",
+          "label": "Materiaalin tiheys",
+          "unit": "tn/m3",
+          "default": 1.8,
+          "min": 0.1
+        },
+        {
+          "key": "install_productivity_m3_h",
+          "label": "Levitystuottavuus",
+          "unit": "m3/h",
+          "default": 18,
+          "min": 1
+        }
+      ],
+      "components": [
+        {
+          "resource_code": "M07",
+          "quantity_unit": "tn",
+          "output_unit": "tn",
+          "sort_order": 0,
+          "waste_percent": 5,
+          "note": "Asennushiekka (tn/m)",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "bedding_width_m * bedding_thickness_m * density_tn_m3"
+        },
+        {
+          "resource_code": "K02",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 1,
+          "note": "Levitys kaivukoneella",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "bedding_width_m * bedding_thickness_m / install_productivity_m3_h"
+        },
+        {
+          "resource_code": "T02",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 2,
+          "note": "Putkimies / tasaus",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1.2 * bedding_width_m * bedding_thickness_m / install_productivity_m3_h"
+        },
+        {
+          "resource_code": "K61",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 3,
+          "note": "Putkilaser",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "bedding_width_m * bedding_thickness_m / install_productivity_m3_h"
+        }
+      ]
+    },
+    {
+      "code": "1837",
+      "name": "Johtokaivannon virtaussulku",
+      "unit": "kpl",
+      "input_type": "count",
+      "description": "Virtaussulku kaivantoon. Määrä kappaleina; tilavuus lasketaan mitoista.",
+      "folder_path": "INFRA 2015 / Putkikaivannot",
+      "tags": [
+        "1837",
+        "virtaussulku"
+      ],
+      "parameters": [
+        {
+          "key": "dam_width_m",
+          "label": "Sulun leveys",
+          "unit": "m",
+          "default": 1.2,
+          "min": 0
+        },
+        {
+          "key": "dam_height_m",
+          "label": "Sulun korkeus",
+          "unit": "m",
+          "default": 1.5,
+          "min": 0
+        },
+        {
+          "key": "dam_thickness_m",
+          "label": "Sulun paksuus",
+          "unit": "m",
+          "default": 0.5,
+          "min": 0
+        },
+        {
+          "key": "material_density_tn_m3",
+          "label": "Materiaalin tiheys",
+          "unit": "tn/m3",
+          "default": 2,
+          "min": 0.1
+        },
+        {
+          "key": "install_hours_per_dam",
+          "label": "Asennustunnit / sulku",
+          "unit": "h/kpl",
+          "default": 1.5,
+          "min": 0
+        }
+      ],
+      "components": [
+        {
+          "resource_code": "M03",
+          "quantity_unit": "tn",
+          "output_unit": "tn",
+          "sort_order": 0,
+          "note": "Sulkumateriaali (tn/kpl)",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "dam_width_m * dam_height_m * dam_thickness_m * material_density_tn_m3"
+        },
+        {
+          "resource_code": "K02",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 1,
+          "note": "Asennus kaivukoneella",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "install_hours_per_dam"
+        },
+        {
+          "resource_code": "T01",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 2,
+          "note": "Käsityö ja muotoilu",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "install_hours_per_dam"
+        }
+      ]
+    },
+    {
+      "code": "3121",
+      "name": "Hulevesiviemäri muovia (asennus)",
+      "unit": "m",
+      "input_type": "line_length",
+      "description": "Hulevesiviemäriputken (PE 315) asennus. Asennusalusta ja täyttö omina resepteinään.",
+      "folder_path": "INFRA 2015 / Putkiasennus",
+      "tags": [
+        "3121",
+        "hulevesi",
+        "putki"
+      ],
+      "parameters": [
+        {
+          "key": "laying_productivity_m_h",
+          "label": "Asennustuottavuus",
+          "unit": "m/h",
+          "default": 22,
+          "min": 1
+        }
+      ],
+      "components": [
+        {
+          "resource_code": "M24",
+          "quantity_unit": "m",
+          "output_unit": "m",
+          "sort_order": 0,
+          "note": "Hulevesiputki (sis. hukka 2 %)",
+          "quantity": 1.02
+        },
+        {
+          "resource_code": "T02",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 1,
+          "note": "Putkimies",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1 / laying_productivity_m_h"
+        },
+        {
+          "resource_code": "T01",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 2,
+          "note": "Perämies / avustaja",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1 / laying_productivity_m_h"
+        },
+        {
+          "resource_code": "K02",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 3,
+          "note": "Kaivukone nostoihin",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1 / laying_productivity_m_h"
+        },
+        {
+          "resource_code": "K61",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 4,
+          "note": "Putkilaser",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1 / laying_productivity_m_h"
+        }
+      ]
+    },
+    {
+      "code": "3111",
+      "name": "Jätevesiviemäri muovia (asennus)",
+      "unit": "m",
+      "input_type": "line_length",
+      "description": "Jätevesiviemäriputken (PVC 160) asennus, sis. tarkemittaus ja TV-kuvausvaraus.",
+      "folder_path": "INFRA 2015 / Putkiasennus",
+      "tags": [
+        "3111",
+        "jätevesi",
+        "viemäri",
+        "putki"
+      ],
+      "parameters": [
+        {
+          "key": "laying_productivity_m_h",
+          "label": "Asennustuottavuus",
+          "unit": "m/h",
+          "default": 18,
+          "min": 1
+        },
+        {
+          "key": "survey_hours_per_100m",
+          "label": "Mittaus h / 100 m",
+          "unit": "h",
+          "default": 2,
+          "min": 0
+        }
+      ],
+      "components": [
+        {
+          "resource_code": "M32",
+          "quantity_unit": "m",
+          "output_unit": "m",
+          "sort_order": 0,
+          "note": "Jätevesiputki (sis. hukka 2 %)",
+          "quantity": 1.02
+        },
+        {
+          "resource_code": "T02",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 1,
+          "note": "Putkimies",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1 / laying_productivity_m_h"
+        },
+        {
+          "resource_code": "T01",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 2,
+          "note": "Perämies / avustaja",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1 / laying_productivity_m_h"
+        },
+        {
+          "resource_code": "K02",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 3,
+          "note": "Kaivukone nostoihin",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1 / laying_productivity_m_h"
+        },
+        {
+          "resource_code": "T03",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 4,
+          "note": "Tarkemittaus",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "survey_hours_per_100m / 100"
+        },
+        {
+          "resource_code": "A06",
+          "quantity_unit": "m",
+          "output_unit": "m",
+          "sort_order": 5,
+          "note": "TV-kuvaus (m)",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "code": "3131",
+      "name": "Vesijohto PE (asennus ja koestus)",
+      "unit": "m",
+      "input_type": "line_length",
+      "description": "PE-vesijohdon (110 PN16) asennus, puskuhitsaus ja koeponnistusvaraus.",
+      "folder_path": "INFRA 2015 / Putkiasennus",
+      "tags": [
+        "3131",
+        "vesijohto",
+        "PE",
+        "painekoe"
+      ],
+      "parameters": [
+        {
+          "key": "install_productivity_m_h",
+          "label": "Asennustuottavuus",
+          "unit": "m/h",
+          "default": 20,
+          "min": 1
+        },
+        {
+          "key": "welding_interval_m",
+          "label": "Hitsausväli (putkikangin pituus)",
+          "unit": "m",
+          "default": 12,
+          "min": 0.1
+        },
+        {
+          "key": "tests_per_100m",
+          "label": "Painekokeita / 100 m",
+          "unit": "kpl",
+          "default": 1,
+          "min": 0
+        }
+      ],
+      "components": [
+        {
+          "resource_code": "M27",
+          "quantity_unit": "m",
+          "output_unit": "m",
+          "sort_order": 0,
+          "note": "PE-vesijohto (sis. hukka 2 %)",
+          "quantity": 1.02
+        },
+        {
+          "resource_code": "T12",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 1,
+          "note": "PE-putkihitsaaja",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "0.5 / install_productivity_m_h + 0.35 / welding_interval_m"
+        },
+        {
+          "resource_code": "T02",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 2,
+          "note": "Putkimies",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1 / install_productivity_m_h"
+        },
+        {
+          "resource_code": "K67",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 3,
+          "note": "PE-hitsauskalusto",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "0.35 / welding_interval_m"
+        },
+        {
+          "resource_code": "A20",
+          "quantity_unit": "kpl",
+          "output_unit": "kpl",
+          "sort_order": 4,
+          "note": "Koeponnistus / tiiveyskoe",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "tests_per_100m / 100"
+        }
+      ]
+    },
+    {
+      "code": "1832",
+      "name": "Putkikaivannon alku- ja lopputäyttö",
+      "unit": "m",
+      "input_type": "line_length",
+      "description": "Alku- ja lopputäyttö. Alkutäytöstä vähennetään putken syrjäyttämä ala. Alkutäyttömateriaali ostetaan; lopputäyttö oletuksena kaivumaista.",
+      "folder_path": "INFRA 2015 / Täytöt",
+      "tags": [
+        "1832",
+        "1833",
+        "täyttö",
+        "tiivistys"
+      ],
+      "parameters": [
+        {
+          "key": "bottom_width_m",
+          "label": "Kaivannon pohjaleveys",
+          "unit": "m",
+          "default": 1.2,
+          "min": 0
+        },
+        {
+          "key": "pipe_diameter_m",
+          "label": "Putken ulkohalkaisija",
+          "unit": "m",
+          "default": 0.315,
+          "min": 0
+        },
+        {
+          "key": "initial_fill_height_above_pipe_m",
+          "label": "Alkutäyttö putken päältä",
+          "unit": "m",
+          "default": 0.3,
+          "min": 0
+        },
+        {
+          "key": "final_fill_height_m",
+          "label": "Lopputäytön korkeus",
+          "unit": "m",
+          "default": 1.2,
+          "min": 0
+        },
+        {
+          "key": "initial_density_tn_m3",
+          "label": "Alkutäytön tiheys",
+          "unit": "tn/m3",
+          "default": 1.85,
+          "min": 0.1
+        },
+        {
+          "key": "compaction_productivity_m3_h",
+          "label": "Tiivistyksen tuottavuus",
+          "unit": "m3/h",
+          "default": 20,
+          "min": 1
+        }
+      ],
+      "components": [
+        {
+          "resource_code": "M07",
+          "quantity_unit": "tn",
+          "output_unit": "tn",
+          "sort_order": 0,
+          "waste_percent": 5,
+          "note": "Alkutäyttömateriaali (tn/m)",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "(bottom_width_m * (pipe_diameter_m + initial_fill_height_above_pipe_m) - 3.14159 * (pipe_diameter_m / 2) * (pipe_diameter_m / 2)) * initial_density_tn_m3"
+        },
+        {
+          "resource_code": "K02",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 1,
+          "note": "Täyttö kaivukoneella",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "0.8 * (bottom_width_m * (pipe_diameter_m + initial_fill_height_above_pipe_m) - 3.14159 * (pipe_diameter_m / 2) * (pipe_diameter_m / 2) + bottom_width_m * final_fill_height_m) / compaction_productivity_m3_h"
+        },
+        {
+          "resource_code": "K42",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 2,
+          "note": "Tiivistys tärylevyllä",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "(bottom_width_m * (pipe_diameter_m + initial_fill_height_above_pipe_m) - 3.14159 * (pipe_diameter_m / 2) * (pipe_diameter_m / 2) + bottom_width_m * final_fill_height_m) / compaction_productivity_m3_h"
+        },
+        {
+          "resource_code": "T01",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 3,
+          "note": "Käsityö ja tiivistyksen apu",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "(bottom_width_m * (pipe_diameter_m + initial_fill_height_above_pipe_m) - 3.14159 * (pipe_diameter_m / 2) * (pipe_diameter_m / 2) + bottom_width_m * final_fill_height_m) / compaction_productivity_m3_h"
+        }
+      ]
+    },
+    {
+      "code": "3122",
+      "name": "Hulevesi- tai tarkastuskaivon asennus",
+      "unit": "kpl",
+      "input_type": "count",
+      "description": "Kaivon (SVK 400) toimitus ja asennus alustoineen. Vaihda kaivon resurssi tarvittaessa.",
+      "folder_path": "INFRA 2015 / Kaivot",
+      "tags": [
+        "3122",
+        "kaivo",
+        "hulevesi"
+      ],
+      "parameters": [
+        {
+          "key": "install_hours_per_manhole",
+          "label": "Asennustunnit / kaivo",
+          "unit": "h/kpl",
+          "default": 3.5,
+          "min": 0
+        },
+        {
+          "key": "bedding_m3_per_manhole",
+          "label": "Alustamateriaali / kaivo",
+          "unit": "m3/kpl",
+          "default": 0.8,
+          "min": 0
+        },
+        {
+          "key": "density_tn_m3",
+          "label": "Alustan tiheys",
+          "unit": "tn/m3",
+          "default": 1.85,
+          "min": 0.1
+        }
+      ],
+      "components": [
+        {
+          "resource_code": "M51",
+          "quantity_unit": "kpl",
+          "output_unit": "kpl",
+          "sort_order": 0,
+          "note": "Kaivo",
+          "quantity": 1
+        },
+        {
+          "resource_code": "M07",
+          "quantity_unit": "tn",
+          "output_unit": "tn",
+          "sort_order": 1,
+          "note": "Alustamateriaali (tn/kpl)",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "bedding_m3_per_manhole * density_tn_m3"
+        },
+        {
+          "resource_code": "K02",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 2,
+          "note": "Kaivukone nostoihin",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "install_hours_per_manhole"
+        },
+        {
+          "resource_code": "T02",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 3,
+          "note": "Putkimies / liitokset",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "0.9 * install_hours_per_manhole"
+        },
+        {
+          "resource_code": "T01",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 4,
+          "note": "Avustava työ",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "0.7 * install_hours_per_manhole"
+        }
+      ]
+    },
+    {
+      "code": "2111",
+      "name": "Suodatinkangas ja suodatinkerros",
+      "unit": "m2",
+      "input_type": "area",
+      "description": "Suodatinkangas (limityksineen) ja suodatinkerros annetulla paksuudella.",
+      "folder_path": "INFRA 2015 / Rakennekerrokset",
+      "tags": [
+        "2111",
+        "2112",
+        "suodatinkerros",
+        "kangas"
+      ],
+      "parameters": [
+        {
+          "key": "layer_thickness_m",
+          "label": "Kerroksen paksuus",
+          "unit": "m",
+          "default": 0.3,
+          "min": 0
+        },
+        {
+          "key": "material_density_tn_m3",
+          "label": "Materiaalin tiheys",
+          "unit": "tn/m3",
+          "default": 1.95,
+          "min": 0.1
+        },
+        {
+          "key": "overlap_percent",
+          "label": "Kankaan limitys",
+          "unit": "%",
+          "default": 10,
+          "min": 0
+        },
+        {
+          "key": "spreading_productivity_m3_h",
+          "label": "Levitystuottavuus",
+          "unit": "m3/h",
+          "default": 80,
+          "min": 1
+        }
+      ],
+      "components": [
+        {
+          "resource_code": "M72",
+          "quantity_unit": "m2",
+          "output_unit": "m2",
+          "sort_order": 0,
+          "note": "Suodatinkangas (m²/m²)",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1 + overlap_percent / 100"
+        },
+        {
+          "resource_code": "M03",
+          "quantity_unit": "tn",
+          "output_unit": "tn",
+          "sort_order": 1,
+          "waste_percent": 5,
+          "note": "Suodatinkerros (tn/m²)",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "layer_thickness_m * material_density_tn_m3"
+        },
+        {
+          "resource_code": "K02",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 2,
+          "note": "Levitys",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "layer_thickness_m / spreading_productivity_m3_h"
+        },
+        {
+          "resource_code": "K41",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 3,
+          "note": "Tiivistys",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "0.8 * layer_thickness_m / spreading_productivity_m3_h"
+        },
+        {
+          "resource_code": "T01",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 4,
+          "note": "Kankaan levitys ja avustava työ",
+          "quantity": 0.004
+        }
+      ]
+    },
+    {
+      "code": "2121",
+      "name": "Jakava kerros murskeesta",
+      "unit": "m2",
+      "input_type": "area",
+      "description": "Jakava kerros (murske 0-63). Vaihda murskelaji suunnitelman mukaan.",
+      "folder_path": "INFRA 2015 / Rakennekerrokset",
+      "tags": [
+        "2121",
+        "jakava",
+        "murske"
+      ],
+      "parameters": [
+        {
+          "key": "layer_thickness_m",
+          "label": "Kerrosvahvuus",
+          "unit": "m",
+          "default": 0.4,
+          "min": 0
+        },
+        {
+          "key": "density_tn_m3",
+          "label": "Tiheys rakenteessa",
+          "unit": "tn/m3",
+          "default": 2,
+          "min": 0.1
+        },
+        {
+          "key": "spreading_productivity_m3_h",
+          "label": "Levitystuottavuus",
+          "unit": "m3/h",
+          "default": 100,
+          "min": 1
+        }
+      ],
+      "components": [
+        {
+          "resource_code": "M03",
+          "quantity_unit": "tn",
+          "output_unit": "tn",
+          "sort_order": 0,
+          "waste_percent": 3,
+          "note": "Jakavan kerroksen murske (tn/m²)",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "layer_thickness_m * density_tn_m3"
+        },
+        {
+          "resource_code": "K08",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 1,
+          "note": "Levitys pyöräkuormaajalla",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "layer_thickness_m / spreading_productivity_m3_h"
+        },
+        {
+          "resource_code": "K41",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 2,
+          "note": "Tiivistys",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "0.8 * layer_thickness_m / spreading_productivity_m3_h"
+        },
+        {
+          "resource_code": "T03",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 3,
+          "note": "Mittaus ja tarkistus",
+          "quantity": 0.00067
+        }
+      ]
+    },
+    {
+      "code": "2131",
+      "name": "Sitomaton kantava kerros",
+      "unit": "m2",
+      "input_type": "area",
+      "description": "Sitomaton kantava kerros (murske 0-32), sis. muotoilun, tiivistyksen ja laadunvarmistusvarauksen.",
+      "folder_path": "INFRA 2015 / Rakennekerrokset",
+      "tags": [
+        "2131",
+        "kantava",
+        "murske",
+        "laatu"
+      ],
+      "parameters": [
+        {
+          "key": "layer_thickness_m",
+          "label": "Kerrosvahvuus",
+          "unit": "m",
+          "default": 0.2,
+          "min": 0
+        },
+        {
+          "key": "density_tn_m3",
+          "label": "Tiheys rakenteessa",
+          "unit": "tn/m3",
+          "default": 2,
+          "min": 0.1
+        },
+        {
+          "key": "grading_productivity_m2_h",
+          "label": "Muotoilun tuottavuus",
+          "unit": "m2/h",
+          "default": 900,
+          "min": 1
+        },
+        {
+          "key": "qa_tests_per_m2",
+          "label": "Laadunvarmistuskokeita / m²",
+          "unit": "kpl",
+          "default": 0.00033,
+          "min": 0
+        }
+      ],
+      "components": [
+        {
+          "resource_code": "M02",
+          "quantity_unit": "tn",
+          "output_unit": "tn",
+          "sort_order": 0,
+          "waste_percent": 3,
+          "note": "Kantavan kerroksen murske (tn/m²)",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "layer_thickness_m * density_tn_m3"
+        },
+        {
+          "resource_code": "K10",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 1,
+          "note": "Muotoilu tiehöylällä",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1 / grading_productivity_m2_h"
+        },
+        {
+          "resource_code": "K41",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 2,
+          "note": "Tiivistys valssijyrällä",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "0.7 / grading_productivity_m2_h"
+        },
+        {
+          "resource_code": "T03",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 3,
+          "note": "Mittaus / korkomalli",
+          "quantity": 0.00083
+        },
+        {
+          "resource_code": "A17",
+          "quantity_unit": "kpl",
+          "output_unit": "kpl",
+          "sort_order": 4,
+          "note": "Laadunvarmistuskoe",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "qa_tests_per_m2"
+        }
+      ]
+    },
+    {
+      "code": "2141",
+      "name": "Asfalttipäällyste AB / ABK",
+      "unit": "m2",
+      "input_type": "area",
+      "description": "Asfalttipäällyste neliöinä; tonnivaraus mukana massatarkistusta varten.",
+      "folder_path": "INFRA 2015 / Päällysteet",
+      "tags": [
+        "2141",
+        "asfaltti",
+        "päällyste"
+      ],
+      "parameters": [
+        {
+          "key": "thickness_m",
+          "label": "Paksuus",
+          "unit": "m",
+          "default": 0.05,
+          "min": 0
+        },
+        {
+          "key": "asphalt_density_tn_m3",
+          "label": "Asfaltin tiheys",
+          "unit": "tn/m3",
+          "default": 2.5,
+          "min": 0.1
+        }
+      ],
+      "components": [
+        {
+          "resource_code": "A01",
+          "quantity_unit": "m2",
+          "output_unit": "m2",
+          "sort_order": 0,
+          "note": "Asfaltointi (m²)",
+          "quantity": 1
+        },
+        {
+          "resource_code": "A24",
+          "quantity_unit": "tn",
+          "output_unit": "tn",
+          "sort_order": 1,
+          "waste_percent": 2,
+          "note": "Massan kuljetus/levitys (tn/m²)",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "thickness_m * asphalt_density_tn_m3"
+        }
+      ]
+    },
+    {
+      "code": "1811",
+      "name": "Louhepenger / louhetäyttö",
+      "unit": "m3_rtr",
+      "input_type": "manual",
+      "description": "Louhetäyttö valmiina rakenteena (m³ rtr). Syötä rakennetilavuus.",
+      "folder_path": "INFRA 2015 / Täytöt",
+      "tags": [
+        "1811",
+        "louhe",
+        "penger"
+      ],
+      "parameters": [
+        {
+          "key": "spreading_productivity_m3_h",
+          "label": "Levitystuottavuus",
+          "unit": "m3/h",
+          "default": 120,
+          "min": 1
+        },
+        {
+          "key": "compaction_productivity_m3_h",
+          "label": "Tiivistystuottavuus",
+          "unit": "m3/h",
+          "default": 180,
+          "min": 1
+        }
+      ],
+      "components": [
+        {
+          "resource_code": "M13",
+          "quantity_unit": "m3_rtr",
+          "output_unit": "m3_rtr",
+          "sort_order": 0,
+          "note": "Louhe 0-300 (m³ rtr)",
+          "quantity": 1
+        },
+        {
+          "resource_code": "K07",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 1,
+          "note": "Louheen käsittely",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1 / spreading_productivity_m3_h"
+        },
+        {
+          "resource_code": "K09",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 2,
+          "note": "Puskutraktori levitykseen",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "0.8 / spreading_productivity_m3_h"
+        },
+        {
+          "resource_code": "K41",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 3,
+          "note": "Tiivistys / yliajot",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1 / compaction_productivity_m3_h"
+        },
+        {
+          "resource_code": "T03",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 4,
+          "note": "Pinnan ja kerrosten mittaus",
+          "quantity": 0.002
+        }
+      ]
+    },
+    {
+      "code": "1625",
+      "name": "Massanvaihto: kaivanto ja täyttö",
+      "unit": "m3_rtr",
+      "input_type": "manual",
+      "description": "Heikon maan poisto ja korvaava täyttö. Syötä vaihdettava tilavuus (m³ rtr).",
+      "folder_path": "INFRA 2015 / Massanvaihto",
+      "tags": [
+        "1625",
+        "1836",
+        "massanvaihto"
+      ],
+      "parameters": [
+        {
+          "key": "excavation_productivity_m3_h",
+          "label": "Kaivun tuottavuus",
+          "unit": "m3/h",
+          "default": 55,
+          "min": 1
+        },
+        {
+          "key": "fill_productivity_m3_h",
+          "label": "Täytön tuottavuus",
+          "unit": "m3/h",
+          "default": 90,
+          "min": 1
+        },
+        {
+          "key": "density_tn_m3",
+          "label": "Täyttömateriaalin tiheys",
+          "unit": "tn/m3",
+          "default": 2,
+          "min": 0.1
+        }
+      ],
+      "components": [
+        {
+          "resource_code": "K03",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 0,
+          "note": "Poistettavan maan kaivu",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1 / excavation_productivity_m3_h"
+        },
+        {
+          "resource_code": "K21",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 1,
+          "note": "Poiskuljetus",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1.2 / excavation_productivity_m3_h"
+        },
+        {
+          "resource_code": "M03",
+          "quantity_unit": "tn",
+          "output_unit": "tn",
+          "sort_order": 2,
+          "note": "Korvaava materiaali (tn/m³)",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "density_tn_m3"
+        },
+        {
+          "resource_code": "K08",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 3,
+          "note": "Levitys",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1 / fill_productivity_m3_h"
+        },
+        {
+          "resource_code": "K41",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 4,
+          "note": "Tiivistys",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "0.8 / fill_productivity_m3_h"
+        }
+      ]
+    },
+    {
+      "code": "1711",
+      "name": "Kallioavoleikkaus / louhinta",
+      "unit": "m3_ktr",
+      "input_type": "manual",
+      "description": "Kallion avolouhinta teoreettisena tilavuutena (m³ ktr). Louhinta alihankintana.",
+      "folder_path": "INFRA 2015 / Louhinta",
+      "tags": [
+        "1711",
+        "1712",
+        "louhinta",
+        "kallio"
+      ],
+      "parameters": [
+        {
+          "key": "drilling_productivity_m3_h",
+          "label": "Porauksen tuottavuus",
+          "unit": "m3/h",
+          "default": 45,
+          "min": 1
+        },
+        {
+          "key": "loading_productivity_m3_h",
+          "label": "Louheen kuormaus",
+          "unit": "m3/h",
+          "default": 80,
+          "min": 1
+        },
+        {
+          "key": "survey_hours_per_1000m3",
+          "label": "Mittaus h / 1000 m³",
+          "unit": "h",
+          "default": 3,
+          "min": 0
+        },
+        {
+          "key": "vibration_per_1000m3",
+          "label": "Tärinämittauksia / 1000 m³",
+          "unit": "kpl",
+          "default": 1,
+          "min": 0
+        }
+      ],
+      "components": [
+        {
+          "resource_code": "A03",
+          "quantity_unit": "m3_rtr",
+          "output_unit": "m3_rtr",
+          "sort_order": 0,
+          "note": "Kallion avolouhinta (alihankinta)",
+          "quantity": 1
+        },
+        {
+          "resource_code": "K07",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 1,
+          "note": "Louheen käsittely / kuormaus",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1 / loading_productivity_m3_h"
+        },
+        {
+          "resource_code": "T05",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 2,
+          "note": "Panostaja / räjäyttäjä",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "0.35 / drilling_productivity_m3_h"
+        },
+        {
+          "resource_code": "T03",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 3,
+          "note": "Louhintamittaus",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "survey_hours_per_1000m3 / 1000"
+        },
+        {
+          "resource_code": "A10",
+          "quantity_unit": "kpl",
+          "output_unit": "kpl",
+          "sort_order": 4,
+          "note": "Tärinämittaus ja katselmukset",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "vibration_per_1000m3 / 1000"
+        }
+      ]
+    },
+    {
+      "code": "1721",
+      "name": "Kalliokanaali putkelle/johdolle",
+      "unit": "m",
+      "input_type": "line_length",
+      "description": "Kapean kalliokanaalin louhinta. Tilavuus leveydestä ja syvyydestä.",
+      "folder_path": "INFRA 2015 / Louhinta",
+      "tags": [
+        "1721",
+        "kalliokanaali",
+        "louhinta"
+      ],
+      "parameters": [
+        {
+          "key": "channel_width_m",
+          "label": "Kanaalin leveys",
+          "unit": "m",
+          "default": 1.2,
+          "min": 0
+        },
+        {
+          "key": "channel_depth_m",
+          "label": "Louhintasyvyys",
+          "unit": "m",
+          "default": 0.8,
+          "min": 0
+        },
+        {
+          "key": "rock_productivity_m3_h",
+          "label": "Kanaalilouhinnan tuottavuus",
+          "unit": "m3/h",
+          "default": 18,
+          "min": 1
+        }
+      ],
+      "components": [
+        {
+          "resource_code": "A04",
+          "quantity_unit": "m3_rtr",
+          "output_unit": "m3_rtr",
+          "sort_order": 0,
+          "note": "Kanaali-/ojalouhinta (m³ rtr/m)",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "channel_width_m * channel_depth_m"
+        },
+        {
+          "resource_code": "K03",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 1,
+          "note": "Louheen poisto kanaalista",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "channel_width_m * channel_depth_m / rock_productivity_m3_h"
+        },
+        {
+          "resource_code": "K64",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 2,
+          "note": "Kompressori / paineilma",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "0.3 * channel_width_m * channel_depth_m / rock_productivity_m3_h"
+        },
+        {
+          "resource_code": "T05",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 3,
+          "note": "Panostaja / räjäyttäjä",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "0.25 * channel_width_m * channel_depth_m / rock_productivity_m3_h"
+        }
+      ]
+    },
+    {
+      "code": "1431",
+      "name": "Salaojaputki ja salaojasepeli",
+      "unit": "m",
+      "input_type": "line_length",
+      "description": "Salaojaputki, ympärystäytön sepeli ja suodatinkangas annetuilla mitoilla.",
+      "folder_path": "INFRA 2015 / Kuivatusrakenteet",
+      "tags": [
+        "1431",
+        "salaoja",
+        "kuivatus"
+      ],
+      "parameters": [
+        {
+          "key": "gravel_width_m",
+          "label": "Sepelikaistan leveys",
+          "unit": "m",
+          "default": 0.5,
+          "min": 0
+        },
+        {
+          "key": "gravel_height_m",
+          "label": "Sepelikaistan korkeus",
+          "unit": "m",
+          "default": 0.5,
+          "min": 0
+        },
+        {
+          "key": "gravel_density_tn_m3",
+          "label": "Sepelin tiheys",
+          "unit": "tn/m3",
+          "default": 1.55,
+          "min": 0.1
+        },
+        {
+          "key": "geotextile_m2_per_m",
+          "label": "Kangasta / metri",
+          "unit": "m2/m",
+          "default": 1.5,
+          "min": 0
+        }
+      ],
+      "components": [
+        {
+          "resource_code": "M25",
+          "quantity_unit": "m",
+          "output_unit": "m",
+          "sort_order": 0,
+          "note": "Salaojaputki (sis. hukka 2 %)",
+          "quantity": 1.02
+        },
+        {
+          "resource_code": "M06",
+          "quantity_unit": "tn",
+          "output_unit": "tn",
+          "sort_order": 1,
+          "note": "Salaojasepeli (tn/m)",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "gravel_width_m * gravel_height_m * gravel_density_tn_m3"
+        },
+        {
+          "resource_code": "M72",
+          "quantity_unit": "m2",
+          "output_unit": "m2",
+          "sort_order": 2,
+          "note": "Suodatinkangas (m²/m)",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "geotextile_m2_per_m"
+        },
+        {
+          "resource_code": "K05",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 3,
+          "note": "Pieni kaivukone / asennus",
+          "quantity": 0.05
+        },
+        {
+          "resource_code": "T02",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 4,
+          "note": "Asennustyö",
+          "quantity": 0.056
+        }
+      ]
+    },
+    {
+      "code": "1435",
+      "name": "Rumpuputki ja rumpukaivanto",
+      "unit": "m",
+      "input_type": "line_length",
+      "description": "Muoviputkirumpu (500 mm) alustoineen. Lisää päätyrakenteet (M85) erikseen kappaleina.",
+      "folder_path": "INFRA 2015 / Kuivatusrakenteet",
+      "tags": [
+        "1435",
+        "rumpu",
+        "kuivatus"
+      ],
+      "parameters": [
+        {
+          "key": "trench_width_m",
+          "label": "Rumpukaivannon leveys",
+          "unit": "m",
+          "default": 1.5,
+          "min": 0
+        },
+        {
+          "key": "bedding_thickness_m",
+          "label": "Asennusalustan paksuus",
+          "unit": "m",
+          "default": 0.2,
+          "min": 0
+        },
+        {
+          "key": "density_tn_m3",
+          "label": "Alustamateriaalin tiheys",
+          "unit": "tn/m3",
+          "default": 1.85,
+          "min": 0.1
+        }
+      ],
+      "components": [
+        {
+          "resource_code": "M82",
+          "quantity_unit": "m",
+          "output_unit": "m",
+          "sort_order": 0,
+          "note": "Rumpuputki (sis. hukka 2 %)",
+          "quantity": 1.02
+        },
+        {
+          "resource_code": "M07",
+          "quantity_unit": "tn",
+          "output_unit": "tn",
+          "sort_order": 1,
+          "note": "Asennusalusta (tn/m)",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "trench_width_m * bedding_thickness_m * density_tn_m3"
+        },
+        {
+          "resource_code": "K02",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 2,
+          "note": "Kaivu ja asennus",
+          "quantity": 0.125
+        },
+        {
+          "resource_code": "T02",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 3,
+          "note": "Asennustyö",
+          "quantity": 0.1
+        }
+      ]
+    },
+    {
+      "code": "3321",
+      "name": "Kaapelisuojaputket kaivantoon",
+      "unit": "m",
+      "input_type": "line_length",
+      "description": "Kaapelinsuojaputkien asennus. Materiaalipituus = linjapituus × putkien lukumäärä.",
+      "folder_path": "INFRA 2015 / Kaapelirakenteet",
+      "tags": [
+        "3321",
+        "kaapeli",
+        "suojaputki"
+      ],
+      "parameters": [
+        {
+          "key": "duct_count",
+          "label": "Putkien lukumäärä",
+          "unit": "kpl",
+          "default": 4,
+          "min": 1
+        },
+        {
+          "key": "install_productivity_m_h",
+          "label": "Asennustuottavuus",
+          "unit": "m/h",
+          "default": 25,
+          "min": 1
+        }
+      ],
+      "components": [
+        {
+          "resource_code": "M31",
+          "quantity_unit": "m",
+          "output_unit": "m",
+          "sort_order": 0,
+          "note": "Kaapelinsuojaputket (m/m, sis. hukka 2 %)",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "duct_count * 1.02"
+        },
+        {
+          "resource_code": "M44",
+          "quantity_unit": "m",
+          "output_unit": "m",
+          "sort_order": 1,
+          "note": "Varoitusnauha (m)",
+          "quantity": 1
+        },
+        {
+          "resource_code": "T13",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 2,
+          "note": "Kaapeliasentaja / putkitus",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1 / install_productivity_m_h"
+        },
+        {
+          "resource_code": "T01",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 3,
+          "note": "Avustava työ",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1 / install_productivity_m_h"
+        },
+        {
+          "resource_code": "K02",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 4,
+          "note": "Kaivukone asennusapuna",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "0.8 / install_productivity_m_h"
+        }
+      ]
+    },
+    {
+      "code": "2112",
+      "name": "Suodatinkangas erillisenä työnä",
+      "unit": "m2",
+      "input_type": "area",
+      "description": "Pelkkä suodatinkankaan asennus limityksineen.",
+      "folder_path": "INFRA 2015 / Rakennekerrokset",
+      "tags": [
+        "2112",
+        "suodatinkangas"
+      ],
+      "parameters": [
+        {
+          "key": "overlap_percent",
+          "label": "Limitys ja hukkavara",
+          "unit": "%",
+          "default": 10,
+          "min": 0
+        },
+        {
+          "key": "installation_productivity_m2_h",
+          "label": "Asennustuottavuus",
+          "unit": "m2/h",
+          "default": 250,
+          "min": 1
+        }
+      ],
+      "components": [
+        {
+          "resource_code": "M72",
+          "quantity_unit": "m2",
+          "output_unit": "m2",
+          "sort_order": 0,
+          "note": "Suodatinkangas (m²/m²)",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1 + overlap_percent / 100"
+        },
+        {
+          "resource_code": "T01",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 1,
+          "note": "Kankaan levitys",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1 / installation_productivity_m2_h"
+        },
+        {
+          "resource_code": "K05",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 2,
+          "note": "Pieni kone / avustus",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "0.3 / installation_productivity_m2_h"
+        }
+      ]
+    },
+    {
+      "code": "2143",
+      "name": "Reunakiven asennus",
+      "unit": "m",
+      "input_type": "line_length",
+      "description": "Betonireunakiven asennus maakostealla betonilla.",
+      "folder_path": "INFRA 2015 / Pintarakenteet",
+      "tags": [
+        "2143",
+        "reunakivi",
+        "kiveys"
+      ],
+      "parameters": [
+        {
+          "key": "concrete_m3_per_m",
+          "label": "Asennusbetoni / metri",
+          "unit": "m3/m",
+          "default": 0.035,
+          "min": 0
+        },
+        {
+          "key": "install_productivity_m_h",
+          "label": "Asennustuottavuus",
+          "unit": "m/h",
+          "default": 8,
+          "min": 1
+        }
+      ],
+      "components": [
+        {
+          "resource_code": "M101",
+          "quantity_unit": "m",
+          "output_unit": "m",
+          "sort_order": 0,
+          "note": "Betonireunakivi (sis. hukka 2 %)",
+          "quantity": 1.02
+        },
+        {
+          "resource_code": "M91",
+          "quantity_unit": "m3",
+          "output_unit": "m3",
+          "sort_order": 1,
+          "note": "Maakostea asennusbetoni (m³/m)",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "concrete_m3_per_m"
+        },
+        {
+          "resource_code": "T06",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 2,
+          "note": "Reunakiviasentaja",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "1 / install_productivity_m_h"
+        },
+        {
+          "resource_code": "K05",
+          "quantity_unit": "h",
+          "output_unit": "h",
+          "sort_order": 3,
+          "note": "Minikaivukone / nostoapu",
+          "calculation_mode": "parameter_formula",
+          "formula_expression": "0.6 / install_productivity_m_h"
+        }
+      ]
+    }
+  ]
+}
