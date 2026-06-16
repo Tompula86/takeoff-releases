@@ -1148,7 +1148,6 @@ input:disabled + .slider {
 
 /* Success payment modal */
 .payment-success-box {
-  display: none;
   padding: 2rem;
   text-align: center;
 }

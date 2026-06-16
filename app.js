@@ -5,7 +5,74 @@ let currentLang = 'fi';
 document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
   initCookies();
+  initLatestReleaseDownload();
 });
+
+/* ==========================================================================
+   GitHub Releases Fetcher (Dynamic Download Link)
+   ========================================================================== */
+
+function initLatestReleaseDownload() {
+  const repo = 'Tompula86/takeoff-releases';
+  const defaultFallbackUrl = `https://github.com/${repo}/releases`;
+  
+  // Collect all target download links robustly
+  const downloadLinks = [];
+  const heroBtn = document.getElementById('hero-download-btn');
+  if (heroBtn) downloadLinks.push(heroBtn);
+  
+  const successBtns = document.querySelectorAll('.download-box a');
+  successBtns.forEach(btn => downloadLinks.push(btn));
+  
+  document.querySelectorAll('a').forEach(link => {
+    const href = link.getAttribute('href') || '';
+    if (href.includes('poitakeoff.com/download') || (href.includes('github.com/') && href.includes('/releases'))) {
+      if (!downloadLinks.includes(link)) {
+        downloadLinks.push(link);
+      }
+    }
+  });
+  
+  // Set fallback url first in case API fetch fails or is blocked by CORS
+  downloadLinks.forEach(link => {
+    link.href = defaultFallbackUrl;
+  });
+  
+  fetch(`https://api.github.com/repos/${repo}/releases/latest`)
+    .then(res => {
+      if (!res.ok) throw new Error('GitHub API response not OK');
+      return res.json();
+    })
+    .then(data => {
+      if (data && data.assets && data.assets.length > 0) {
+        // Find the .exe installer first, then .msi, or fallback to any asset
+        const setupExe = data.assets.find(asset => asset.name.toLowerCase().endsWith('.exe'));
+        const setupMsi = data.assets.find(asset => asset.name.toLowerCase().endsWith('.msi'));
+        const activeAsset = setupExe || setupMsi || data.assets[0];
+        
+        const downloadUrl = activeAsset.browser_download_url;
+        if (downloadUrl) {
+          window.latestVersionTag = data.tag_name;
+          downloadLinks.forEach(link => {
+            link.href = downloadUrl;
+            
+            // Display the version tag on the hero download button
+            if (link.id === 'hero-download-btn') {
+              const originalText = currentLang === 'fi' ? 'Lataa ilmainen kokeilu' : 'Download Free Trial';
+              const versionInfo = ` (${data.tag_name})`;
+              link.innerText = `${originalText}${versionInfo}`;
+            }
+          });
+          console.log(`Latest release asset loaded: ${downloadUrl}`);
+        }
+      }
+    })
+    .catch(err => {
+      console.warn('Could not fetch latest release asset via GitHub API, using fallback: ', err);
+      // Fallback is already set
+    });
+}
+
 
 /* ==========================================================================
    Language Localization Engine
@@ -27,6 +94,46 @@ function initLanguage() {
     }
   }
   
+  // 3. Redirect to the correct language-specific page if needed
+  const path = window.location.pathname;
+  const filename = path.substring(path.lastIndexOf('/') + 1);
+  
+  if (currentLang === 'en') {
+    if (filename === 'ohjeet.html') {
+      window.location.href = 'docs.html';
+      return;
+    }
+    if (filename === 'tietosuoja.html') {
+      window.location.href = 'privacy.html';
+      return;
+    }
+    if (filename === 'ehdot.html') {
+      window.location.href = 'terms.html';
+      return;
+    }
+    if (filename === 'evasteet.html') {
+      window.location.href = 'cookies.html';
+      return;
+    }
+  } else if (currentLang === 'fi') {
+    if (filename === 'docs.html') {
+      window.location.href = 'ohjeet.html';
+      return;
+    }
+    if (filename === 'privacy.html') {
+      window.location.href = 'tietosuoja.html';
+      return;
+    }
+    if (filename === 'terms.html') {
+      window.location.href = 'ehdot.html';
+      return;
+    }
+    if (filename === 'cookies.html') {
+      window.location.href = 'evasteet.html';
+      return;
+    }
+  }
+  
   setLanguage(currentLang);
 }
 
@@ -34,6 +141,46 @@ function changeLanguage(lang) {
   if (lang !== 'fi' && lang !== 'en') return;
   currentLang = lang;
   localStorage.setItem('takeoff_lang', lang);
+  
+  const path = window.location.pathname;
+  const filename = path.substring(path.lastIndexOf('/') + 1);
+  
+  if (lang === 'en') {
+    if (filename === 'ohjeet.html') {
+      window.location.href = 'docs.html';
+      return;
+    }
+    if (filename === 'tietosuoja.html') {
+      window.location.href = 'privacy.html';
+      return;
+    }
+    if (filename === 'ehdot.html') {
+      window.location.href = 'terms.html';
+      return;
+    }
+    if (filename === 'evasteet.html') {
+      window.location.href = 'cookies.html';
+      return;
+    }
+  } else if (lang === 'fi') {
+    if (filename === 'docs.html') {
+      window.location.href = 'ohjeet.html';
+      return;
+    }
+    if (filename === 'privacy.html') {
+      window.location.href = 'tietosuoja.html';
+      return;
+    }
+    if (filename === 'terms.html') {
+      window.location.href = 'ehdot.html';
+      return;
+    }
+    if (filename === 'cookies.html') {
+      window.location.href = 'evasteet.html';
+      return;
+    }
+  }
+  
   setLanguage(lang);
 }
 
@@ -59,7 +206,12 @@ function setLanguage(lang) {
   elements.forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (window.translations[lang] && window.translations[lang][key]) {
-      el.innerHTML = window.translations[lang][key];
+      let content = window.translations[lang][key];
+      if (el.id === 'hero-download-btn' && window.latestVersionTag) {
+        const originalText = lang === 'fi' ? 'Lataa ilmainen kokeilu' : 'Download Free Trial';
+        content = `${originalText} (${window.latestVersionTag})`;
+      }
+      el.innerHTML = content;
     }
   });
 
