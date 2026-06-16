@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>Takeoff — Määrälaskenta ja kustannusarviot ilman kuukausimaksuja</title>
+  <meta name="description" content="Laske massat ja kustannukset PDF-kuvista sekunneissa. Avoin MCP-tekoälytuki, kertaostos ilman kuukausimaksuja. Omista työkalusi ja datasi ikuisesti.">
+  <meta name="keywords" content="määrälaskenta, kustannusarvio, takeoff, estimating, rakennuslaskenta, MCP, tekoäly, tauri, pdf-mittaus">
+  <meta name="author" content="PQuant">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Takeoff — Määrälaskenta ja kustannusarviot ilman kuukausimaksuja">
+  <meta property="og:description" content="Laske massat ja kustannukset PDF-kuvista sekunneissa. Avoin MCP-tekoälytuki, kertaostos ilman kuukausimaksuja.">
+  <meta property="og:type" content="website">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="header">
+    <div class="container nav">
+      <a href="#" class="nav-logo" id="logo-link">
+        <span class="nav-logo-icon"></span>
+        <span data-i18n="nav.brand">Takeoff</span>
+      </a>
+      
+      <nav class="nav-links">
+        <a href="#manifesto" data-i18n="nav.manifesto" id="nav-manifesto-link">Diili</a>
+        <a href="#features" data-i18n="nav.features" id="nav-features-link">Ominaisuudet</a>
+        <a href="#mcp" data-i18n="nav.mcp" id="nav-mcp-link">AI & MCP</a>
+        <a href="#pricing" data-i18n="nav.pricing" id="nav-pricing-link">Hinnoittelu</a>
+        <a href="#faq" data-i18n="nav.faq" id="nav-faq-link">UKK</a>
+        <a href="ohjeet.html" id="nav-docs-link" data-i18n="nav.docs">Ohjeet</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <!-- Language Switcher -->
+        <div class="lang-switcher" id="lang-switcher-container">
+          <button class="lang-btn active" id="lang-btn-fi" onclick="changeLanguage('fi')">FI</button>
+          <button class="lang-btn" id="lang-btn-en" onclick="changeLanguage('en')">EN</button>
+        </div>
+        
+        <a href="#pricing" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;" data-i18n="nav.pricing" id="nav-quick-buy-btn">Hinnoittelu</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero section-padding" id="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <h1 data-i18n="hero.title">Määrälaskenta ja kustannusarviot ilman kuukausimaksuja.</h1>
+          <p data-i18n="hero.subtitle">Tuo PDF-kuvat, laske massat ja sido ne resepteihin sekunneissa. Avoin MCP-tuki suosikkitekoälyllesi. Osta kerran – omista ikuisesti.</p>
+          
+          <div class="hero-ctas">
+            <a href="https://poitakeoff.com/download/latest" class="btn btn-blue" id="hero-download-btn" data-i18n="hero.cta.download">Lataa ilmainen kokeilu (30 päivää)</a>
+            <a href="#pricing" class="btn btn-primary" id="hero-buy-btn" data-i18n="hero.cta.buy">Osta lisenssi – 250 €</a>
+          </div>
+          
+          <div class="hero-stats">
+            <span data-i18n="hero.stats.users" id="hero-stats-text">Liity 30 000 laskijan tavoitteeseen. Ei piilokuluja.</span>
+          </div>
+        </div>
+        
+        <div class="hero-media">
+          <div class="hero-media-wrapper">
+            <!-- Main Hero Image (generated later) -->
+            <img src="assets/hero_ui.png" alt="Takeoff User Interface Screenshot" id="hero-screenshot" loading="eager">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manifesto / Comparison Section -->
+    <section class="manifesto section-padding" id="manifesto">
+      <div class="container">
+        <div class="section-header">
+          <h2 data-i18n="deal.title">Reilun pelin sopimus</h2>
+          <p data-i18n="deal.subtitle">Insinöörit ja laskijat tietävät, millaista on joutua kuukausimaksullisten ja suljettujen ohjelmistojen vangiksi. Me teemme asiat toisin.</p>
+        </div>
+        
+        <table class="manifesto-table" id="comparison-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th data-i18n="deal.col.traditional">Perinteiset ohjelmistot</th>
+              <th data-i18n="deal.col.takeoff">Meidän ratkaisumme (Takeoff)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="manifesto-row-title" data-i18n="deal.row1.title">Hinnoittelu</td>
+              <td class="manifesto-cell-trad" data-i18n="deal.row1.trad">"Pyydä tarjous" – Hinnat piilotetaan ja neuvotellaan firman koon mukaan.</td>
+              <td class="manifesto-cell-takeoff" data-i18n="deal.row1.take">250 € (alv 0%). Hinta on sama kaikille, suoraan verkkosivuilla.</td>
+            </tr>
+            <tr>
+              <td class="manifesto-row-title" data-i18n="deal.row2.title">Omistajuus</td>
+              <td class="manifesto-cell-trad" data-i18n="deal.row2.trad">Ikuinen kuukausikuppaus – Jos lopetat maksamisen, menetät työkalusi ja datasi.</td>
+              <td class="manifesto-cell-takeoff" data-i18n="deal.row2.take">Kertaostos. Maksat kerran, ohjelma ja data ovat sinun ikuisesti.</td>
+            </tr>
+            <tr>
+              <td class="manifesto-row-title" data-i18n="deal.row3.title">Käyttöoikeus</td>
+              <td class="manifesto-cell-trad" data-i18n="deal.row3.trad">Lukitut käyttöehdot – Lisenssi on sidottu yhteen ihmiseen tai laitteeseen kankeasti.</td>
+              <td class="manifesto-cell-takeoff" data-i18n="deal.row3.take">Vapaa jälleenmyynti. Jos et enää tarvitse softaa, myy se eteenpäin toiselle.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features section-padding" id="features">
+      <div class="container">
+        <div class="section-header">
+          <h2 data-i18n="features.title">Suoraviivainen ja tehokas työnkulku</h2>
+          <p data-i18n="features.subtitle">Ei turhaa monimutkaisuutta. Kolme helppoa askelta suunnitelmasta valmiiseen Excel-määräluetteloon.</p>
+        </div>
+        
+        <div class="features-list">
+          <!-- Step 1 -->
+          <div class="feature-step" id="feature-step-1">
+            <div class="feature-step-content">
+              <span class="feature-number" data-i18n="features.step1.num">01</span>
+              <h3 data-i18n="features.step1.title">Visuaalinen määrälaskenta (Takeoff)</h3>
+              <p data-i18n="features.step1.desc">Tuo PDF-piirustukset. Kalibroi ja skaalaa kuva yhdellä tunnetulla mitalla. Laske pituudet, pinta-alat, pisteet ja suorakaiteet klikkaamalla canvasia. Dynamic Snap lukitsee pisteet tarkasti aiempiin verteksiryhmiin.</p>
+            </div>
+            <div class="feature-step-media">
+              <img src="assets/recipe_ui.png" alt="Quantity Takeoff Visual Canvas" id="feature-img-1" loading="lazy">
+            </div>
+          </div>
+          
+          <!-- Step 2 -->
+          <div class="feature-step" id="feature-step-2">
+            <div class="feature-step-content">
+              <span class="feature-number">02</span>
+              <h3 data-i18n="features.step2.title">Reseptipohjainen kustannuslaskenta</h3>
+              <p data-i18n="features.step2.desc">Yhdistä mitatut määrät valmiisiin tai omiin kustannusresepteihin (esim. materiaali + työ + kalusto). Kaavakone laskee loppusummat, menekit ja hävikit lennosta ilman virhealttiita manuaalisia laskutoimituksia.</p>
+            </div>
+            <div class="feature-step-media">
+              <img src="assets/recipe_ui.png" alt="Recipe Cost Estimating Editor" id="feature-img-2" loading="lazy">
+            </div>
+          </div>
+          
+          <!-- Step 3 -->
+          <div class="feature-step" id="feature-step-3">
+            <div class="feature-step-content">
+              <span class="feature-number">03</span>
+              <h3 data-i18n="features.step3.title">Puhdas ja avoin vienti Exceliin</h3>
+              <p data-i18n="features.step3.desc">Ei lukittuja tai sotkuisia PDF-raportteja. Vie koko määräluettelo ja kustannusarvio Exceliin (.xlsx) yhdellä klikkauksella. Solut ja kaavat säilyvät täysin muokattavassa muodossa omia jatkokäsittelyjä varten.</p>
+            </div>
+            <div class="feature-step-media">
+              <img src="assets/excel_ui.png" alt="Excel Spreadsheet Export Preview" id="feature-img-3" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Collaboration Section -->
+    <section class="collab-section section-padding" id="collab-section">
+      <div class="container">
+        <div class="section-header text-center" style="margin-bottom: 4rem;">
+          <h2 data-i18n="collab.title" style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem;">Pilvisynkronointi ja tiimityö ilman kuukausimaksuja</h2>
+          <p data-i18n="collab.subtitle" class="section-subtitle" style="font-size: 1.15rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">Jaa projektit tiimisi kesken ja hallitse vastuita, sopimuksia sekä riskejä jaetulta pilvilevyltä.</p>
+        </div>
+        <div class="collab-grid">
+          <div class="collab-card">
+            <div class="collab-card-icon">☁️</div>
+            <h3 data-i18n="collab.feature1.title">OneDrive &amp; Dropbox -yhteensopiva</h3>
+            <p data-i18n="collab.feature1.desc">Projektit tallennetaan itsenäiseen .ptko-tiedostoon (ZIP-arkisto). Voit tallentaa ja synkronoida tiedostoja suoraan yrityksesi jaetuilla pilvilevyillä ilman kalliita lisenssisitoumuksia.</p>
+          </div>
+          <div class="collab-card">
+            <div class="collab-card-icon">👥</div>
+            <h3 data-i18n="collab.feature2.title">Laskijoiden seuranta ja auditointi</h3>
+            <p data-i18n="collab.feature2.desc">Projektille voidaan määrittää vastuullinen laskija ja tarkastaja. Sovellus pitää kirjaa siitä, kuka on tehnyt tai muokannut viimeisimmät mittaukset ja milloin.</p>
+          </div>
+          <div class="collab-card">
+            <div class="collab-card-icon">📌</div>
+            <h3 data-i18n="collab.feature3.title">Projektin ilmoitustaulu ja riskirekisteri</h3>
+            <p data-i18n="collab.feature3.desc">Projektin kotisivu (Project Home) sisältää tiimin ilmoitustaulun, automaattisen checklist-tarkistimen ja riskirekisterin maaperä- sekä sopimusriskien hallintaan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MCP / AI-Ready Section -->
+    <section class="mcp-section section-padding" id="mcp">
+      <div class="container mcp-grid">
+        <div class="mcp-content">
+          <span class="feature-number">MCP</span>
+          <h2 data-i18n="mcp.title" style="font-size: 2.5rem; font-weight: 800; margin-bottom: 1.5rem; letter-spacing: -0.025em;">AI-Ready – Avoin MCP-tuki edelläkävijöille</h2>
+          <p data-i18n="mcp.subtitle" style="font-size: 1.2rem; color: var(--accent-yellow); margin-bottom: 1rem; font-weight: 500;">Miksi lukittautua yhteen tekoälyyn? Ohjelmassa on natiivi MCP-palvelin.</p>
+          <p data-i18n="mcp.desc">Kytke ohjelma suoraan omaan suosikkitekoälyysi (Cursor, Cline, Claude Desktop jne.). Asiakkaana maksat vain omat AI-kulusi suoraan tarjoajalle – me emme ota välistä mitään.</p>
+          
+          <div class="mcp-examples-card" id="mcp-examples">
+            <h4 data-i18n="mcp.examples.title">Mitä tekoäly voi tehdä softassasi?</h4>
+            <ul class="mcp-examples-list">
+              <li data-i18n="mcp.examples.item1">"Lue tämän PDF-kuvan kaivot ja syötä ne suoraan laskentalomakkeelle."</li>
+              <li data-i18n="mcp.examples.item2">"Rakenna minulle kustannusresepti putkikaivannolle tämän maaperätiedon perusteella."</li>
+              <li data-i18n="mcp.examples.item3">"Analysoi tämän projektin kustannusriskit ja vertaa niitä toteutuneisiin hintoihin."</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="mcp-visual-terminal" id="terminal-visual">
+          <div class="terminal-header">
+            <div class="terminal-dots">
+              <span class="terminal-dot close"></span>
+              <span class="terminal-dot minimize"></span>
+              <span class="terminal-dot maximize"></span>
+            </div>
+            <div class="terminal-title">mcp-server-takeoff.log</div>
+            <div></div>
+          </div>
+          <div class="terminal-body" id="terminal-content">
+            <div class="terminal-line"><span class="terminal-prompt">pquant@takeoff:~$</span> <span class="terminal-command">npx @pquant/takeoff-mcp-server --port 8080</span></div>
+            <div class="terminal-line terminal-log">[info] MCP Takeoff Server listening on port 8080</div>
+            <div class="terminal-line terminal-log">[info] Initializing handshake with Claude Desktop...</div>
+            <div class="terminal-line terminal-success">[success] Handshake completed successfully. Active schemas: 9</div>
+            <div class="terminal-line terminal-log">[info] Incoming request: tool/call 'get_project_measurements'</div>
+            <div class="terminal-line terminal-log">[info] Executing SQL: SELECT * FROM measurements WHERE project_id = 1...</div>
+            <div class="terminal-line terminal-success">[success] Returned 42 measurement items to LLM model.</div>
+            <div class="terminal-line"><span class="terminal-prompt">pquant@takeoff:~$</span> <span class="terminal-command">_</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing section-padding" id="pricing">
+      <div class="container">
+        <div class="section-header">
+          <h2 data-i18n="pricing.title">Yksinkertainen, reilu hinnoittelu</h2>
+          <p data-i18n="pricing.subtitle">Valitse tarpeisiisi sopiva vaihtoehto. Ei sitoutumista, ei yllätyksiä.</p>
+        </div>
+        
+        <div class="pricing-grid">
+          <!-- Pro Card -->
+          <div class="pricing-card featured" id="pricing-card-pro">
+            <h3 data-i18n="pricing.pro.title">Ammattilaislisenssi</h3>
+            <div class="pricing-price-wrapper">
+              <span class="pricing-price" data-i18n="pricing.pro.price">250 €</span>
+              <span class="pricing-vat" data-i18n="pricing.pro.vat">alv 0% (kertaostos)</span>
+            </div>
+            <ul class="pricing-features">
+              <li data-i18n="pricing.pro.feature1">Ikuinen käyttöoikeus ostettuun versioon</li>
+              <li data-i18n="pricing.pro.feature2">Kaikki ylläpito- ja virhekorjauspäivitykset sisältyvät</li>
+              <li data-i18n="pricing.pro.feature3">Vapaa oikeus siirtää tai myydä lisenssi eteenpäin</li>
+              <li data-i18n="pricing.pro.feature4">Natiivi MCP-tekoälypalvelin</li>
+            </ul>
+            <button class="btn btn-primary" id="buy-pro-btn" onclick="openStripeCheckout()" data-i18n="pricing.pro.cta">Osta Pro-lisenssi (Stripe)</button>
+          </div>
+          
+          <!-- Student Card -->
+          <div class="pricing-card" id="pricing-card-student">
+            <h3 data-i18n="pricing.student.title">Opiskelijalisenssi</h3>
+            <div class="pricing-price-wrapper">
+              <span class="pricing-price" data-i18n="pricing.student.price">0 €</span>
+              <span class="pricing-vat" data-i18n="pricing.student.vat">täysin ilmainen</span>
+            </div>
+            <ul class="pricing-features">
+              <li data-i18n="pricing.student.feature1">Kaikki ammattilaisversion ominaisuudet ilman rajoituksia</li>
+              <li data-i18n="pricing.student.feature2">Voimassa koko opinto-oikeutesi ajan</li>
+              <li data-i18n="pricing.student.feature3">Automaattinen aktivointi koulun sähköpostilla</li>
+              <li data-i18n="pricing.student.feature4">Tuki opinnäytetöihin ja harjoitustöihin</li>
+            </ul>
+            
+            <form class="student-form" id="student-license-form" onsubmit="handleStudentForm(event)">
+              <input type="email" class="student-input" id="student-email" placeholder="koulunimi@oppilaitos.fi" required data-i18n-placeholder="pricing.student.placeholder">
+              <button type="submit" class="btn btn-secondary" id="order-student-btn" data-i18n="pricing.student.cta">Tilaa opiskelijalisenssi</button>
+              <div class="student-message" id="student-msg"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section-padding" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <h2 data-i18n="faq.title">Usein kysytyt kysymykset</h2>
+          <p data-i18n="faq.subtitle">Onko diili liian hyvä ollakseen totta? Vastaamme kysymyksiisi täysin avoimesti.</p>
+        </div>
+        
+        <div class="faq-list" id="faq-accordions">
+          <!-- Q1 -->
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span data-i18n="faq.q1">Miten ohjelman päivitykset toimivat jatkossa?</span>
+              <span class="faq-icon"></span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner" data-i18n="faq.a1">
+                Kaikki korjaukset ja parannukset ostamaasi pääversioon ovat ilmaisia. Jos tulevaisuudessa julkaisemme massiivisen uuden pääversion (esim. v2.0) täysin uudella teknologialla, voit jatkaa nykyisen versiosi käyttöä ikuisesti tai päivittää uuteen edullisella päivitysmaksulla. Vanha softasi ei lakkaa koskaan toimimasta.
+              </div>
+            </div>
+          </div>
+          
+          <!-- Q2 -->
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span data-i18n="faq.q2">Pitääkö minun rekisteröityä ladatakseni ohjelman?</span>
+              <span class="faq-icon"></span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner" data-i18n="faq.a2">
+                Ei. Voit ladata asennustiedoston suoraan sivuiltamme ja ohjelma toimii täysillä ominaisuuksilla 30 päivää ilman mitään rekisteröitymistä tai luottokorttia. Jos pidät ohjelmasta, voit ostaa lisenssiavaimen milloin tahansa kokeilun aikana.
+              </div>
+            </div>
+          </div>
+          
+          <!-- Q3 -->
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span data-i18n="faq.q3">Miten lisenssin eteenpäinmyynti ja siirto toimii käytännössä?</span>
+              <span class="faq-icon"></span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner" data-i18n="faq.a3">
+                Jos et enää tarvitse ohjelmaa (esim. eläköitymisen tai toimialavaihdon vuoksi), voit myydä sen kollegallesi. Ilmoitat vain meille uuden omistajan sähköpostiosoitteen ja lisenssiavaimesi, niin siirrämme sen uuden omistajan nimiin. Emme peri siirrosta mitään käsittelymaksuja.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span data-i18n="faq.q4">Missä tietoni säilytetään?</span>
+              <span class="faq-icon"></span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner" data-i18n="faq.a4">
+                Takeoff on 100 % paikallinen työpöytäsovellus. Kaikki projektitiedot, piirustukset, reseptit ja mittaukset tallennetaan omalle tietokoneellesi SQLite-tietokantaan ja pakataan .ptko-projektitiedostoksi. Mitään datastasi ei lähetetä palvelimillemme.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <h3>
+          <span class="nav-logo-icon"></span>
+          <span>Takeoff</span>
+        </h3>
+        <p data-i18n="footer.desc">PQuant 2026 / Takeoff — Seuraavan sukupolven määrälaskentaohjelmisto. Suomalaista suunnittelua insinööreille.</p>
+      </div>
+      
+      <div class="footer-links-grid">
+        <a href="ohjeet.html" id="footer-docs-link" data-i18n="nav.docs">Ohjeet</a>
+        <a href="tietosuoja.html" id="privacy-link" data-i18n="footer.links.privacy">Tietosuojaseloste</a>
+        <a href="ehdot.html" id="terms-link" data-i18n="footer.links.terms">Käyttöehdot</a>
+        <a href="evasteet.html" id="cookies-link" data-i18n="footer.links.cookies">Evästekäytäntö</a>
+        <span style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem;" data-i18n="footer.resale.info">Haluatko siirtää lisenssin? Vapauta se ohjelman asetuksista ja anna koodi eteenpäin.</span>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <span data-i18n="footer.copyright">© 2026 PQuant. Kaikki oikeudet pidätetään.</span>
+      <div>
+        <a href="#" onclick="openCookieSettings(event)" style="text-decoration: underline;" data-i18n="cookies.settings.title">Evästeasetukset</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GDPR Cookie Banner -->
+  <div class="cookie-banner" id="cookie-consent-banner">
+    <div class="cookie-text" data-i18n="cookies.banner.text">
+      Käytämme evästeitä parantaaksemme käyttökokemustasi ja analysoidaksemme sivuston liikennettä. Voit valita, mitkä evästeet hyväksyt.
+    </div>
+    
+    <div class="cookie-buttons">
+      <button class="btn btn-blue" id="cookie-accept-all" onclick="acceptAllCookies()" data-i18n="cookies.banner.acceptAll">Hyväksy kaikki</button>
+      <button class="btn btn-secondary" id="cookie-reject-all" onclick="rejectAllCookies()" data-i18n="cookies.banner.reject">Vain välttämättömät</button>
+      <button class="btn btn-secondary" id="cookie-customize" onclick="toggleCookieSettingsPanel()" data-i18n="cookies.banner.customize">Muokkaa asetuksia</button>
+    </div>
+    
+    <!-- Customizable Cookie Settings Panel -->
+    <div class="cookie-settings-panel" id="cookie-settings-panel">
+      <div class="cookie-option">
+        <div class="cookie-option-label">
+          <span class="cookie-option-title" data-i18n="cookies.settings.essential">Välttämättömät evästeet</span>
+          <span class="cookie-option-desc" data-i18n="cookies.settings.essential.desc">Pakolliset evästeet sivuston perustoiminnoille ja evästeasetusten muistamiseen.</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" checked disabled id="cookie-opt-essential">
+          <span class="slider"></span>
+        </label>
+      </div>
+      
+      <div class="cookie-option">
+        <div class="cookie-option-label">
+          <span class="cookie-option-title" data-i18n="cookies.settings.analytics">Analytiikka ja tilastot</span>
+          <span class="cookie-option-desc" data-i18n="cookies.settings.analytics.desc">Auttavat meitä ymmärtämään, miten vierailijat käyttävät sivustoa, jotta voimme kehittää sitä paremmaksi.</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" checked id="cookie-opt-analytics">
+          <span class="slider"></span>
+        </label>
+      </div>
+      
+      <button class="btn btn-blue" id="cookie-save-settings" onclick="saveCustomCookies()" style="margin-top: 1rem; width: 100%;" data-i18n="cookies.banner.save">Tallenna valinnat</button>
+    </div>
+  </div>
+
+  <!-- Stripe Checkout simulation modal -->
+  <div class="payment-modal" id="stripe-checkout-modal">
+    <!-- Payment Box Form -->
+    <div class="payment-box" id="payment-form-box">
+      <div class="payment-box-header">
+        <span class="payment-stripe-logo">stripe</span>
+        <span style="font-size: 0.8rem; background-color: rgba(99, 91, 255, 0.1); color: #635bff; padding: 0.2rem 0.5rem; border-radius: 4px; font-weight: 700;">TEST MODE</span>
+      </div>
+      <div class="payment-box-body">
+        <div class="payment-price-row">
+          <span class="payment-prod-name" data-i18n="pricing.pro.title">Ammattilaislisenssi</span>
+          <span class="payment-prod-price">250,00 €</span>
+        </div>
+        
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 1.5rem;" data-i18n="modal.payment.body">Tämä on turvallinen Stripe-maksupäätteen simulaatio.</p>
+        
+        <div class="payment-form-group">
+          <label class="payment-form-label">Email</label>
+          <div class="payment-input-mock">
+            <input type="email" id="stripe-email" placeholder="customer@domain.com" required>
+          </div>
+        </div>
+        
+        <div class="payment-form-group">
+          <label class="payment-form-label" data-i18n="modal.payment.card">Kortin tiedot</label>
+          <div class="payment-input-mock">
+            <span style="color: #635bff; font-weight: bold;">💳</span>
+            <input type="text" id="stripe-card" placeholder="4242 4242 4242 4242" value="4242 4242 4242 4242" readonly>
+          </div>
+          <div class="payment-input-row" style="margin-top: 0.75rem;">
+            <div class="payment-input-mock">
+              <input type="text" placeholder="MM / YY" value="12 / 29" readonly>
+            </div>
+            <div class="payment-input-mock">
+              <input type="text" placeholder="CVC" value="123" readonly>
+            </div>
+          </div>
+        </div>
+        
+        <button class="payment-btn-pay" id="stripe-submit-pay-btn" onclick="executePayment()" data-i18n="modal.payment.btn.pay">Maksa 250,00 €</button>
+        <button class="payment-btn-cancel" id="stripe-cancel-pay-btn" onclick="closeStripeCheckout()" data-i18n="modal.payment.btn.cancel">Peruuta</button>
+      </div>
+    </div>
+
+    <!-- Payment Success Box -->
+    <div class="payment-box" id="payment-success-box" style="display: none;">
+      <div class="payment-success-box">
+        <div class="success-icon">✓</div>
+        <h3 data-i18n="modal.payment.success.title">Maksu onnistui!</h3>
+        <p class="success-body-text" data-i18n="modal.payment.success.body">Kiitos ostoksestasi! Lähetimme aktivointikoodin sähköpostiisi.</p>
+        
+        <div style="text-align: left; margin-bottom: 1rem;">
+          <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: bold; text-transform: uppercase;" data-i18n="modal.payment.success.license">Lisenssiavain:</span>
+        </div>
+        <div class="license-box" id="generated-license-key">PTKO-XXXX-XXXX-XXXX</div>
+        
+        <div class="download-box">
+          <span data-i18n="modal.payment.success.download">Lataa asennustiedosto tästä (.msi / .exe)</span>
+          <a href="https://poitakeoff.com/download/latest" class="btn btn-blue" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Download</a>
+        </div>
+        
+        <button class="btn btn-secondary" style="width: 100%;" id="success-close-btn" onclick="closeStripeCheckout()" data-i18n="modal.payment.success.close">Sulje ikkuna</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="translations.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

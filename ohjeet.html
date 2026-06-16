@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Käyttöohjeet — Takeoff</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="nav-logo" id="logo-link">
+        <span class="nav-logo-icon"></span>
+        <span data-i18n="nav.brand">Takeoff</span>
+      </a>
+      
+      <nav class="nav-links">
+        <a href="index.html#manifesto" data-i18n="nav.manifesto">Diili</a>
+        <a href="index.html#features" data-i18n="nav.features">Ominaisuudet</a>
+        <a href="index.html#mcp" data-i18n="nav.mcp">AI & MCP</a>
+        <a href="index.html#pricing" data-i18n="nav.pricing">Hinnoittelu</a>
+        <a href="index.html#faq" data-i18n="nav.faq">UKK</a>
+        <a href="ohjeet.html" id="nav-docs-link" class="active" data-i18n="nav.docs">Ohjeet</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <!-- Language Switcher -->
+        <div class="lang-switcher" id="lang-switcher-container">
+          <button class="lang-btn active" id="lang-btn-fi" onclick="changeLanguage('fi')">FI</button>
+          <button class="lang-btn" id="lang-btn-en" onclick="changeLanguage('en')">EN</button>
+        </div>
+        <a href="index.html#pricing" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;" data-i18n="nav.pricing">Hinnoittelu</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container docs-container">
+    <!-- Sidebar -->
+    <aside class="docs-sidebar">
+      <div class="docs-sidebar-title">Käyttöopas</div>
+      <nav class="docs-sidebar-menu">
+        <a href="#johdanto" class="docs-sidebar-link active">1. Johdanto & Asennus</a>
+        <a href="#kalibrointi" class="docs-sidebar-link">2. Mittakaavan kalibrointi</a>
+        <a href="#mittaus" class="docs-sidebar-link">3. Mittaus & Snappaus</a>
+        <a href="#haku" class="docs-sidebar-link">4. PDF-tekstihaku</a>
+        <a href="#reseptit" class="docs-sidebar-link">5. Reseptimoottori & Kaavat</a>
+        <a href="#excel" class="docs-sidebar-link">6. Vienti Exceliin</a>
+        <a href="#tiimityo" class="docs-sidebar-link">7. Tiimityö &amp; Pilvisynkronointi</a>
+      </nav>
+    </aside>
+
+    <!-- Content -->
+    <main class="docs-content">
+      <!-- Johdanto -->
+      <section id="johdanto" class="docs-section">
+        <h1>1. Johdanto & Asennus</h1>
+        <p>Takeoff on seuraavan sukupolven työpöytäohjelmisto, joka on suunniteltu rakennusalan määrälaskentaan ja kustannusarvioiden tekoon. Ohjelmisto toimii täysin paikallisesti tietokoneellasi, mikä takaa äärimmäisen suorituskyvyn ja tietosuojan — projektisi eivät koskaan lähde tietokoneeltasi ulkopuolisille palvelimille.</p>
+        
+        <div class="docs-note">
+          <span class="docs-note-title">Kokeilujakso</span>
+          <p>Ohjelma toimii suoraan täydellä teholla 30 päivää ilman rekisteröitymistä tai luottokortin syöttämistä. Tämän jälkeen voit jatkaa käyttöä syöttämällä kertahintaisen Pro-lisenssikoodin.</p>
+        </div>
+
+        <h2>Asennusohje</h2>
+        <p>Lataa asennustiedosto kotisivujen latauspainikkeesta ja suorita se omalla koneellasi:</p>
+        <ul>
+          <li><strong>Windows:</strong> Suorita <code>Takeoff_Setup.exe</code> tai <code>.msi</code> ja seuraa asennusvelhon ohjeita.</li>
+          <li><strong>Tietokanta:</strong> Ohjelma luo automaattisesti SQLite-tietokannan käyttäjäprofiilisi hakemistoon (<code>%APPDATA%/com.tomip.poitakeoff/poitakeoff.db</code>).</li>
+        </ul>
+      </section>
+
+      <!-- Kalibrointi -->
+      <section id="kalibrointi" class="docs-section">
+        <h2>2. Mittakaavan kalibrointi</h2>
+        <p>Jotta kuvasta mitatut pikselit voidaan muuttaa todellisiksi metreiksi ja neliömetreiksi, piirustus pitää kalibroida. Takeoff tukee useita edistyneitä kalibrointimenetelmiä:</p>
+        
+        <h3>A. Tunnettu etäisyys (Known Distance)</h3>
+        <p>Valitse piirustuksesta jana, jonka pituuden tiedät (esimerkiksi oviaukko tai mittaviiva):</p>
+        <ol>
+          <li>Klikkaa kalibrointityökalua ja valitse kuvalta janan alkupiste ja loppupiste.</li>
+          <li>Syötä avautuvaan dialogiin janan todellinen mitta (esim. 1200 mm tai 1.2 m).</li>
+          <li>Ohjelma laskee kuvan m/px-suhteen välittömästi.</li>
+        </ol>
+
+        <h3>B. Nimellissuhde (Drawing Scale)</h3>
+        <p>Jos tiedät kuvan mittakaavan suoraan (esim. 1:100 tai 1:500):</p>
+        <ul>
+          <li>Valitse suoraan mittakaava listasta tai syötä haluamasi jakaja. Ohjelma huomioi PDF:n renderöintitarkkuuden (renderScale, oletus 2.0) ja laskee oikean m/px-suhteen matemaattisesti.</li>
+        </ul>
+
+        <h3>C. Akselikohtainen kalibrointi (XY Scale)</h3>
+        <p>Jos PDF on venynyt epäsymmetrisesti (korkeus- ja leveyssuunnassa on eri mittakaavat):</p>
+        <ul>
+          <li>Voit kalibroida X- ja Y-akselit itsenäisesti syöttämällä kaksi eri janaa tai suhdelukua, jolloin pinta-ala- ja pituuslaskenta on tarkkaa myös vääristyneissä piirustuksissa.</li>
+        </ul>
+      </section>
+
+      <!-- Mittaus & Snappaus -->
+      <section id="mittaus" class="docs-section">
+        <h2>3. Mittaus & Magneettinen Snappaus (Dynamic Snap)</h2>
+        <p>Takeoff sisältää kattavat visuaaliset piirtotyökalut pituuksien, pinta-alojen ja kappalemäärien poimintaan:</p>
+        <ul>
+          <li><strong>Polyline (Viivaketju):</strong> Pituuksien, kuten väliseinien tai putkien mittaukseen.</li>
+          <li><strong>Polygon (Monikulmio):</strong> Vapaamuotoisten pinta-alojen, kuten lattioiden tai kattojen laskentaan.</li>
+          <li><strong>Rectangle (Suorakaide):</strong> Nopeaan nelikulmaisten alueiden mittaamiseen kahdella klikkauksella.</li>
+          <li><strong>Count (Kappalelaskenta):</strong> Kaivojen, valaisimien tai kalusteiden merkitsemiseen ja laskemiseen.</li>
+        </ul>
+
+        <h3>Magneettinen Snappaus (Dynamic Snap)</h3>
+        <p>Kun piirrät uutta mittausta tai muokkaat olemassa olevan mittauksen verteksiä (kulmapistettä), kohdistin hakeutuu automaattisesti (snappaa) lähimpään aiemmin piirrettyyn pisteeseen, kun se tuodaan riittävän lähelle (10px kynnys). Tämä varmistaa, että pintojen ja linjojen liitoskohdista tulee täysin tiiviitä ilman rakoja tai päällekkäisyyksiä.</p>
+
+        <!-- Video Placeholder -->
+        <div class="video-demo-box">
+          <video autoplay loop muted playsinline id="snap-video">
+            <source src="assets/snap_demo.mp4" type="video/mp4">
+            <!-- If file missing, overlay placeholder -->
+          </video>
+          <div class="video-placeholder-overlay" id="snap-video-placeholder">
+            <div class="video-placeholder-icon">▶</div>
+            <div class="video-placeholder-title">Esittelyvideo: Magneettinen snappaus</div>
+            <div class="video-placeholder-desc">Kehittäjälle: Korvaa tämä placeholder tallentamalla lyhyt ruudunkaappaussovellusvideo polkuun <code>takeoff-pages/assets/snap_demo.mp4</code>.</div>
+          </div>
+        </div>
+
+        <h3>Vertex-editointi lennosta</h3>
+        <p>Voit valita minkä tahansa jo tehdyn mittauksen ja muokata sitä suoraan kankaalla:</p>
+        <ul>
+          <li>Siirrä olemassa olevaa kulmapistettä raahaamalla sen kahvaa.</li>
+          <li>Lisää uusi kulmapiste klikkaamalla viivan puolivälissä näkyvää harmaata välipistekahvaa (midpoint) ja raahaamalla se paikoilleen.</li>
+        </ul>
+      </section>
+
+      <!-- PDF-tekstihaku -->
+      <section id="haku" class="docs-section">
+        <h2>4. Automaattinen PDF-tekstihaku</h2>
+        <p>Takeoff lukee taustalla PDF-piirustuksen sisältämät tekstiobjektit ja sijoittaa ne pikseliavaruuteen. Tämän ansiosta voit käyttää tehokasta tekstihakua suoraan piirustuksesta:</p>
+        <ol>
+          <li>Paina <code>Ctrl + F</code> tai avaa haku työkaluvalikosta.</li>
+          <li>Kirjoita hakusana (esim. <i>"kaivo"</i>, <i>"PP"</i> tai huonenumerot).</li>
+          <li>Ohjelma korostaa kaikki osumat kankaalla kirkkaalla värillä ja näyttää hakulistan.</li>
+          <li>Klikkaamalla osumaa listalta ohjelma keskittää ja zoomaa näkymän suoraan kyseiseen kohtaan.</li>
+        </ol>
+
+        <!-- Video Placeholder -->
+        <div class="video-demo-box">
+          <video autoplay loop muted playsinline id="search-video">
+            <source src="assets/search_demo.mp4" type="video/mp4">
+          </video>
+          <div class="video-placeholder-overlay" id="search-video-placeholder">
+            <div class="video-placeholder-icon">🔍</div>
+            <div class="video-placeholder-title">Esittelyvideo: Tekstihaku piirustuksesta</div>
+            <div class="video-placeholder-desc">Kehittäjälle: Korvaa tämä placeholder tallentamalla lyhyt ruudunkaappaussovellusvideo polkuun <code>takeoff-pages/assets/search_demo.mp4</code>.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reseptimoottori -->
+      <section id="reseptit" class="docs-section">
+        <h2>5. Reseptimoottori & Kaavalaskenta</h2>
+        <p>Pelkkien määrien laskeminen ei riitä kustannusarvioon. Takeoffin ydinvoima on sen joustava <strong>Reseptimoottori</strong>, jolla kytket mitatut geometriat suoraan rakenteisiin ja materiaaleihin.</p>
+        
+        <h3>Miten resepti toimii?</h3>
+        <p>Resepti on valmis rakennekaava, joka koostuu yhdestä tai useammasta resurssista (materiaalit, työtunnit, kalustovuokrat). Esimerkiksi resepti <i>"Salaojitus (putki 110mm)"</i> sisältää seuraavat resurssit:</p>
+        <ul>
+          <li><strong>Salaojaputki 110mm:</strong> 1.05 m per juoksumetri (5% hävikki)</li>
+          <li><strong>Suodatinkangas:</strong> 2.4 m² per juoksumetri</li>
+          <li><strong>Salaojasora:</strong> 0.35 m³ per juoksumetri</li>
+          <li><strong>Putkiasennustyö:</strong> 0.25 tuntia per juoksumetri</li>
+        </ul>
+
+        <h3>Kaavalaskin (Formula Engine)</h3>
+        <p>Voit kirjoittaa resurssien menekeille matemaattisia kaavoja, jotka käyttävät mitattua suoritetta (kuten pituus <code>L</code>, pinta-ala <code>A</code> tai kappalemäärä <code>N</code>) ja projektin parametreja (kuten putkihalkaisija tai kaivannon syvyys):</p>
+        <div class="docs-code-block">
+          // Esimerkkikaava suodatinkankaan menekille kaivannossa (lasketaan L:n mukaan)
+          menekki = <span class="docs-code-keyword">L</span> * (kaivantoLeveys + 2 * kaivantoSyvyys + 0.4)
+        </div>
+        <p>Moottori suorittaa laskennan hiekkalaatikossa (restricted arithmetic parser) turvallisesti ja ilmoittaa mahdollisista kaavavirheistä heti syötön aikana.</p>
+      </section>
+
+      <!-- Excel-vienti -->
+      <section id="excel" class="docs-section">
+        <h2>6. Vienti Exceliin</h2>
+        <p>Kun määrät on mitattu ja kustannukset sidottu resepteihin, voit viedä koko aineiston Excel-muotoon yhdellä painikkeella.</p>
+        <ul>
+          <li><strong>Ei lukittuja raportteja:</strong> Vienti luo puhtaan <code>.xlsx</code> -tiedoston, jossa kaikki laskentakaavat, välisummat ja ryhmittelyt säilyvät Excelin omina kaavoina.</li>
+          <li><strong>Muokattavuus:</strong> Voit jatkaa arvion hienosäätöä, katteiden laskentaa ja tarjouksen muotoilua suoraan omassa Excel-taulukossasi ilman manuaalista tiedon uudelleensyöttöä.</li>
+        </ul>
+      </section>
+
+      <!-- Tiimityö & Pilvisynkronointi -->
+      <section id="tiimityo" class="docs-section">
+        <h2>7. Tiimityö &amp; Pilvisynkronointi</h2>
+        <p>Takeoff on suunniteltu moderniin ja joustavaan tiimityöhön. Vaikka ohjelma on paikallinen työpöytäsovellus, se mahdollistaa saumattoman yhteistyön jaetun levyjärjestelmän ja sisäänrakennetun auditoinnin kautta ilman kalliita pilvilisenssejä tai kuukausimaksuja.</p>
+
+        <h3>A. Pilvitallennus (OneDrive, Dropbox, Google Drive)</h3>
+        <p>Ohjelman oma tallennusmuoto on <code>.ptko</code> (pakattu ZIP-arkisto), joka sisältää projektin SQLite-tietokannan, PDF-piirustukset ja väliaikaiset asetukset. Tämän ansiosta:</p>
+        <ul>
+          <li>Voit tallentaa ja avata <code>.ptko</code>-projektitiedostoja suoraan jaetuista pilvikansioista (kuten yrityksen yhteinen OneDrive, Dropbox tai SharePoint-synkronoitu kansio).</li>
+          <li>Kun teet tallennuksen painamalla <strong>Tallenna</strong> tai <code>Ctrl + S</code>, ohjelma pakkaa tietokannan ja piirustukset yhtenäiseksi ZIP-paketiksi, joka synkronoituu pilvipalvelun kautta muille laskijoille.</li>
+          <li>Ohjelma sulkee ja lukitsee SQLite-tietokantayhteyden aina kun projekti suljetaan tai vaihdetaan, mikä estää tietokannan korruptoitumisen ja tekee yhteiskäytöstä turvallista.</li>
+        </ul>
+
+        <h3>B. Vastuulliset roolit ja laskijoiden auditointi</h3>
+        <p>Jokaiselle projektille voidaan määrittää perustiedot ja seurantaan liittyvät osapuolet:</p>
+        <ul>
+          <li><strong>Projektin vastuuhenkilö (Responsible) ja Tarkastaja (Reviewer):</strong> Auttavat varmistamaan, kuka kantaa päävastuun määräarvioinnista ja kuka tarkastaa sen ennen tarjouksen jättämistä.</li>
+          <li><strong>Mittauskohtainen muokkaushistoria:</strong> Sovellus tallentaa automaattisesti jokaisen mittausrivin yhteyteen viimeisimmän muokkaajan nimen ja muokkausajankohdan. Ominaisuuspaneelista näet heti, kuka tiimistäsi on kyseisen seinälinjan tai kaivon klikannut kuvasta ja milloin muutoksia on viimeksi tehty.</li>
+        </ul>
+
+        <h3>C. Project Home -dashboard ja tarkastuslista</h3>
+        <p>Projektin avaamisen jälkeen nähtävä <strong>Project Home</strong> -näkymä toimii tiimin yhteisenä ohjauskeskuksena:</p>
+        <ul>
+          <li><strong>Ilmoitustaulu (Noticeboard):</strong> Vapaamuotoinen tekstikenttä projektin kotisivulla. Tähän voit jättää tiimille viestejä, ohjeita tai huomioita kuvien poikkeamista (esim. <i>"Huom: Rakennekuvien revisio C poikkeaa arkkitehdin kuvasta"</i>).</li>
+          <li><strong>Automaattinen tarkastuslista (Checklist):</strong> Järjestelmä käy projektin tiedot taustalla läpi ja varoittaa puuttuvista tiedoista (kuten kalibroimattomat piirustukset, puuttuvat sopimustiedot tai tarjouspyynnön umpeutuvat määräajat).</li>
+          <li><strong>Riskirekisteri (Risk Registry):</strong> Voit kirjata ja luokittelua projektiin liittyvät maaperä-, sopimus- ja aikatauluriskit suoraan ohjelmaan vakavuustasoilla (Low, Medium, High). Tämä auttaa tiimiä varautumaan riskeihin kustannusarvion laadinnassa.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <h3>
+          <span class="nav-logo-icon"></span>
+          <span>Takeoff</span>
+        </h3>
+        <p data-i18n="footer.desc">PQuant 2026 / Takeoff — Seuraavan sukupolven määrälaskentaohjelmisto. Suomalaista suunnittelua insinööreille.</p>
+      </div>
+      
+      <div class="footer-links-grid">
+        <a href="ohjeet.html" id="footer-docs-link" data-i18n="nav.docs">Ohjeet</a>
+        <a href="tietosuoja.html" id="privacy-link" data-i18n="footer.links.privacy">Tietosuojaseloste</a>
+        <a href="ehdot.html" id="terms-link" data-i18n="footer.links.terms">Käyttöehdot</a>
+        <a href="evasteet.html" id="cookies-link" data-i18n="footer.links.cookies">Evästekäytäntö</a>
+        <span style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem;" data-i18n="footer.resale.info">Haluatko siirtää lisenssin? Vapauta se ohjelman asetuksista ja anna koodi eteenpäin.</span>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <span data-i18n="footer.copyright">© 2026 PQuant. Kaikki oikeudet pidätetään.</span>
+      <div>
+        <a href="#" onclick="openCookieSettings(event)" style="text-decoration: underline;" data-i18n="cookies.settings.title">Evästeasetukset</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GDPR Cookie Banner (reused from index) -->
+  <div class="cookie-banner" id="cookie-consent-banner">
+    <div class="cookie-text" data-i18n="cookies.banner.text">
+      Käytämme evästeitä parantaaksemme käyttökokemustasi ja liikennettä.
+    </div>
+    <div class="cookie-buttons">
+      <button class="btn btn-blue" onclick="acceptAllCookies()" data-i18n="cookies.banner.acceptAll">Hyväksy kaikki</button>
+      <button class="btn btn-secondary" onclick="rejectAllCookies()" data-i18n="cookies.banner.reject">Vain välttämättömät</button>
+      <button class="btn btn-secondary" onclick="toggleCookieSettingsPanel()" data-i18n="cookies.banner.customize">Asetukset</button>
+    </div>
+    <div class="cookie-settings-panel" id="cookie-settings-panel">
+      <div class="cookie-option">
+        <div class="cookie-option-label">
+          <span class="cookie-option-title" data-i18n="cookies.settings.essential">Välttämättömät</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" checked disabled>
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="cookie-option">
+        <div class="cookie-option-label">
+          <span class="cookie-option-title" data-i18n="cookies.settings.analytics">Analytiikka</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" checked id="cookie-opt-analytics">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <button class="btn btn-blue" onclick="saveCustomCookies()" style="margin-top: 1rem; width: 100%;" data-i18n="cookies.banner.save">Tallenna</button>
+    </div>
+  </div>
+
+  <script src="translations.js"></script>
+  <script src="app.js"></script>
+  
+  <script>
+    // Handle active link highlights in documentation sidebar during scroll
+    const sections = document.querySelectorAll('.docs-section');
+    const sidebarLinks = document.querySelectorAll('.docs-sidebar-link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - 150)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      sidebarLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Hide placeholders if demo videos are successfully loaded
+    const videos = ['snap-video', 'search-video'];
+    videos.forEach(id => {
+      const v = document.getElementById(id);
+      const placeholder = document.getElementById(id + '-placeholder');
+      if (v && placeholder) {
+        v.addEventListener('playing', () => {
+          placeholder.style.display = 'none';
+        });
+        // Check if already playing or loads
+        v.addEventListener('loadeddata', () => {
+          placeholder.style.display = 'none';
+        });
+      }
+    });
+  </script>
+</body>
+</html>

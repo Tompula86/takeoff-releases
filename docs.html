@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Guide — Takeoff</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="nav-logo" id="logo-link">
+        <span class="nav-logo-icon"></span>
+        <span data-i18n="nav.brand">Takeoff</span>
+      </a>
+      
+      <nav class="nav-links">
+        <a href="index.html#manifesto" data-i18n="nav.manifesto">The Deal</a>
+        <a href="index.html#features" data-i18n="nav.features">Features</a>
+        <a href="index.html#mcp" data-i18n="nav.mcp">AI & MCP</a>
+        <a href="index.html#pricing" data-i18n="nav.pricing">Pricing</a>
+        <a href="index.html#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="docs.html" id="nav-docs-link" class="active" data-i18n="nav.docs">Docs</a>
+      </nav>
+      
+      <div class="nav-actions">
+        <!-- Language Switcher -->
+        <div class="lang-switcher" id="lang-switcher-container">
+          <button class="lang-btn" id="lang-btn-fi" onclick="changeLanguage('fi')">FI</button>
+          <button class="lang-btn active" id="lang-btn-en" onclick="changeLanguage('en')">EN</button>
+        </div>
+        <a href="index.html#pricing" class="btn btn-primary" style="padding: 0.5rem 1rem; font-size: 0.85rem;" data-i18n="nav.pricing">Pricing</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container docs-container">
+    <!-- Sidebar -->
+    <aside class="docs-sidebar">
+      <div class="docs-sidebar-title">User Guide</div>
+      <nav class="docs-sidebar-menu">
+        <a href="#intro" class="docs-sidebar-link active">1. Intro & Installation</a>
+        <a href="#calibration" class="docs-sidebar-link">2. Scale Calibration</a>
+        <a href="#measure" class="docs-sidebar-link">3. Measuring & Snapping</a>
+        <a href="#search" class="docs-sidebar-link">4. PDF Text Search</a>
+        <a href="#recipes" class="docs-sidebar-link">5. Recipe Engine & Formulas</a>
+        <a href="#excel" class="docs-sidebar-link">6. Exporting to Excel</a>
+        <a href="#collab" class="docs-sidebar-link">7. Collaboration &amp; Cloud Sync</a>
+      </nav>
+    </aside>
+
+    <!-- Content -->
+    <main class="docs-content">
+      <!-- Johdanto -->
+      <section id="intro" class="docs-section">
+        <h1>1. Intro & Installation</h1>
+        <p>Takeoff is a next-generation desktop application designed for construction quantity takeoff and cost estimating. The application runs entirely locally on your computer, ensuring outstanding performance and absolute data privacy — your blueprints and project data never leave your local drive.</p>
+        
+        <div class="docs-note">
+          <span class="docs-note-title">Trial Period</span>
+          <p>The application works with full features out of the box for 30 days without registration or entering credit card details. After that, you can continue using the app by purchasing a one-off Pro license key.</p>
+        </div>
+
+        <h2>Installation Instructions</h2>
+        <p>Download the installer file from the homepage CTA button and run it on your machine:</p>
+        <ul>
+          <li><strong>Windows:</strong> Run <code>Takeoff_Setup.exe</code> or <code>.msi</code> and follow the setup wizard instructions.</li>
+          <li><strong>Database:</strong> The app automatically creates a local SQLite database in your user application directory (<code>%APPDATA%/com.tomip.poitakeoff/poitakeoff.db</code>).</li>
+        </ul>
+      </section>
+
+      <!-- Kalibrointi -->
+      <section id="calibration" class="docs-section">
+        <h2>2. Scale Calibration</h2>
+        <p>In order to convert pixels measured from drawings into real-world meters and square meters, the drawing viewport must be calibrated. Takeoff supports several advanced calibration methods:</p>
+        
+        <h3>A. Known Distance</h3>
+        <p>Select a segment on the drawing whose actual length is known (such as a door opening or dimension line):</p>
+        <ol>
+          <li>Click the calibration tool, and click the start point and end point of the known segment on the canvas.</li>
+          <li>In the dialog box that appears, enter the real-world length (e.g. 1200 mm or 1.2 m).</li>
+          <li>The program calculates the meters-per-pixel ratio immediately.</li>
+        </ol>
+
+        <h3>B. Drawing Scale (Nominal)</h3>
+        <p>If you know the scale of the drawing directly (such as 1:100 or 1:500):</p>
+        <ul>
+          <li>Select the nominal scale from the list or enter a custom denominator. The program accounts for the PDF rendering scale (renderScale, default 2.0) to compute the correct meters/px ratio mathematically.</li>
+        </ul>
+
+        <h3>C. Asymmetrical Calibration (XY Scale)</h3>
+        <p>If the PDF has been stretched unevenly (different scales along the horizontal and vertical axes):</p>
+        <ul>
+          <li>You can calibrate the X and Y axes independently by selecting two separate segments or scales, ensuring accurate area and length measurements even on distorted plans.</li>
+        </ul>
+      </section>
+
+      <!-- Mittaus & Snappaus -->
+      <section id="measure" class="docs-section">
+        <h2>3. Measuring & Snapping (Dynamic Snap)</h2>
+        <p>Takeoff contains comprehensive visual drawing tools to capture lengths, areas, and counts:</p>
+        <ul>
+          <li><strong>Polyline:</strong> For measuring linear items like partition walls, cabling, or pipelines.</li>
+          <li><strong>Polygon:</strong> For measuring custom area boundaries such as floor finishes or roof tiling.</li>
+          <li><strong>Rectangle:</strong> For quickly measuring rectangular areas with just two diagonal clicks.</li>
+          <li><strong>Count:</strong> For marking and counting individual components like manholes, light fixtures, or doors.</li>
+        </ul>
+
+        <h3>Dynamic Snapping</h3>
+        <p>When drawing a new measurement or dragging an existing vertex (corner point), the pointer automatically snaps to the nearest vertex of previously drawn shapes when within range (10px threshold). This ensures that joint surfaces and wall joins align perfectly, avoiding gaps or overlaps.</p>
+
+        <!-- Video Placeholder -->
+        <div class="video-demo-box">
+          <video autoplay loop muted playsinline id="snap-video">
+            <source src="assets/snap_demo.mp4" type="video/mp4">
+          </video>
+          <div class="video-placeholder-overlay" id="snap-video-placeholder">
+            <div class="video-placeholder-icon">▶</div>
+            <div class="video-placeholder-title">Demo Video: Dynamic Snapping</div>
+            <div class="video-placeholder-desc">For developers: Replace this placeholder by saving a short screen recording of the app to <code>takeoff-pages/assets/snap_demo.mp4</code>.</div>
+          </div>
+        </div>
+
+        <h3>On-the-fly Vertex Editing</h3>
+        <p>You can select any existing shape and modify its path directly on the canvas:</p>
+        <ul>
+          <li>Drag a corner vertex handle to move that point.</li>
+          <li>Add a new corner vertex by clicking and dragging the gray midpoint handle displayed halfway along any line segment.</li>
+        </ul>
+      </section>
+
+      <!-- PDF-tekstihaku -->
+      <section id="search" class="docs-section">
+        <h2>4. PDF Text Search</h2>
+        <p>Takeoff extracts text elements from the PDF in the background and maps them directly to the canvas pixel coordinate space. This enables powerful search features directly on your blueprint:</p>
+        <ol>
+          <li>Press <code>Ctrl + F</code> or open the search bar from the tool rail.</li>
+          <li>Enter your query (such as room codes <i>"WC"</i>, drain labels <i>"DN110"</i>, or annotations).</li>
+          <li>The program highlights all matches on the drawing canvas in real time and lists them.</li>
+          <li>Clicking a result in the list automatically centers and zooms the viewport on that specific match.</li>
+        </ol>
+
+        <!-- Video Placeholder -->
+        <div class="video-demo-box">
+          <video autoplay loop muted playsinline id="search-video">
+            <source src="assets/search_demo.mp4" type="video/mp4">
+          </video>
+          <div class="video-placeholder-overlay" id="search-video-placeholder">
+            <div class="video-placeholder-icon">🔍</div>
+            <div class="video-placeholder-title">Demo Video: Text Search on Drawing</div>
+            <div class="video-placeholder-desc">For developers: Replace this placeholder by saving a short screen recording of the app to <code>takeoff-pages/assets/search_demo.mp4</code>.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reseptimoottori -->
+      <section id="recipes" class="docs-section">
+        <h2>5. Recipe Engine & Formulas</h2>
+        <p>Measuring raw quantities is only half the battle. The core power of Takeoff lies in its flexible <strong>Recipe Engine</strong>, which links measured geometries directly to construction assemblies and materials.</p>
+        
+        <h3>How a Recipe Works</h3>
+        <p>A recipe represents a construction assembly made of one or more resources (materials, labor hours, equipment rentals). For example, a recipe named <i>"Sewer Pipe Trenching (110mm)"</i> includes:</p>
+        <ul>
+          <li><strong>Sewer Pipe 110mm:</strong> 1.05 m per linear meter of takeoff (5% wastage)</li>
+          <li><strong>Geotextile fabric:</strong> 2.4 m² per linear meter of takeoff</li>
+          <li><strong>Trench gravel:</strong> 0.35 m³ per linear meter of takeoff</li>
+          <li><strong>Pipe laying labor:</strong> 0.25 hours per linear meter of takeoff</li>
+        </ul>
+
+        <h3>Sandbox Formula Engine</h3>
+        <p>You can write custom mathematical formulas for resource yields that reference takeoff metrics (such as length <code>L</code>, area <code>A</code>, or count <code>N</code>) and project parameters (such as trench width or soil type):</p>
+        <div class="docs-code-block">
+          // Example formula for geotextile yield in a trench (calculated based on L)
+          yield = <span class="docs-code-keyword">L</span> * (trenchWidth + 2 * trenchDepth + 0.4)
+        </div>
+        <p>The parser runs formulas securely in a math sandbox and highlights syntax errors immediately during entry.</p>
+      </section>
+
+      <!-- Excel-vienti -->
+      <section id="excel" class="docs-section">
+        <h2>6. Exporting to Excel</h2>
+        <p>Once quantities are measured and linked to recipes, you can export your entire estimate to Microsoft Excel format in a single click.</p>
+        <ul>
+          <li><strong>Perpetual Editability:</strong> The export creates a clean <code>.xlsx</code> file where mathematical formulas, totals, and group hierarchies remain as native Excel formulas rather than flat values.</li>
+          <li><strong>Easy Customization:</strong> Continue refining your markups, pricing, and formatting directly in your preferred spreadsheet app without re-entering data.</li>
+        </ul>
+      </section>
+
+      <!-- Collaboration & Cloud Sync -->
+      <section id="collab" class="docs-section">
+        <h2>7. Collaboration &amp; Cloud Sync</h2>
+        <p>Takeoff is built with modern and flexible team collaboration in mind. Although the software is a local desktop application, it allows seamless cooperation through a shared filesystem and built-in audit tracking without expensive cloud subscription licenses.</p>
+
+        <h3>A. Cloud Storage Integration (OneDrive, Dropbox, Google Drive)</h3>
+        <p>The application's native storage format is <code>.ptko</code> (a compressed ZIP archive) containing the project's SQLite database, PDF drawings, and local view configurations. Thanks to this architecture:</p>
+        <ul>
+          <li>You can save and open <code>.ptko</code> project files directly from shared cloud directories (such as your company's shared OneDrive, Dropbox, or SharePoint-synced folder).</li>
+          <li>When you save your project by clicking <strong>Save</strong> or pressing <code>Ctrl + S</code>, the app packages the database and drawings into a single ZIP archive, which is then synchronized to other estimators via the cloud provider.</li>
+          <li>The program completely closes and releases the SQLite database connection whenever a project is closed or switched, preventing file lock conflicts and ensuring database integrity.</li>
+        </ul>
+
+        <h3>B. Project Roles & Estimator Audit Logs</h3>
+        <p>You can define project administration details to track the team members involved:</p>
+        <ul>
+          <li><strong>Responsible Estimator & Reviewer:</strong> Clearly assign who carries primary responsibility for the quantity takeoff and who is the auditor reviewing the values before the bid submission.</li>
+          <li><strong>Measurement-Level Edit History:</strong> The application automatically records the name of the last modifier and the timestamp for every single measurement path or count point. The properties panel displays this audit log, showing who created or last adjusted each item and when.</li>
+        </ul>
+
+        <h3>C. Project Home Dashboard & Automated Checklists</h3>
+        <p>The <strong>Project Home</strong> screen serves as the team's central control panel for the project:</p>
+        <ul>
+          <li><strong>Team Noticeboard:</strong> A free-form bulletin board on the dashboard. Use it to leave notes, guidelines, or notices about plan updates for your team (e.g. <i>"Note: Revision C structural drawings have changed column sizes on floor 2"</i>).</li>
+          <li><strong>Automated Project Checklist:</strong> The system automatically scans the database for missing fields, warning you about uncalibrated viewports, missing contract terms, or approaching bid deadlines.</li>
+          <li><strong>Risk Registry:</strong> Log, categorize, and prioritize soil, contract, and schedule risks (Low, Medium, High) directly in the project file, ensuring the team prices the estimate with a full view of potential hazards.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-top">
+      <div class="footer-brand">
+        <h3>
+          <span class="nav-logo-icon"></span>
+          <span>Takeoff</span>
+        </h3>
+        <p data-i18n="footer.desc">PQuant 2026 / Takeoff — Next generation quantity takeoff software. Finnish engineering for professionals.</p>
+      </div>
+      
+      <div class="footer-links-grid">
+        <a href="docs.html" id="footer-docs-link" data-i18n="nav.docs">Docs</a>
+        <a href="privacy.html" id="privacy-link" data-i18n="footer.links.privacy">Privacy Policy</a>
+        <a href="terms.html" id="terms-link" data-i18n="footer.links.terms">Terms of Use</a>
+        <a href="cookies.html" id="cookies-link" data-i18n="footer.links.cookies">Cookie Policy</a>
+        <span style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem;" data-i18n="footer.resale.info">Want to transfer your license? Release it from the app settings and hand the key to the buyer.</span>
+      </div>
+    </div>
+    
+    <div class="container footer-bottom">
+      <span data-i18n="footer.copyright">© 2026 PQuant. All rights reserved.</span>
+      <div>
+        <a href="#" onclick="openCookieSettings(event)" style="text-decoration: underline;" data-i18n="cookies.settings.title">Cookie Settings</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GDPR Cookie Banner (reused from index) -->
+  <div class="cookie-banner" id="cookie-consent-banner">
+    <div class="cookie-text" data-i18n="cookies.banner.text">
+      We use cookies to improve your experience and analyze website traffic.
+    </div>
+    <div class="cookie-buttons">
+      <button class="btn btn-blue" onclick="acceptAllCookies()" data-i18n="cookies.banner.acceptAll">Accept All</button>
+      <button class="btn btn-secondary" onclick="rejectAllCookies()" data-i18n="cookies.banner.reject">Necessary Only</button>
+      <button class="btn btn-secondary" onclick="toggleCookieSettingsPanel()" data-i18n="cookies.banner.customize">Settings</button>
+    </div>
+    <div class="cookie-settings-panel" id="cookie-settings-panel">
+      <div class="cookie-option">
+        <div class="cookie-option-label">
+          <span class="cookie-option-title" data-i18n="cookies.settings.essential">Necessary</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" checked disabled>
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="cookie-option">
+        <div class="cookie-option-label">
+          <span class="cookie-option-title" data-i18n="cookies.settings.analytics">Analytics</span>
+        </div>
+        <label class="switch">
+          <input type="checkbox" checked id="cookie-opt-analytics">
+          <span class="slider"></span>
+        </label>
+      </div>
+      <button class="btn btn-blue" onclick="saveCustomCookies()" style="margin-top: 1rem; width: 100%;" data-i18n="cookies.banner.save">Save Choices</button>
+    </div>
+  </div>
+
+  <script src="translations.js"></script>
+  <script src="app.js"></script>
+  
+  <script>
+    // Handle active link highlights in documentation sidebar during scroll
+    const sections = document.querySelectorAll('.docs-section');
+    const sidebarLinks = document.querySelectorAll('.docs-sidebar-link');
+
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= (sectionTop - 150)) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      sidebarLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
+
+    // Hide placeholders if demo videos are successfully loaded
+    const videos = ['snap-video', 'search-video'];
+    videos.forEach(id => {
+      const v = document.getElementById(id);
+      const placeholder = document.getElementById(id + '-placeholder');
+      if (v && placeholder) {
+        v.addEventListener('playing', () => {
+          placeholder.style.display = 'none';
+        });
+        v.addEventListener('loadeddata', () => {
+          placeholder.style.display = 'none';
+        });
+      }
+    });
+  </script>
+</body>
+</html>
