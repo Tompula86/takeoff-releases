@@ -41,13 +41,15 @@
     <aside class="docs-sidebar">
       <div class="docs-sidebar-title">User Guide</div>
       <nav class="docs-sidebar-menu">
-        <a href="#intro" class="docs-sidebar-link active">1. Intro & Installation</a>
+        <a href="#intro" class="docs-sidebar-link active">1. Intro &amp; Installation</a>
         <a href="#calibration" class="docs-sidebar-link">2. Scale Calibration</a>
-        <a href="#measure" class="docs-sidebar-link">3. Measuring & Snapping</a>
+        <a href="#measure" class="docs-sidebar-link">3. Measuring &amp; Snapping</a>
         <a href="#search" class="docs-sidebar-link">4. PDF Text Search</a>
-        <a href="#recipes" class="docs-sidebar-link">5. Recipe Engine & Formulas</a>
+        <a href="#recipes" class="docs-sidebar-link">5. Recipe Engine &amp; Formulas</a>
         <a href="#excel" class="docs-sidebar-link">6. Exporting to Excel</a>
         <a href="#collab" class="docs-sidebar-link">7. Collaboration &amp; Cloud Sync</a>
+        <a href="#milestones" class="docs-sidebar-link">8. Payment Milestones</a>
+        <a href="#settings" class="docs-sidebar-link">9. System Settings &amp; Units</a>
       </nav>
     </aside>
 
@@ -215,6 +217,53 @@
           <li><strong>Automated Project Checklist:</strong> The system automatically scans the database for missing fields, warning you about uncalibrated viewports, missing contract terms, or approaching bid deadlines.</li>
           <li><strong>Risk Registry:</strong> Log, categorize, and prioritize soil, contract, and schedule risks (Low, Medium, High) directly in the project file, ensuring the team prices the estimate with a full view of potential hazards.</li>
         </ul>
+      </section>
+
+      <!-- Payment Milestones -->
+      <section id="milestones" class="docs-section">
+        <h2>8. Payment Milestones &amp; Schedules</h2>
+        <p>After performing your quantity takeoff and creating a cost estimate, Takeoff allows you to plan and structure your contract payment milestones. This makes cash flow management straightforward and ties billable stages to actual project progress.</p>
+        
+        <h3>Defining &amp; Managing Milestones</h3>
+        <p>You can create and manage payment milestones directly within the Payment Schedule dashboard:</p>
+        <ul>
+          <li><strong>Name &amp; Description:</strong> Give each milestone a clear title (e.g., <i>"Foundations Poured"</i> or <i>"Framing Complete"</i>).</li>
+          <li><strong>Value or Percentage:</strong> Set the milestone's value either in currency or as a percentage of the total project contract. The software computes the corresponding amounts dynamically.</li>
+          <li><strong>Link to Takeoff Recipes:</strong> Bind milestones to specific estimated items, allowing milestone values to update automatically as your quantities and pricing refine.</li>
+        </ul>
+
+        <div class="feature-step-media" style="margin: 2rem 0;">
+          <img src="assets/Payment_milestones.png" alt="Payment Milestones Screen" style="width: 100%; border-radius: 8px;">
+        </div>
+
+        <h3>Progress Tracking &amp; Billing</h3>
+        <p>As work finishes on-site, mark the corresponding milestone as completed. This maintains an audit log of what has been invoiced and what remains, preventing payment disputes between clients and contractors.</p>
+      </section>
+
+      <!-- System Settings & Units -->
+      <section id="settings" class="docs-section">
+        <h2>9. System Settings &amp; Imperial Units</h2>
+        <p>Takeoff is a highly flexible estimator designed for both local work and international procurement. From the settings pane, you can customize your workspace rules to suit the project requirements.</p>
+
+        <h3>Unit System Selection (Metric vs. Imperial)</h3>
+        <p>If you estimate plans drawn in feet/inches or work for North American clients, toggle your project units to Imperial:</p>
+        <ul>
+          <li><strong>Metric Units:</strong> Meters (m), square meters (m²), cubic meters (m³), and millimeters (mm).</li>
+          <li><strong>Imperial Units:</strong> Feet (ft), inches (in), yards (yd), square feet (sq ft), and cubic feet (cu ft).</li>
+          <li><strong>Automatic Unit Conversion:</strong> Switching the unit system converts all previously drawn geometric shapes automatically. There is no need to redraw any polylines or polygons.</li>
+        </ul>
+
+        <div class="feature-step-media-grid" style="margin: 2rem 0;">
+          <div class="sub-media">
+            <img src="assets/settings.png" alt="Settings Window Screenshot">
+          </div>
+          <div class="sub-media">
+            <img src="assets/quantities.png" alt="Imperial Quantities Screenshot">
+          </div>
+        </div>
+
+        <h3>Decimal Precision &amp; Rounding</h3>
+        <p>Configure how many decimal places to display in your measurements. You can set independent rounding rules for lengths, areas, and volumes, ensuring your exported Excel spreadsheets stay clean and professional.</p>
       </section>
     </main>
   </div>

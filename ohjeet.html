@@ -41,13 +41,15 @@
     <aside class="docs-sidebar">
       <div class="docs-sidebar-title">Käyttöopas</div>
       <nav class="docs-sidebar-menu">
-        <a href="#johdanto" class="docs-sidebar-link active">1. Johdanto & Asennus</a>
+        <a href="#johdanto" class="docs-sidebar-link active">1. Johdanto &amp; Asennus</a>
         <a href="#kalibrointi" class="docs-sidebar-link">2. Mittakaavan kalibrointi</a>
-        <a href="#mittaus" class="docs-sidebar-link">3. Mittaus & Snappaus</a>
+        <a href="#mittaus" class="docs-sidebar-link">3. Mittaus &amp; Snappaus</a>
         <a href="#haku" class="docs-sidebar-link">4. PDF-tekstihaku</a>
-        <a href="#reseptit" class="docs-sidebar-link">5. Reseptimoottori & Kaavat</a>
+        <a href="#reseptit" class="docs-sidebar-link">5. Reseptimoottori &amp; Kaavat</a>
         <a href="#excel" class="docs-sidebar-link">6. Vienti Exceliin</a>
         <a href="#tiimityo" class="docs-sidebar-link">7. Tiimityö &amp; Pilvisynkronointi</a>
+        <a href="#maksuerat" class="docs-sidebar-link">8. Maksuerät &amp; Maksuerätaulukko</a>
+        <a href="#asetukset" class="docs-sidebar-link">9. Järjestelmäasetukset &amp; Yksiköt</a>
       </nav>
     </aside>
 
@@ -216,6 +218,53 @@
           <li><strong>Automaattinen tarkastuslista (Checklist):</strong> Järjestelmä käy projektin tiedot taustalla läpi ja varoittaa puuttuvista tiedoista (kuten kalibroimattomat piirustukset, puuttuvat sopimustiedot tai tarjouspyynnön umpeutuvat määräajat).</li>
           <li><strong>Riskirekisteri (Risk Registry):</strong> Voit kirjata ja luokittelua projektiin liittyvät maaperä-, sopimus- ja aikatauluriskit suoraan ohjelmaan vakavuustasoilla (Low, Medium, High). Tämä auttaa tiimiä varautumaan riskeihin kustannusarvion laadinnassa.</li>
         </ul>
+      </section>
+
+      <!-- Maksuerät -->
+      <section id="maksuerat" class="docs-section">
+        <h2>8. Maksuerät &amp; Maksuerätaulukko</h2>
+        <p>Määrälaskennan ja kustannusarvion luomisen jälkeen Takeoff mahdollistaa urakan maksuerätaulukon (Payment Milestones) automaattisen tai manuaalisen suunnittelun. Tämä helpottaa rahoituksen ja kassavirran hallintaa sekä maksujen sitomista projektin todellisiin vaiheisiin.</p>
+        
+        <h3>Maksuerien määrittäminen ja hallinta</h3>
+        <p>Voit luoda projekteille maksueriä suoraan maksuerätaulukkonäkymässä:</p>
+        <ul>
+          <li><strong>Nimi ja kuvaus:</strong> Anna maksuerälle selkeä nimi (esim. <i>"Perustukset valettu"</i> tai <i>"Runkovaihe valmis"</i>).</li>
+          <li><strong>Summa tai prosenttiosuus:</strong> Määritä maksuerän arvo joko suoraan euroina tai prosenttiosuutena projektin kokonaiskustannuksista. Ohjelma laskee vastaavat arvot lennosta.</li>
+          <li><strong>Maksupostien sitominen:</strong> Maksuerät voidaan sitoa tiettyihin suoritettuihin määriin tai resepteihin, jolloin niiden arvo päivittyy automaattisesti, kun arvio tarkentuu.</li>
+        </ul>
+
+        <div class="feature-step-media" style="margin: 2rem 0;">
+          <img src="assets/Payment_milestones.png" alt="Payment Milestones Screen" style="width: 100%; border-radius: 8px;">
+        </div>
+
+        <h3>Edistymisen seuranta ja laskutus</h3>
+        <p>Kun työvaihe valmistuu työmaalla, vastaava maksuerä voidaan merkitä valmiiksi. Tämä luo selkeän historian siitä, mitä on laskutettu ja mitä on vielä jäljellä, mikä ehkäisee epäselvyyksiä tilaajan ja urakoitsijan välillä.</p>
+      </section>
+
+      <!-- Asetukset ja mittayksiköt -->
+      <section id="asetukset" class="docs-section">
+        <h2>9. Järjestelmäasetukset &amp; Imperial-yksiköt</h2>
+        <p>Takeoff on joustava työkalu, joka soveltuu sekä kotimaisiin että kansainvälisiin projekteihin. Ohjelman asetuksista voit mukauttaa laskentaympäristön juuri omiin tarpeisiisi sopivaksi.</p>
+
+        <h3>Yksikköjärjestelmän valinta (Metric / Imperial)</h3>
+        <p>Jos teet urakkalaskentaa ulkomaisiin kohteisiin tai kuvissa käytetään tuumamittoja, voit vaihtaa yksikköjärjestelmän Imperial-tilaan:</p>
+        <ul>
+          <li><strong>Metriset yksiköt (Metric):</strong> Metri (m), neliömetri (m²), kuutiometri (m³) ja millimetri (mm).</li>
+          <li><strong>Imperial-yksiköt (Imperial):</strong> Jalka (ft), tuuma (in), jaardi (yd), neliöjalka (sq ft) ja kuutiojalka (cu ft).</li>
+          <li><strong>Automaattinen muunnos:</strong> Kun vaihdat yksikköjärjestelmää, ohjelma muuntaa aiemmin piirretyt geometriset mitat automaattisesti valitun yksikön mukaisiksi ilman, että sinun tarvitsee piirtää mittauksia uudelleen.</li>
+        </ul>
+
+        <div class="feature-step-media-grid" style="margin: 2rem 0;">
+          <div class="sub-media">
+            <img src="assets/settings.png" alt="Settings Window Screenshot">
+          </div>
+          <div class="sub-media">
+            <img src="assets/quantities.png" alt="Imperial Quantities Screenshot">
+          </div>
+        </div>
+
+        <h3>Pyöristyssäännöt ja desimaalit</h3>
+        <p>Asetuspaneelista voit myös määrittää, kuinka monta desimaalia mittauksissa ja määräluetteloissa näytetään. Voit säätää pituuksien, pinta-alojen ja tilavuuksien tarkkuutta erikseen, mikä pitää määräluettelot siisteinä ja ammattimaisina.</p>
       </section>
     </main>
   </div>

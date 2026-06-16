@@ -44,6 +44,12 @@ window.translations = {
     "features.step3.num": "03",
     "features.step3.title": "Puhdas ja avoin vienti Exceliin",
     "features.step3.desc": "Ei lukittuja tai sotkuisia PDF-raportteja. Vie koko määräluettelo ja kustannusarvio Exceliin (.xlsx) yhdellä klikkauksella. Solut ja kaavat säilyvät täysin muokattavassa muodossa omia jatkokäsittelyjä varten.",
+    "features.step4.num": "04",
+    "features.step4.title": "Maksuerätaulukko & maksupostit",
+    "features.step4.desc": "Jaa projektin kustannusarvio selkeiksi maksueriksi ja maksu-milestoneiksi. Ohjelma auttaa luomaan ja hallitsemaan urakan maksuerätaulukkoa automaattisesti työn edistymisen tai valittujen resepteistä tulevien kustannuserien mukaan.",
+    "features.step5.num": "05",
+    "features.step5.title": "Imperial-mittaukset & joustavat asetukset",
+    "features.step5.desc": "Tee mittauksia sekä metrisillä yksiköillä että imperial-järjestelmällä (tuumat, jalat, jaardit, neliöjalat). Voit säätää desimaalitarkkuuksia ja yksiköitä joustavasti projektin ja piirustuksen vaatimusten mukaan.",
 
     // MCP / AI-Ready
     "mcp.title": "AI-Ready — Avoin MCP-tuki edelläkävijöille",
@@ -177,6 +183,12 @@ window.translations = {
     "features.step3.num": "03",
     "features.step3.title": "Clean & Open Excel Export",
     "features.step3.desc": "No locked or messy PDF reports. Export your entire bill of quantities and estimate to Excel (.xlsx) with a single click. Formulas and cells remain fully editable for your own downstream processing.",
+    "features.step4.num": "04",
+    "features.step4.title": "Payment Milestones & Schedules",
+    "features.step4.desc": "Structure your project estimate into clear payment milestones. The software helps you automatically generate and manage payment schedules based on work progress or specific cost groups directly from your recipes.",
+    "features.step5.num": "05",
+    "features.step5.title": "Imperial Measurements & Flexible Units",
+    "features.step5.desc": "Perform quantity takeoffs using either metric or imperial systems (feet, inches, yards, square feet). Customize decimal precision and unit configurations dynamically based on your drawing settings.",
 
     // MCP / AI-Ready
     "mcp.title": "AI-Ready — Open MCP Support for Innovators",

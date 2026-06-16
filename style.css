@@ -499,6 +499,41 @@ img, video {
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+.feature-step-media-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.feature-step-media-grid .sub-media {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 6px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: all var(--transition-normal);
+}
+
+.feature-step-media-grid .sub-media:hover {
+  border-color: var(--accent-blue);
+  transform: translateY(-2px);
+}
+
+.feature-step-media-grid .sub-media img {
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .feature-step-media-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
 /* MCP / AI Section */
 .mcp-section {
   background-color: var(--bg-secondary);
