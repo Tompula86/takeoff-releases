@@ -1,6 +1,21 @@
 // PQuant 2026 / Takeoff Website Script
 let currentLang = 'fi';
 
+/* ==========================================================================
+   Configuration — Beta Request Notifications
+   ========================================================================== */
+
+// To enable automatic GitHub issue creation when someone requests a beta key:
+// 1. Create a fine-grained personal access token at https://github.com/settings/tokens
+// 2. Grant it ONLY "Issues: Write" permission for the repository below
+// 3. Paste the token here. NOTE: This is exposed in client-side code, so the
+//    worst case is spam issues. You can regenerate the token anytime.
+const BETA_CONFIG = {
+  githubToken: '', // Leave empty to disable auto-issue creation
+  repo: 'Tompula86/takeoff-releases',
+  owner: 'Tompula86'
+};
+
 // Initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
@@ -58,7 +73,7 @@ function initLatestReleaseDownload() {
             
             // Display the version tag on the hero download button
             if (link.id === 'hero-download-btn') {
-              const originalText = currentLang === 'fi' ? 'Lataa ilmainen kokeilu' : 'Download Free Trial';
+              const originalText = currentLang === 'fi' ? 'Lataa Windows-versio' : 'Download for Windows';
               const versionInfo = ` (${data.tag_name})`;
               link.innerText = `${originalText}${versionInfo}`;
             }
@@ -208,7 +223,7 @@ function setLanguage(lang) {
     if (window.translations[lang] && window.translations[lang][key]) {
       let content = window.translations[lang][key];
       if (el.id === 'hero-download-btn' && window.latestVersionTag) {
-        const originalText = lang === 'fi' ? 'Lataa ilmainen kokeilu' : 'Download Free Trial';
+        const originalText = lang === 'fi' ? 'Lataa Windows-versio' : 'Download for Windows';
         content = `${originalText} (${window.latestVersionTag})`;
       }
       el.innerHTML = content;
@@ -388,59 +403,156 @@ function toggleFaq(button) {
 }
 
 /* ==========================================================================
-   Student License Form Validation
+   Beta Key Request Form Handler
    ========================================================================== */
 
-function handleStudentForm(event) {
+function handleBetaForm(event) {
   event.preventDefault();
   
-  const emailInput = document.getElementById('student-email');
-  const messageBox = document.getElementById('student-msg');
+  const emailInput = document.getElementById('beta-email');
+  const messageBox = document.getElementById('beta-msg');
   const email = emailInput.value.trim().toLowerCase();
   
   if (!email) return;
   
-  // Simple educational email validation
-  // Matches: .edu, .ac, .fi, or domains containing school, uni, college, etc.
-  const eduRegex = /(\.edu|\.ac|\.sch|\.fi|school|uni|opisto|koulu|lukio|amk|yliopisto|tuni|aalto|helsinki|lut|jyu|oulu|utu|uef|univaasa|abo|hanken|metropolia|haaga-helia|laurea|jamk|savonia|xamk|turkuamk|tamk|oamk|saimia|vamk|palkat)/;
+  // Simple email validation
   const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  const isEduEmail = eduRegex.test(email);
-
-  messageBox.className = 'student-message';
   
-  if (isEmailValid && isEduEmail) {
-    // Show success
-    messageBox.classList.add('success');
-    messageBox.innerHTML = window.translations[currentLang]["pricing.student.validation.success"];
-    emailInput.disabled = true;
-    document.getElementById('order-student-btn').disabled = true;
-  } else {
-    // Show error
+  messageBox.className = 'beta-message';
+  
+  if (!isEmailValid) {
     messageBox.classList.add('error');
-    messageBox.innerHTML = window.translations[currentLang]["pricing.student.validation.error"];
+    messageBox.innerHTML = window.translations[currentLang]["pricing.beta.validation.error"];
+    return;
+  }
+  
+  // Show success message
+  messageBox.classList.add('success');
+  messageBox.innerHTML = window.translations[currentLang]["pricing.beta.validation.success"];
+  emailInput.disabled = true;
+  document.getElementById('order-beta-btn').disabled = true;
+  
+  // Build the request data
+  const requestData = {
+    email: email,
+    language: currentLang,
+    timestamp: new Date().toISOString(),
+    userAgent: navigator.userAgent,
+    source: 'takeoff-website-beta-form'
+  };
+  
+  // Try to create a GitHub issue if token is configured
+  if (BETA_CONFIG.githubToken) {
+    createGitHubIssue(requestData)
+      .then(() => {
+        console.log('GitHub issue created successfully');
+      })
+      .catch(err => {
+        console.warn('Failed to create GitHub issue:', err);
+        showCopyFallback(requestData, messageBox);
+      });
+  } else {
+    // Show copy-to-clipboard fallback
+    showCopyFallback(requestData, messageBox);
   }
 }
 
+function showCopyFallback(requestData, messageBox) {
+  const titleText = window.translations[currentLang]["pricing.beta.copy.title"];
+  const infoText = window.translations[currentLang]["pricing.beta.copy.text"];
+  
+  const issueBody = `## Beta Key Request
+
+**Email:** ${requestData.email}
+**Language:** ${requestData.language}
+**Timestamp:** ${requestData.timestamp}
+**User Agent:** ${requestData.userAgent}
+
+---
+*Submitted via takeoff-website-beta-form*`;
+
+  const issueTitle = `Beta request: ${requestData.email}`;
+  
+  messageBox.innerHTML = `
+    <div style="margin-top: 0.75rem;">
+      <div style="font-weight: 600; margin-bottom: 0.5rem; color: var(--accent-yellow);">${titleText}</div>
+      <div style="font-size: 0.8rem; margin-bottom: 0.75rem;">${infoText}</div>
+      <div class="beta-clipboard-box">
+        <button class="beta-clipboard-btn" onclick="copyBetaRequest(this, '${escapeHtml(issueTitle)}', '${escapeHtml(issueBody)}')">
+          ${window.translations[currentLang]["pricing.beta.copy.btn"]}
+        </button>
+        <div style="font-weight: 600; margin-bottom: 0.25rem;">Title: ${escapeHtml(issueTitle)}</div>
+        <div style="white-space: pre-wrap;">${escapeHtml(issueBody)}</div>
+      </div>
+      <div style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--text-muted);">
+        ${window.translations[currentLang]["pricing.beta.github.info"]}
+      </div>
+    </div>
+  `;
+}
+
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+function copyBetaRequest(btn, title, body) {
+  const fullText = `Title: ${title}\n\n${body}`;
+  navigator.clipboard.writeText(fullText).then(() => {
+    btn.textContent = window.translations[currentLang]["pricing.beta.copy.copied"];
+    setTimeout(() => {
+      btn.textContent = window.translations[currentLang]["pricing.beta.copy.btn"];
+    }, 2000);
+  }).catch(err => {
+    console.error('Failed to copy:', err);
+  });
+}
+
+async function createGitHubIssue(requestData) {
+  const url = `https://api.github.com/repos/${BETA_CONFIG.owner}/${BETA_CONFIG.repo}/issues`;
+  
+  const issueBody = `## Beta Key Request
+
+**Email:** ${requestData.email}
+**Language:** ${requestData.language}
+**Timestamp:** ${requestData.timestamp}
+**User Agent:** ${requestData.userAgent}
+
+---
+*Submitted via takeoff-website-beta-form*`;
+
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${BETA_CONFIG.githubToken}`,
+      'Accept': 'application/vnd.github.v3+json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      title: `Beta request: ${requestData.email}`,
+      body: issueBody,
+      labels: ['beta-request']
+    })
+  });
+  
+  if (!response.ok) {
+    const errorData = await response.json();
+    throw new Error(errorData.message || `GitHub API error: ${response.status}`);
+  }
+  
+  return await response.json();
+}
+
 /* ==========================================================================
-   Stripe Payment Simulation
+   Stripe Payment Simulation (currently disabled — no license sales)
    ========================================================================== */
 
 function openStripeCheckout() {
-  const modal = document.getElementById('stripe-checkout-modal');
-  const formBox = document.getElementById('payment-form-box');
-  const successBox = document.getElementById('payment-success-box');
-  const emailInput = document.getElementById('stripe-email');
-  
-  if (modal && formBox && successBox) {
-    modal.style.display = 'flex';
-    formBox.style.display = 'block';
-    successBox.style.display = 'none';
-    if (emailInput) {
-      emailInput.value = '';
-      emailInput.disabled = false;
-      emailInput.focus();
-    }
-  }
+  // Currently disabled — no licenses for sale yet
+  alert(currentLang === 'fi' 
+    ? 'Lisenssien myynti ei ole vielä käynnissä. Liity beta-ohjelmaan saadaksesi ilmaisen käyttöavaimen.' 
+    : 'License sales are not yet active. Join the beta program to get a free activation key.');
 }
 
 function closeStripeCheckout() {

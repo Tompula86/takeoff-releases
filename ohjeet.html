@@ -49,7 +49,8 @@
         <a href="#excel" class="docs-sidebar-link">6. Vienti Exceliin</a>
         <a href="#tiimityo" class="docs-sidebar-link">7. Tiimityö &amp; Pilvisynkronointi</a>
         <a href="#maksuerat" class="docs-sidebar-link">8. Maksuerät &amp; Maksuerätaulukko</a>
-        <a href="#asetukset" class="docs-sidebar-link">9. Järjestelmäasetukset &amp; Yksiköt</a>
+        <a href="#aikataulu" class="docs-sidebar-link">9. Aikataulu &amp; Gantt</a>
+        <a href="#asetukset" class="docs-sidebar-link">10. Järjestelmäasetukset &amp; Yksiköt</a>
       </nav>
     </aside>
 
@@ -61,14 +62,15 @@
         <p>Takeoff on seuraavan sukupolven työpöytäohjelmisto, joka on suunniteltu rakennusalan määrälaskentaan ja kustannusarvioiden tekoon. Ohjelmisto toimii täysin paikallisesti tietokoneellasi, mikä takaa äärimmäisen suorituskyvyn ja tietosuojan — projektisi eivät koskaan lähde tietokoneeltasi ulkopuolisille palvelimille.</p>
         
         <div class="docs-note">
-          <span class="docs-note-title">Kokeilujakso</span>
-          <p>Ohjelma toimii suoraan täydellä teholla 30 päivää ilman rekisteröitymistä tai luottokortin syöttämistä. Tämän jälkeen voit jatkaa käyttöä syöttämällä kertahintaisen Pro-lisenssikoodin.</p>
+          <span class="docs-note-title">Beta-ohjelma</span>
+          <p>Ohjelma on kehitysvaiheessa. Voit liittyä beta-ohjelmaan ilmaiseksi ja saada käyttöavaimen sähköpostiisi. Beta-avain toimii kunnes ohjelma on virallisesti valmis, jonka jälkeen se lakkaa toimimasta. Lisenssien myynti alkaa myöhemmin, ja beta-käyttäjät saavat tiedon ensimmäisenä.</p>
         </div>
 
         <h2>Asennusohje</h2>
         <p>Lataa asennustiedosto kotisivujen latauspainikkeesta ja suorita se omalla koneellasi:</p>
         <ul>
-          <li><strong>Windows:</strong> Suorita <code>Takeoff_Setup.exe</code> tai <code>.msi</code> ja seuraa asennusvelhon ohjeita.</li>
+          <li><strong>Vain Windows x64:</strong> Suorita <code>Takeoff_Setup.exe</code> tai <code>.msi</code> ja seuraa asennusvelhon ohjeita.</li>
+          <li><strong>SmartScreen-varoitus:</strong> Asennustiedosto ei ole koodivarmenteella allekirjoitettu. Windowsin SmartScreen voi näyttää varoituksen. Valitse <strong>"Lisätietoja" → "Suorita silti"</strong> jatkaaksesi.</li>
           <li><strong>Tietokanta:</strong> Ohjelma luo automaattisesti SQLite-tietokannan käyttäjäprofiilisi hakemistoon (<code>%APPDATA%/com.tomip.poitakeoff/poitakeoff.db</code>).</li>
         </ul>
       </section>
@@ -241,9 +243,35 @@
         <p>Kun työvaihe valmistuu työmaalla, vastaava maksuerä voidaan merkitä valmiiksi. Tämä luo selkeän historian siitä, mitä on laskutettu ja mitä on vielä jäljellä, mikä ehkäisee epäselvyyksiä tilaajan ja urakoitsijan välillä.</p>
       </section>
 
+      <!-- Aikataulu & Gantt -->
+      <section id="aikataulu" class="docs-section">
+        <h2>9. Aikataulu &amp; Gantt-kaavio</h2>
+        <p>Takeoff sisältää visuaalisen projektin aikataulutusvälineen interaktiivisella Gantt-kaaviolla. Voit suunnitella rakennusvaiheet, määritellä työkalenterit ja seurata projektin edistymistä arvion perusteella.</p>
+        
+        <h3>Projektin aikataulun suunnittelu</h3>
+        <p>Määritä projektin aikataulu joustavilla parametreilla:</p>
+        <ul>
+          <li><strong>Aloituspäivä ja tavoitepäivä:</strong> Aseta projektin kokonaisaikataulun rajat.</li>
+          <li><strong>Työtunnit:</strong> Määritä tunnit per vuoro, vuorot per päivä ja työpäivät per viikko tiimisi kapasiteetin mukaan.</li>
+          <li><strong>Keston laskenta:</strong> Järjestelmä laskee automaattisesti kokonaiskeston, aloitus- ja lopetuspäivät sekä sen, onko projekti aikataulussa.</li>
+        </ul>
+
+        <div class="feature-step-media" style="margin: 2rem 0;">
+          <img src="assets/schedule.png" alt="Aikataulu ja Gantt-kaavio" style="width: 100%; border-radius: 8px;">
+        </div>
+
+        <h3>Gantt-visualisointi</h3>
+        <p>Gantt-kaavio näyttää jokaisen projektivaiheen värillisenä palkkina aikajanalla:</p>
+        <ul>
+          <li><strong>Värikoodatut vaiheet:</strong> Jokainen rakennustoiminto näkyy eri värillä nopeaa visuaalista tunnistamista varten.</li>
+          <li><strong>Manuaaliset tehtävät:</strong> Lisää omia tehtäviä, jotka eivät ole sidottu reseptiarvioihin, täydentäviksi toiminnoiksi.</li>
+          <li><strong>Aikataulun seuranta:</strong> Seuraa edistymistä suunniteltuja päiviä vasten ja tunnista mahdolliset viivästykset aikaisin.</li>
+        </ul>
+      </section>
+
       <!-- Asetukset ja mittayksiköt -->
       <section id="asetukset" class="docs-section">
-        <h2>9. Järjestelmäasetukset &amp; Imperial-yksiköt</h2>
+        <h2>10. Järjestelmäasetukset &amp; Imperial-yksiköt</h2>
         <p>Takeoff on joustava työkalu, joka soveltuu sekä kotimaisiin että kansainvälisiin projekteihin. Ohjelman asetuksista voit mukauttaa laskentaympäristön juuri omiin tarpeisiisi sopivaksi.</p>
 
         <h3>Yksikköjärjestelmän valinta (Metric / Imperial)</h3>

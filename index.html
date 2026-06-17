@@ -55,21 +55,43 @@
       <div class="container hero-grid">
         <div class="hero-content">
           <h1 data-i18n="hero.title">Määrälaskenta ja kustannusarviot ilman kuukausimaksuja.</h1>
-          <p data-i18n="hero.subtitle">Tuo PDF-kuvat, laske massat ja sido ne resepteihin sekunneissa. Avoin MCP-tuki suosikkitekoälyllesi. Osta kerran – omista ikuisesti.</p>
+          <p data-i18n="hero.subtitle">Tuo PDF-kuvat, laske massat ja sido ne resepteihin sekunneissa. Avoin MCP-tuki suosikkitekoälyllesi. Osta kerran — omista ikuisesti.</p>
           
           <div class="hero-ctas">
-            <a href="https://poitakeoff.com/download/latest" class="btn btn-blue" id="hero-download-btn" data-i18n="hero.cta.download">Lataa ilmainen kokeilu (30 päivää)</a>
-            <a href="#pricing" class="btn btn-primary" id="hero-buy-btn" data-i18n="hero.cta.buy">Osta lisenssi – 250 €</a>
+            <div class="btn-row">
+              <a href="https://poitakeoff.com/download/latest" class="btn btn-blue" id="hero-download-btn" data-i18n="hero.cta.download">Lataa Windows-versio</a>
+              <a href="#pricing" class="btn btn-teal" id="hero-beta-btn" data-i18n="hero.cta.beta">Liity beta-ohjelmaan</a>
+            </div>
+            
+            <!-- Windows Badge & SmartScreen Warning -->
+            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+              <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                <span class="windows-badge">
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+                  <span data-i18n="hero.windows.badge">Windows x64</span>
+                </span>
+              </div>
+              
+              <div class="smartscreen-warning">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                </svg>
+                <div>
+                  <div style="font-weight: 600; color: var(--accent-yellow); margin-bottom: 0.25rem;" data-i18n="hero.smartscreen.title">Asennuksen varmistus</div>
+                  <div data-i18n="hero.smartscreen.text">Asennustiedosto ei ole koodivarmenteella allekirjoitettu. Windowsin SmartScreen voi varoittaa asennuksesta. Valitse <strong>"Lisätietoja" → "Suorita silti"</strong> asentaaksesi ohjelman.</div>
+                </div>
+              </div>
+            </div>
           </div>
           
           <div class="hero-stats">
-            <span data-i18n="hero.stats.users" id="hero-stats-text">Liity 30 000 laskijan tavoitteeseen. Ei piilokuluja.</span>
+            <span data-i18n="hero.stats.users" id="hero-stats-text">Liity beta-ohjelmaan. Ei piilokuluja.</span>
           </div>
         </div>
         
         <div class="hero-media">
           <div class="hero-media-wrapper">
-            <!-- Main Hero Image (generated later) -->
+            <!-- Main Hero Image -->
             <img src="assets/hero_ui.png" alt="Takeoff User Interface Screenshot" id="hero-screenshot" loading="eager">
           </div>
         </div>
@@ -118,7 +140,7 @@
       <div class="container">
         <div class="section-header">
           <h2 data-i18n="features.title">Suoraviivainen ja tehokas työnkulku</h2>
-          <p data-i18n="features.subtitle">Ei turhaa monimutkaisuutta. Kolme helppoa askelta suunnitelmasta valmiiseen Excel-määräluetteloon.</p>
+          <p data-i18n="features.subtitle">Ei turhaa monimutkaisuutta. Nopeat askeleet suunnitelmasta valmiiseen Excel-määräluetteloon.</p>
         </div>
         
         <div class="features-list">
@@ -162,7 +184,7 @@
           <div class="feature-step" id="feature-step-4">
             <div class="feature-step-content">
               <span class="feature-number" data-i18n="features.step4.num">04</span>
-              <h3 data-i18n="features.step4.title">Maksuerätaulukko &amp; maksupostit</h3>
+              <h3 data-i18n="features.step4.title">Maksuerätaulukko & maksupostit</h3>
               <p data-i18n="features.step4.desc">Jaa projektin kustannusarvio selkeiksi maksueriksi ja maksu-milestoneiksi. Ohjelma auttaa luomaan ja hallitsemaan urakan maksuerätaulukkoa automaattisesti työn edistymisen tai valittujen resepteistä tulevien kustannuserien mukaan.</p>
             </div>
             <div class="feature-step-media">
@@ -170,19 +192,31 @@
             </div>
           </div>
 
-          <!-- Step 5 -->
+          <!-- Step 5 — NEW: Schedule -->
           <div class="feature-step" id="feature-step-5">
             <div class="feature-step-content">
               <span class="feature-number" data-i18n="features.step5.num">05</span>
-              <h3 data-i18n="features.step5.title">Imperial-mittaukset &amp; joustavat asetukset</h3>
-              <p data-i18n="features.step5.desc">Tee mittauksia sekä metrisillä yksiköillä että imperial-järjestelmällä (tuumat, jalat, jaardit, neliöjalat). Voit säätää desimaalitarkkuuksia ja yksiköitä joustavasti projektin ja piirustuksen vaatimusten mukaan.</p>
+              <h3 data-i18n="features.step5.title">Aikataulu & Gantt-kaavio</h3>
+              <p data-i18n="features.step5.desc">Suunnittele projektin vaiheet visuaalisella Gantt-kaaviolla. Määritä työpäivät, vuorot ja työviikot. Seuraa kestoa, aloitus- ja lopetuspäiviä sekä aikataulun toteutumista reaaliaikaisesti.</p>
+            </div>
+            <div class="feature-step-media">
+              <img src="assets/schedule.png" alt="Schedule and Gantt Chart" id="feature-img-5" loading="lazy">
+            </div>
+          </div>
+
+          <!-- Step 6 — Imperial/settings -->
+          <div class="feature-step" id="feature-step-6">
+            <div class="feature-step-content">
+              <span class="feature-number" data-i18n="features.step6.num">06</span>
+              <h3 data-i18n="features.step6.title">Imperial-mittaukset & joustavat asetukset</h3>
+              <p data-i18n="features.step6.desc">Tee mittauksia sekä metrisillä yksiköillä että imperial-järjestelmällä (tuumat, jalat, jaardit, neliöjalat). Voit säätää desimaalitarkkuuksia ja yksiköitä joustavasti projektin ja piirustuksen vaatimusten mukaan.</p>
             </div>
             <div class="feature-step-media-grid">
               <div class="sub-media">
-                <img src="assets/settings.png" alt="Settings configuration for units" id="feature-img-5a" loading="lazy">
+                <img src="assets/settings.png" alt="Settings configuration for units" id="feature-img-6a" loading="lazy">
               </div>
               <div class="sub-media">
-                <img src="assets/quantities.png" alt="Quantities list with imperial units" id="feature-img-5b" loading="lazy">
+                <img src="assets/quantities.png" alt="Quantities list with imperial units" id="feature-img-6b" loading="lazy">
               </div>
             </div>
           </div>
@@ -200,7 +234,7 @@
         <div class="collab-grid">
           <div class="collab-card">
             <div class="collab-card-icon">☁️</div>
-            <h3 data-i18n="collab.feature1.title">OneDrive &amp; Dropbox -yhteensopiva</h3>
+            <h3 data-i18n="collab.feature1.title">OneDrive & Dropbox -yhteensopiva</h3>
             <p data-i18n="collab.feature1.desc">Projektit tallennetaan itsenäiseen .ptko-tiedostoon (ZIP-arkisto). Voit tallentaa ja synkronoida tiedostoja suoraan yrityksesi jaetuilla pilvilevyillä ilman kalliita lisenssisitoumuksia.</p>
           </div>
           <div class="collab-card">
@@ -264,12 +298,12 @@
     <section class="pricing section-padding" id="pricing">
       <div class="container">
         <div class="section-header">
-          <h2 data-i18n="pricing.title">Yksinkertainen, reilu hinnoittelu</h2>
-          <p data-i18n="pricing.subtitle">Valitse tarpeisiisi sopiva vaihtoehto. Ei sitoutumista, ei yllätyksiä.</p>
+          <h2 data-i18n="pricing.title">Liity beta-ohjelmaan</h2>
+          <p data-i18n="pricing.subtitle">Ohjelmisto on kehitysvaiheessa. Tällä hetkellä lisenssien myynti ei ole käynnissä. Voit liittyä beta-ohjelmaan ja saada ilmaisen käyttöavaimen.</p>
         </div>
         
         <div class="pricing-grid">
-          <!-- Pro Card -->
+          <!-- Pro Card (Coming Soon) -->
           <div class="pricing-card featured" id="pricing-card-pro">
             <h3 data-i18n="pricing.pro.title">Ammattilaislisenssi</h3>
             <div class="pricing-price-wrapper">
@@ -282,27 +316,30 @@
               <li data-i18n="pricing.pro.feature3">Vapaa oikeus siirtää tai myydä lisenssi eteenpäin</li>
               <li data-i18n="pricing.pro.feature4">Natiivi MCP-tekoälypalvelin</li>
             </ul>
+            <div style="background-color: rgba(251, 191, 36, 0.08); border: 1px solid rgba(251, 191, 36, 0.2); border-radius: 8px; padding: 0.875rem; font-size: 0.85rem; color: var(--accent-yellow); margin-bottom: 1rem; text-align: center;" data-i18n="pricing.pro.notice">
+              Lisenssien myynti alkaa myöhemmin. Ilmoitamme beta-ohjelman jäsenille ensimmäisenä.
+            </div>
             <button class="btn btn-primary" id="buy-pro-btn" onclick="openStripeCheckout()" data-i18n="pricing.pro.cta">Osta Pro-lisenssi (Stripe)</button>
           </div>
           
-          <!-- Student Card -->
-          <div class="pricing-card" id="pricing-card-student">
-            <h3 data-i18n="pricing.student.title">Opiskelijalisenssi</h3>
+          <!-- Beta Card -->
+          <div class="pricing-card beta-card" id="pricing-card-beta">
+            <h3 data-i18n="pricing.beta.title">Beta-ohjelma</h3>
             <div class="pricing-price-wrapper">
-              <span class="pricing-price" data-i18n="pricing.student.price">0 €</span>
-              <span class="pricing-vat" data-i18n="pricing.student.vat">täysin ilmainen</span>
+              <span class="pricing-price" data-i18n="pricing.beta.price">0 €</span>
+              <span class="pricing-vat" data-i18n="pricing.beta.vat">täysin ilmainen</span>
             </div>
             <ul class="pricing-features">
-              <li data-i18n="pricing.student.feature1">Kaikki ammattilaisversion ominaisuudet ilman rajoituksia</li>
-              <li data-i18n="pricing.student.feature2">Voimassa koko opinto-oikeutesi ajan</li>
-              <li data-i18n="pricing.student.feature3">Automaattinen aktivointi koulun sähköpostilla</li>
-              <li data-i18n="pricing.student.feature4">Tuki opinnäytetöihin ja harjoitustöihin</li>
+              <li data-i18n="pricing.beta.feature1">Kaikki ammattilaisversion ominaisuudet ilman rajoituksia</li>
+              <li data-i18n="pricing.beta.feature2">Ilmainen käyttöavain beta-ohjelman ajan</li>
+              <li data-i18n="pricing.beta.feature3">Avain toimii kunnes ohjelma on valmis — sen jälkeen se lakkaa toimimasta</li>
+              <li data-i18n="pricing.beta.feature4">Saa ensimmäisenä tieto lisenssien myynnin alkamisesta</li>
             </ul>
             
-            <form class="student-form" id="student-license-form" onsubmit="handleStudentForm(event)">
-              <input type="email" class="student-input" id="student-email" placeholder="koulunimi@oppilaitos.fi" required data-i18n-placeholder="pricing.student.placeholder">
-              <button type="submit" class="btn btn-secondary" id="order-student-btn" data-i18n="pricing.student.cta">Tilaa opiskelijalisenssi</button>
-              <div class="student-message" id="student-msg"></div>
+            <form class="beta-form" id="beta-license-form" onsubmit="handleBetaForm(event)">
+              <input type="email" class="beta-input" id="beta-email" placeholder="sähköposti@osoite.fi" required data-i18n-placeholder="pricing.beta.placeholder">
+              <button type="submit" class="btn btn-teal" id="order-beta-btn" data-i18n="pricing.beta.cta">Pyydä beta-avain</button>
+              <div class="beta-message" id="beta-msg"></div>
             </form>
           </div>
         </div>
@@ -331,15 +368,15 @@
             </div>
           </div>
           
-          <!-- Q2 -->
+          <!-- Q2 — Beta -->
           <div class="faq-item">
             <button class="faq-question" onclick="toggleFaq(this)">
-              <span data-i18n="faq.q2">Pitääkö minun rekisteröityä ladatakseni ohjelman?</span>
+              <span data-i18n="faq.q2">Miten beta-ohjelma toimii?</span>
               <span class="faq-icon"></span>
             </button>
             <div class="faq-answer">
               <div class="faq-answer-inner" data-i18n="faq.a2">
-                Ei. Voit ladata asennustiedoston suoraan sivuiltamme ja ohjelma toimii täysillä ominaisuuksilla 30 päivää ilman mitään rekisteröitymistä tai luottokorttia. Jos pidät ohjelmasta, voit ostaa lisenssiavaimen milloin tahansa kokeilun aikana.
+                Beta-ohjelma on ilmainen. Saat käyttöavaimen sähköpostiisi, jolla voit käyttää ohjelmaa täysillä ominaisuuksilla. Beta-avain toimii kunnes ohjelma on virallisesti valmis, jonka jälkeen se lakkaa toimimasta. Lisenssien myynti alkaa myöhemmin, ja beta-käyttäjät saavat tiedon ensimmäisenä.
               </div>
             </div>
           </div>
@@ -366,6 +403,19 @@
             <div class="faq-answer">
               <div class="faq-answer-inner" data-i18n="faq.a4">
                 Takeoff on 100 % paikallinen työpöytäsovellus. Kaikki projektitiedot, piirustukset, reseptit ja mittaukset tallennetaan omalle tietokoneellesi SQLite-tietokantaan ja pakataan .ptko-projektitiedostoksi. Mitään datastasi ei lähetetä palvelimillemme.
+              </div>
+            </div>
+          </div>
+
+          <!-- Q5 — SmartScreen -->
+          <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+              <span data-i18n="faq.q5">Miksi asennus vaatii SmartScreen-huomioinnin?</span>
+              <span class="faq-icon"></span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner" data-i18n="faq.a5">
+                Asennustiedosto ei ole koodivarmenteella allekirjoitettu (code signing), koska se vaatii vuosittaisen maksun varmenteesta. Tämä tarkoittaa, että Windowsin SmartScreen saattaa näyttää varoituksen asennuksen yhteydessä. Valitse 'Lisätietoja' → 'Suorita silti' jatkaaksesi asennusta. Tämä on normaalia pienille ohjelmistokehittäjille.
               </div>
             </div>
           </div>
@@ -442,7 +492,7 @@
     </div>
   </div>
 
-  <!-- Stripe Checkout simulation modal -->
+  <!-- Stripe Checkout simulation modal (hidden by default, currently disabled) -->
   <div class="payment-modal" id="stripe-checkout-modal">
     <!-- Payment Box Form -->
     <div class="payment-box" id="payment-form-box">

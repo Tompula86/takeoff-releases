@@ -49,7 +49,8 @@
         <a href="#excel" class="docs-sidebar-link">6. Exporting to Excel</a>
         <a href="#collab" class="docs-sidebar-link">7. Collaboration &amp; Cloud Sync</a>
         <a href="#milestones" class="docs-sidebar-link">8. Payment Milestones</a>
-        <a href="#settings" class="docs-sidebar-link">9. System Settings &amp; Units</a>
+        <a href="#schedule" class="docs-sidebar-link">9. Schedule & Gantt</a>
+        <a href="#settings" class="docs-sidebar-link">10. System Settings &amp; Units</a>
       </nav>
     </aside>
 
@@ -61,14 +62,15 @@
         <p>Takeoff is a next-generation desktop application designed for construction quantity takeoff and cost estimating. The application runs entirely locally on your computer, ensuring outstanding performance and absolute data privacy — your blueprints and project data never leave your local drive.</p>
         
         <div class="docs-note">
-          <span class="docs-note-title">Trial Period</span>
-          <p>The application works with full features out of the box for 30 days without registration or entering credit card details. After that, you can continue using the app by purchasing a one-off Pro license key.</p>
+          <span class="docs-note-title">Beta Program</span>
+          <p>Takeoff is currently in development. You can join the beta program for free and receive an activation key by email. The beta key works until the software is officially released, after which it stops working. License sales will start later, and beta users will be notified first.</p>
         </div>
 
         <h2>Installation Instructions</h2>
-        <p>Download the installer file from the homepage CTA button and run it on your machine:</p>
+        <p>Download the installer file from the homepage and run it on your machine:</p>
         <ul>
-          <li><strong>Windows:</strong> Run <code>Takeoff_Setup.exe</code> or <code>.msi</code> and follow the setup wizard instructions.</li>
+          <li><strong>Windows x64 only:</strong> Run <code>Takeoff_Setup.exe</code> or <code>.msi</code> and follow the setup wizard instructions.</li>
+          <li><strong>SmartScreen Warning:</strong> The installer is not code-signed. Windows SmartScreen may show a warning. Click <strong>"More Info" → "Run anyway"</strong> to continue.</li>
           <li><strong>Database:</strong> The app automatically creates a local SQLite database in your user application directory (<code>%APPDATA%/com.tomip.poitakeoff/poitakeoff.db</code>).</li>
         </ul>
       </section>
@@ -240,9 +242,35 @@
         <p>As work finishes on-site, mark the corresponding milestone as completed. This maintains an audit log of what has been invoiced and what remains, preventing payment disputes between clients and contractors.</p>
       </section>
 
+      <!-- Schedule & Gantt -->
+      <section id="schedule" class="docs-section">
+        <h2>9. Schedule &amp; Gantt Chart</h2>
+        <p>Takeoff includes a visual project scheduling tool with an interactive Gantt chart. You can plan construction phases, define working calendars, and track project progress against your estimates.</p>
+        
+        <h3>Project Timeline Planning</h3>
+        <p>Define the project schedule with flexible parameters:</p>
+        <ul>
+          <li><strong>Start Date &amp; Target Date:</strong> Set the overall project timeline boundaries.</li>
+          <li><strong>Working Hours:</strong> Configure hours per shift, shifts per day, and workdays per week to match your team's capacity.</li>
+          <li><strong>Duration Calculation:</strong> The system automatically calculates total duration, start and end dates, and whether the project is on schedule.</li>
+        </ul>
+
+        <div class="feature-step-media" style="margin: 2rem 0;">
+          <img src="assets/schedule.png" alt="Schedule and Gantt Chart Screen" style="width: 100%; border-radius: 8px;">
+        </div>
+
+        <h3>Gantt Visualization</h3>
+        <p>The Gantt chart displays each project phase as a colored bar on a timeline:</p>
+        <ul>
+          <li><strong>Color-coded phases:</strong> Each construction activity is shown with a distinct color for quick visual identification.</li>
+          <li><strong>Manual tasks:</strong> Add custom tasks that aren't tied to recipe estimates for supplementary activities.</li>
+          <li><strong>Schedule tracking:</strong> Monitor progress against planned dates and identify potential delays early.</li>
+        </ul>
+      </section>
+
       <!-- System Settings & Units -->
       <section id="settings" class="docs-section">
-        <h2>9. System Settings &amp; Imperial Units</h2>
+        <h2>10. System Settings &amp; Imperial Units</h2>
         <p>Takeoff is a highly flexible estimator designed for both local work and international procurement. From the settings pane, you can customize your workspace rules to suit the project requirements.</p>
 
         <h3>Unit System Selection (Metric vs. Imperial)</h3>
