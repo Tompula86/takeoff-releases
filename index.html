@@ -338,6 +338,7 @@
             
             <form class="beta-form" id="beta-license-form" onsubmit="handleBetaForm(event)">
               <input type="email" class="beta-input" id="beta-email" placeholder="sähköposti@osoite.fi" required data-i18n-placeholder="pricing.beta.placeholder">
+              <input type="text" id="beta-company" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
               <button type="submit" class="btn btn-teal" id="order-beta-btn" data-i18n="pricing.beta.cta">Pyydä beta-avain</button>
               <div class="beta-message" id="beta-msg"></div>
             </form>
