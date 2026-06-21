@@ -11,58 +11,90 @@
     <a href="index.html" class="legal-back-link">← Back to home</a>
     
     <h1 class="legal-title">Privacy Policy</h1>
-    <span class="legal-meta">Last updated: June 8, 2026</span>
+    <span class="legal-meta">Last updated: June 22, 2026</span>
     
     <div class="legal-content">
-      <p>PQuant ("we", "our") is committed to protecting your privacy. This Privacy Policy describes how we collect, use, and disclose your personal data when you visit our website or purchase and use our Takeoff desktop application.</p>
+      <p>PQuant Oy ("we", "our", "us") is committed to protecting your privacy. This Privacy Policy describes how we collect, process, store, and protect personal data when you visit our website <strong>patakeoff.com</strong> (including its subdomains and release pages) or purchase, install, and use our <strong>Takeoff</strong> desktop application.</p>
       
       <h2>1. Data Controller</h2>
       <p>
         <strong>Company:</strong> PQuant Oy<br>
-        <strong>Email:</strong> privacy@poitakeoff.com<br>
+        <strong>Email:</strong> <a href="mailto:privacy@poitakeoff.com">privacy@poitakeoff.com</a><br>
         <strong>Address:</strong> Helsinki, Finland
       </p>
       
-      <h2>2. Categories of Data Collected and Purpose of Processing</h2>
-      <p>We process your personal data in the following situations:</p>
+      <h2>2. Core Principle: Local-First Privacy</h2>
+      <p>The Takeoff desktop application (built on the Tauri framework) is designed around a <strong>local-first</strong> architecture. This means:</p>
       <ul>
-        <li><strong>License Purchase (Stripe):</strong> When you purchase a software license from our site, our payment provider Stripe handles the payment process. We collect your email address to deliver your activation code and invoice.</li>
-        <li><strong>Student License Ordering:</strong> If you request a student license, we collect your school email address to verify student status and send the activation code.</li>
-        <li><strong>Contact and Support:</strong> If you email us for support, we process your name, email address, and the contents of your message to resolve the support ticket.</li>
+        <li><strong>No Cloud Storage of Project Files:</strong> All imported PDF blueprints, takeoff measurements, closed polygon area calculations, formulas, cost assemblies, SQLite databases, and user settings are stored locally on your device in self-contained project archives (<code>.ptko</code>).</li>
+        <li><strong>No Access to Blueprints:</strong> We do not have access to, nor do we ever upload, copy, or transmit your blueprint drawings or measurements to our servers or any third-party cloud.</li>
+        <li><strong>Full Data Ownership:</strong> As the user, you retain complete and exclusive ownership and physical control of all your project files.</li>
       </ul>
 
-      <h2>3. Local-First Data Principle</h2>
-      <p>The Takeoff desktop application is built as a local-first software. This means:</p>
+      <h2>3. Information We Collect and Process</h2>
+      <p>Although our desktop application is offline-first, some features require limited network communication or local data processing. We process information for the following specific purposes:</p>
+      
+      <h3>A. License Activation and Verification</h3>
+      <p>When you purchase a license, the Takeoff desktop application must verify the key to activate the software. This involves:</p>
       <ul>
-        <li>All project data, measurements, drawing files, recipes, and settings are stored locally on your own computer in an SQLite database.</li>
-        <li>No blueprint drawings or takeoff measurements are automatically transferred to cloud storage or to our servers.</li>
-        <li>As the user, you retain complete and exclusive ownership and control over your data files (.ptko).</li>
+        <li><strong>License Verification Network Request:</strong> The application connects securely to our licensing endpoint (<code>api.poitakeoff.com</code>) to check the validity of your license key and download a cryptographically signed JSON Web Token (JWT) license state.</li>
+        <li><strong>Hardware Identity Hash:</strong> To prevent unauthorized copying and verify that license usage complies with your purchased tier, the application generates a cryptographic hardware hash locally based on hardware components (such as CPU or motherboard serial numbers). This hash is transmitted to our server during activation. It is hashed before transit, making it mathematically irreversible, and is used strictly to count the number of active devices linked to your license key.</li>
       </ul>
 
-      <h2>4. Data Transfers to Third Parties</h2>
-      <p>We do not sell or rent your personal data to third parties. We share data only in the following limited circumstances:</p>
+      <h3>B. Trial Period Evaluation</h3>
+      <p>To support the free 30-day trial without requiring user registration or credit cards:</p>
       <ul>
-        <li><strong>Payment Processing:</strong> Stripe Inc. processes payment data securely. We do not store or process your credit card numbers in our systems.</li>
-        <li><strong>Email Services:</strong> We use reputable transactional email providers (such as Resend or SendGrid) to dispatch license keys and automated receipts.</li>
-        <li><strong>Legal Obligations:</strong> We may disclose information to authorities if required by law.</li>
+        <li>A local, device-specific trial token is generated and signed with an HMAC signature. This token uses the local hardware identity hash and timestamps to track remaining trial days.</li>
+        <li>This trial mechanism is entirely <strong>offline and device-local</strong>. No trial tracking details or hardware hashes are transmitted to our servers during the trial period.</li>
       </ul>
 
-      <h2>5. Cookies</h2>
-      <p>We use cookies to improve our website's functionality and analyze traffic. You can manage your cookie preferences through the "Cookie Settings" link at the bottom of the page. Read more details in our <a href="cookies.html">Cookie Policy</a>.</p>
-
-      <h2>6. Rights of the Data Subject</h2>
-      <p>Under the GDPR, you have the following rights regarding your personal data:</p>
+      <h3>C. Automatic Application Updates</h3>
+      <p>The desktop application includes an automatic update checker to ensure you receive security patches and new features:</p>
       <ul>
-        <li>Right of access and to receive a copy of the data concerning you.</li>
-        <li>Right to rectify incorrect or incomplete information.</li>
-        <li>Right to demand erasure of your data ("right to be forgotten").</li>
-        <li>Right to restrict or object to the processing of your data.</li>
-        <li>Right to data portability.</li>
+        <li>The app periodically queries our release server (hosted on GitHub Pages or <code>patakeoff.com</code>) to see if a newer version of the software is available.</li>
+        <li>This request sends basic metadata, including your current application version and operating system architecture (e.g., Windows x64), to deliver the correct installer. No personal identifiers are transmitted.</li>
       </ul>
-      <p>To exercise your rights, please contact us by email at privacy@poitakeoff.com.</p>
 
-      <h2>7. Security</h2>
-      <p>We implement appropriate technical and organizational measures to safeguard personal data from unauthorized access, loss, or misuse. Our website and communications are secured using industry-standard SSL/TLS encryption.</p>
+      <h3>D. Website Transactions and License Purchases</h3>
+      <p>When you purchase a license on our website:</p>
+      <ul>
+        <li><strong>Payment Processing:</strong> All transactions are securely processed by our third-party payment provider, <strong>Stripe Inc.</strong> We do not collect, process, or store your credit card numbers or financial credentials in our systems. Stripe handles this in compliance with PCI-DSS standards.</li>
+        <li><strong>Purchase Details:</strong> We collect your email address and basic transaction metadata to generate and deliver your activation code, issue receipts, and manage your license record.</li>
+      </ul>
+
+      <h3>E. Support and Direct Communication</h3>
+      <p>If you contact us via email (e.g., for support or general inquiries), we process your email address, name, and the text contents of your message to assist you and resolve the inquiry.</p>
+
+      <h2>4. Third-Party Data Processors</h2>
+      <p>We do not sell, rent, or trade your personal data. We share information only with trusted processors necessary to deliver our services:</p>
+      <ul>
+        <li><strong>Stripe Inc.:</strong> Payment processing.</li>
+        <li><strong>Resend / SendGrid:</strong> Email delivery services used to automatically dispatch license keys, invoices, and receipts.</li>
+        <li><strong>GitHub / Microsoft:</strong> Hosting of update binaries and release distribution.</li>
+      </ul>
+
+      <h2>5. Absence of Telemetry and Analytics</h2>
+      <p>We believe in absolute workspace privacy. The Takeoff desktop application contains <strong>no telemetry, no behavior tracking, and no usage analytics</strong>. We do not track your clicks, mouse movements, active design hours, project names, or keystrokes inside the editor.</p>
+
+      <h2>6. Cookies (Website Only)</h2>
+      <p>Our marketing website uses cookies to store user preferences (such as your chosen language) and analyze basic site traffic. You can manage your choices at any time. For more information, please see our <a href="cookies.html">Cookie Policy</a>. The desktop application itself does not use cookies.</p>
+
+      <h2>7. GDPR Data Subject Rights</h2>
+      <p>Under the European Union General Data Protection Regulation (GDPR), users have the following rights regarding their personal data:</p>
+      <ul>
+        <li><strong>Access:</strong> The right to request copies of your personal data held by us.</li>
+        <li><strong>Rectification:</strong> The right to request corrections of inaccurate or incomplete data.</li>
+        <li><strong>Erasure:</strong> The right to request the deletion of your personal data under certain conditions ("right to be forgotten").</li>
+        <li><strong>Restriction & Objection:</strong> The right to limit or object to how we process your personal data.</li>
+        <li><strong>Data Portability:</strong> The right to request transfer of your data to another organization.</li>
+      </ul>
+      <p>To exercise any of these rights, please contact us at <a href="mailto:privacy@poitakeoff.com">privacy@poitakeoff.com</a>. We will respond within 30 days.</p>
+
+      <h2>8. Data Security</h2>
+      <p>We use industry-standard technical and organizational security measures to protect your personal data. All network traffic to our website and license API is secured using HTTPS (SSL/TLS encryption). Local license state tokens are signed cryptographically to prevent tampering.</p>
+
+      <h2>9. Policy Updates</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our app features or regulatory obligations. The date of the last revision will always be displayed at the top of the page.</p>
     </div>
   </div>
 </body>

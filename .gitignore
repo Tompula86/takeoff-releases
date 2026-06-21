@@ -1,0 +1,29 @@
+# Local session and temporary artifacts
+session_*.zip
+*.log
+*.tmp
+*.temp
+*.bak
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Dependency, build, and cache output
+node_modules/
+dist/
+build/
+coverage/
+.cache/
+.vite/
+
+# Local analysis output
+graphify-out/

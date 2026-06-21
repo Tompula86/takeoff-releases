@@ -17,7 +17,42 @@ document.addEventListener('DOMContentLoaded', () => {
   initLanguage();
   initCookies();
   initLatestReleaseDownload();
+  initMobileMenu();
 });
+
+/* ==========================================================================
+   Mobile Menu Navigation
+   ========================================================================== */
+
+function initMobileMenu() {
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menuToggle.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+      }
+    });
+
+    // Close menu when clicking a link
+    const links = navLinks.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+  }
+}
 
 /* ==========================================================================
    GitHub Releases Fetcher (Dynamic Download Link)
@@ -69,7 +104,7 @@ function initLatestReleaseDownload() {
             
             // Display the version tag on the hero download button
             if (link.id === 'hero-download-btn') {
-              const originalText = currentLang === 'fi' ? 'Lataa Windows-versio' : 'Download for Windows';
+              const originalText = currentLang === 'fi' ? 'Lataa ilmainen 30 päivän kokeilu' : 'Download free 30-day trial';
               const versionInfo = ` (${data.tag_name})`;
               link.innerText = `${originalText}${versionInfo}`;
             }
@@ -219,7 +254,7 @@ function setLanguage(lang) {
     if (window.translations[lang] && window.translations[lang][key]) {
       let content = window.translations[lang][key];
       if (el.id === 'hero-download-btn' && window.latestVersionTag) {
-        const originalText = lang === 'fi' ? 'Lataa Windows-versio' : 'Download for Windows';
+        const originalText = lang === 'fi' ? 'Lataa ilmainen 30 päivän kokeilu' : 'Download free 30-day trial';
         content = `${originalText} (${window.latestVersionTag})`;
       }
       el.innerHTML = content;
@@ -458,8 +493,8 @@ async function handleBetaForm(event) {
 function openStripeCheckout() {
   // Currently disabled — no licenses for sale yet
   alert(currentLang === 'fi' 
-    ? 'Lisenssien myynti ei ole vielä käynnissä. Liity beta-ohjelmaan saadaksesi ilmaisen käyttöavaimen.' 
-    : 'License sales are not yet active. Join the beta program to get a free activation key.');
+    ? 'Lisenssien myynti ei ole vielä käynnissä. Voit ladata kokeilun heti tai pyytää beta-avaimen pidempää käyttöä varten.'
+    : 'License sales are not active yet. You can download the trial now or request a beta key for longer access.');
 }
 
 function closeStripeCheckout() {

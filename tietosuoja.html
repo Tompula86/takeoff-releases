@@ -11,58 +11,90 @@
     <a href="index.html" class="legal-back-link">← Takaisin etusivulle</a>
     
     <h1 class="legal-title">Tietosuojaseloste</h1>
-    <span class="legal-meta">Viimeksi päivitetty: 8. kesäkuuta 2026</span>
+    <span class="legal-meta">Viimeksi päivitetty: 22. kesäkuuta 2026</span>
     
     <div class="legal-content">
-      <p>PQuant ("me", "meidän") on sitoutunut suojelemaan yksityisyyttäsi. Tämä tietosuojaseloste kertoo, miten keräämme, käytämme ja luovutamme henkilötietojasi, kun vierailet verkkosivustollamme tai ostat ja käytät Takeoff-ohjelmistoamme.</p>
+      <p>PQuant Oy ("me", "meidän") on sitoutunut suojelemaan yksityisyyttäsi. Tämä tietosuojaseloste kuvailee, miten keräämme, käsittelemme, säilytämme ja suojaamme henkilötietojasi, kun vierailet verkkosivustollamme <strong>patakeoff.com</strong> (mukaan lukien sen alidomainit ja jakelusivut) tai ostat, asennat ja käytät <strong>Takeoff</strong>-työpöytäsovellustamme.</p>
       
       <h2>1. Rekisterinpitäjä</h2>
       <p>
         <strong>Yritys:</strong> PQuant Oy<br>
-        <strong>Sähköposti:</strong> privacy@poitakeoff.com<br>
+        <strong>Sähköposti:</strong> <a href="mailto:privacy@poitakeoff.com">privacy@poitakeoff.com</a><br>
         <strong>Osoite:</strong> Helsinki, Suomi
       </p>
       
-      <h2>2. Kerättävät tietoryhmät ja käsittelyn tarkoitukset</h2>
-      <p>Käsittelemme henkilötietojasi seuraavissa tilanteissa:</p>
+      <h2>2. Perusperiaate: Paikallisuus (Local-First)</h2>
+      <p>Takeoff-työpöytäsovellus (joka on rakennettu Tauri-kehystä käyttäen) on suunniteltu <strong>local-first</strong>-arkkitehtuurin mukaisesti. Tämä tarkoittaa seuraavaa:</p>
       <ul>
-        <li><strong>Lisenssin ostaminen (Stripe):</strong> Kun ostat ohjelmistolisenssin sivustoltamme, yhteistyökumppanimme Stripe käsittelee maksusi. Keräämme sähköpostiosoitteesi voidaksemme toimittaa aktivointikoodin ja kuitin.</li>
-        <li><strong>Opiskelijalisenssin tilaaminen:</strong> Jos tilaat opiskelijalisenssin, keräämme oppilaitoksesi sähköpostiosoitteen opiskelijaoikeuden todentamiseksi ja aktivointikoodin lähettämiseksi.</li>
-        <li><strong>Yhteydenotot ja tuki:</strong> Jos lähetät meille sähköpostia tukiasioissa, käsittelemme nimeäsi, sähköpostiasi ja viestisi sisältöä tukiilmoituksen ratkaisemiseksi.</li>
+        <li><strong>Ei projektitiedostojen pilvitallennusta:</strong> Kaikki sovellukseen tuodut PDF-piirustukset, tehdyttämiesi massojen mittaukset, pinta-alalaskelmat, kaavat, kustannusreseptit, SQLite-tietokannat ja käyttäjäasetukset tallennetaan paikallisesti omalle laitteellesi itsenäisinä projektitiedostoina (<code>.ptko</code>).</li>
+        <li><strong>Ei pääsyä piirustuksiin:</strong> Meillä ei ole pääsyä piirustuksiisi tai mittaustietoihisi, emmekä koskaan siirrä tai kopioi niitä palvelimillemme tai kolmannen osapuolen pilvipalveluihin.</li>
+        <li><strong>Täysi datan omistajuus:</strong> Käyttäjänä säilytät täyden ja yksinomaisen omistus- ja hallintaoikeuden kaikkiin projektitiedostoihisi.</li>
       </ul>
 
-      <h2>3. Paikallisen datan periaate (Local-First)</h2>
-      <p>Takeoff-työpöytäsovellus on rakennettu paikallisuus edellä (local-first). Tämä tarkoittaa seuraavaa:</p>
+      <h2>3. Kerättävät ja käsiteltävät tiedot</h2>
+      <p>Vaikka työpöytäsovelluksemme on offline-painotteinen, jotkin toiminnot edellyttävät rajattua verkkoyhteyttä tai paikallista tietojen käsittelyä. Käsittelemme tietoja seuraaviin tarkoituksiin:</p>
+      
+      <h3>A. Lisenssin aktivointi ja vahvistus</h3>
+      <p>Kun ostat lisenssin, Takeoff-työpöytäsovelluksen on vahvistettava lisenssiavaimen voimassaolo. Tämä sisältää seuraavat vaiheet:</p>
       <ul>
-        <li>Kaikki projektisi tiedot, mittaukset, piirustukset, reseptit ja asetukset tallennetaan paikallisesti tietokoneellesi SQLite-tietokantaan.</li>
-        <li>Mitään piirustuksia tai mittausdataa ei siirretä automaattisesti pilveen tai meidän palvelimillemme.</li>
-        <li>Käyttäjänä sinulla on täysi ja yksinomainen hallinta omiin tietoihisi ja projektitiedostoihisi (.ptko).</li>
+        <li><strong>Lisenssin vahvistuskysely:</strong> Sovellus muodostaa suojatun yhteyden lisenssipalveluumme (<code>api.poitakeoff.com</code>) tarkistaakseen avaimen voimassaolon ja ladatakseen kryptografisesti allekirjoitetun JSON Web Token (JWT) -lisenssitilan.</li>
+        <li><strong>Laitetunnisteen tiiviste (Hardware Hash):</strong> Luvattoman kopioinnin estämiseksi ja sen varmistamiseksi, että lisenssin käyttö noudattaa ostettuja ehtoja, sovellus luo laitteellasi kryptografisen laitetunnisteen (perustuen laitteiston osiin, kuten suorittimen tai emolevyn sarjanumeroihin). Tämä tunniste lähetetään palvelimellemme aktivoinnin yhteydessä. Tunniste on muunnettu yksisuuntaiseksi tiivisteeksi (hash) ennen lähettämistä, eli sitä ei voi peruuttaa tai yhdistää suoraan henkilöllisyyteesi, ja sitä käytetään ainoastaan lisenssiavaimeen liitettyjen aktiivisten laitteiden määrän laskemiseen.</li>
       </ul>
 
-      <h2>4. Tietojen luovutukset kolmansille osapuolille</h2>
-      <p>Emme myy tai vuokraa henkilötietojasi kolmansille osapuolille. Luovutamme tietoja vain seuraavissa rajatuissa tapauksissa:</p>
+      <h3>B. Kokeilujakson arviointi</h3>
+      <p>Tarjotaksemme ilmaisen 30 päivän kokeilujakson ilman rekisteröitymistä tai luottokorttia:</p>
       <ul>
-        <li><strong>Maksunvälitys:</strong> Stripe Inc. käsittelee maksutiedot turvallisesti. Me emme tallenna tai käsittele luottokorttisi numeroa järjestelmissämme.</li>
-        <li><strong>Sähköpostipalvelut:</strong> Käytämme luotettavaa sähköpostipalveluntarjoajaa (esim. Resend/SendGrid) lisenssiavainten ja automaattisten viestien lähettämiseen.</li>
-        <li><strong>Lain velvoitteet:</strong> Voimme luovuttaa tietoja viranomaisille lakiin perustuvien vaatimusten mukaisesti.</li>
+        <li>Laitteellesi luodaan ja allekirjoitetaan paikallinen kokeilujakson tunniste. Tämä tunniste käyttää paikallista laitetunnistetiivistettä ja aikaleimoja jäljellä olevien kokeilupäivien laskemiseen.</li>
+        <li>Tämä kokeilujakson valvonta on täysin <strong>offline-pohjainen ja laitekohtainen</strong>. Kokeilujakson tietoja tai laitetunnisteita ei lähetetä palvelimillemme kokeilujakson aikana.</li>
       </ul>
 
-      <h2>5. Evästeet (Cookies)</h2>
-      <p>Käytämme evästeitä parantaaksemme sivustomme toimivuutta ja analysoidaksemme liikennettä. Voit hallita evästeasetuksiasi sivun alareunassa olevan "Evästeasetukset"-linkin kautta. Katso tarkemmat tiedot <a href="evasteet.html">Evästekäytännöstämme</a>.</p>
-
-      <h2>6. Rekisteröidyn oikeudet</h2>
-      <p>GDPR-asetuksen mukaisesti sinulla on seuraavat oikeudet omiin henkilötietoihisi:</p>
+      <h3>C. Automaattiset sovelluspäivitykset</h3>
+      <p>Työpöytäsovellus sisältää automaattisen päivitystoiminnon, joka varmistaa, että saat uusimmat tietoturvapäivitykset ja ominaisuudet käyttöösi:</p>
       <ul>
-        <li>Oikeus saada pääsy tietoihin ja saada kopio itseäsi koskevista tiedoista.</li>
-        <li>Oikeus vaatia virheellisten tai puutteellisten tietojen korjaamista.</li>
-        <li>Oikeus vaatia tietojesi poistamista ("oikeus tulla unohdetuksi").</li>
-        <li>Oikeus rajoittaa tai vastustaa tietojesi käsittelyä.</li>
-        <li>Oikeus siirtää tiedot järjestelmästä toiseen.</li>
+        <li>Sovellus tekee säännöllisesti kyselyn päivityspalvelimellemme (joka sijaitsee GitHub Pagesissa tai osoitteessa <code>patakeoff.com</code>) tarkistaakseen, onko uudempaa versiota saatavilla.</li>
+        <li>Tämä kysely lähettää vain perustietoja, kuten nykyisen sovellusversion ja käyttöjärjestelmäarkkitehtuurin (esim. Windows x64), jotta palvelin voi tarjota oikean asennustiedoston. Henkilötietoja ei lähetetä.</li>
       </ul>
-      <p>Jos haluat käyttää oikeuksiasi, ota meihin yhteyttä sähköpostitse osoitteeseen privacy@poitakeoff.com.</p>
 
-      <h2>7. Tietoturva</h2>
-      <p>Käytämme asianmukaisia teknisiä ja organisatorisia suojatoimia henkilötietojen suojaamiseksi luvattomalta pääsyltä, häviämiseltä tai muulta väärinkäytöltä. Sivustomme ja tietoliikenteemme on suojattu vahvalla SSL/TLS-salauksella.</p>
+      <h3>D. Verkkokauppaostot ja lisenssimaksut</h3>
+      <p>Kun ostat lisenssin verkkosivustoltamme:</p>
+      <ul>
+        <li><strong>Maksunvälitys:</strong> Kaikki maksutapahtumat käsitellään turvallisesti kolmannen osapuolen maksunvälittäjän, <strong>Stripe Inc.</strong>:n kautta. Me emme kerää, käsittele tai tallenna luottokorttiesi numeroita tai muita maksutietoja omissa järjestelmissämme. Stripe huolehtii tästä PCI-DSS-standardien mukaisesti.</li>
+        <li><strong>Ostotiedot:</strong> Keräämme sähköpostiosoitteesi ja ostotapahtuman perustiedot aktivointikoodin luomista ja toimittamista, kuittien lähettämistä sekä lisenssinhallintaa varten.</li>
+      </ul>
+
+      <h3>E. Asiakastuki ja yhteydenotot</h3>
+      <p>Jos otat meihin yhteyttä sähköpostitse (esim. tuki- tai yleisissä asioissa), käsittelemme sähköpostiosoitettasi, nimeäsi sekä viestisi sisältöä vastataksemme kysymykseesi ja ratkaistaksemme tukipyynnön.</p>
+
+      <h2>4. Kolmannen osapuolen tietojen käsittelijät</h2>
+      <p>Emme myy, vuokraa tai luovuta henkilötietojasi kolmansille osapuolille. Jaamme tietoja vain luotettujen kumppaneiden kanssa, jotka ovat välttämättömiä palvelumme tarjoamiseksi:</p>
+      <ul>
+        <li><strong>Stripe Inc.:</strong> Maksunvälityspalvelu.</li>
+        <li><strong>Resend / SendGrid:</strong> Sähköpostipalvelut, joita käytetään lisenssiavainten, laskujen ja kuittien automaattiseen lähettämiseen.</li>
+        <li><strong>GitHub / Microsoft:</strong> Päivitys- ja asennustiedostojen jakelu ja isännöinti.</li>
+      </ul>
+
+      <h2>5. Ei telemetriaa tai analytiikkaa</h2>
+      <p>Uskomme täydelliseen yksityisyyteen työtilassasi. Takeoff-työpöytäsovellus <strong>ei sisällä telemetriaa, käyttökäyttäytymisen seurantaa eikä analytiikkaa</strong>. Emme seuraa klikkauksiasi, hiiren liikkeitäsi, aktiivisia käyttötuntejasi, projektien nimiä tai näppäinpainalluksia editorin sisällä.</p>
+
+      <h2>6. Evästeet (vain verkkosivusto)</h2>
+      <p>Markkinointisivustomme käyttää evästeitä käyttäjäasetusten (kuten valitsemasi kieli) tallentamiseen ja sivuston perusliikenteen tilastointiin. Voit muuttaa asetuksiasi milloin tahansa. Lisätietoja löydät <a href="evasteet.html">Evästekäytännöstämme</a>. Työpöytäsovellus itsessään ei käytä evästeitä.</p>
+
+      <h2>7. GDPR:n mukaiset oikeutesi</h2>
+      <p>Euroopan unionin yleisen tietosuoja-asetuksen (GDPR) mukaisesti sinulla on seuraavat oikeudet henkilötietoihisi liittyen:</p>
+      <ul>
+        <li><strong>Pääsy tietoihin:</strong> Oikeus pyytää kopio hallussamme olevista henkilötiedoistasi.</li>
+        <li><strong>Tietojen korjaaminen:</strong> Oikeus vaatia virheellisten tai puutteellisten tietojen korjaamista.</li>
+        <li><strong>Tietojen poistaminen:</strong> Oikeus pyytää henkilötietojesi poistamista tietyissä tilanteissa ("oikeus tulla unohdetuksi").</li>
+        <li><strong>Käsittelyn rajoittaminen ja vastustaminen:</strong> Oikeus rajoittaa tai vastustaa henkilötietojesi käsittelyä.</li>
+        <li><strong>Tiedon siirtäminen:</strong> Oikeus pyytää tietojesi siirtämistä toiselle organisaatiolle.</li>
+      </ul>
+      <p>Jos haluat käyttää näitä oikeuksiasi, ota meihin yhteyttä sähköpostitse osoitteeseen <a href="mailto:privacy@poitakeoff.com">privacy@poitakeoff.com</a>. Vastaamme pyyntöösi 30 päivän kuluessa.</p>
+
+      <h2>8. Tietoturva</h2>
+      <p>Käytämme asianmukaisia teknisiä ja organisatorisia suojatoimia henkilötietojesi suojaamiseksi. Kaikki verkkoliikenne sivustollemme ja lisenssipalveluumme on suojattu vahvalla SSL/TLS-salauksella (HTTPS). Paikalliset lisenssitunnisteet allekirjoitetaan kryptografisesti muokkausten estämiseksi.</p>
+
+      <h2>9. Tietosuojaselosteen muuttaminen</h2>
+      <p>Saatamme päivittää tätä tietosuojaselostetta ajoittain heijastamaan muutoksia sovelluksemme toiminnoissa tai lainsäädännössä. Viimeisimmän päivityksen päivämäärä näkyy aina sivun yläosassa.</p>
     </div>
   </div>
 </body>
