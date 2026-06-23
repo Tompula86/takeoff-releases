@@ -72,7 +72,7 @@ function initLatestReleaseDownload() {
   
   document.querySelectorAll('a').forEach(link => {
     const href = link.getAttribute('href') || '';
-    if (href.includes('poitakeoff.com/download') || (href.includes('github.com/') && href.includes('/releases'))) {
+    if (href.includes('ptakeoff.com/download') || (href.includes('github.com/') && href.includes('/releases'))) {
       if (!downloadLinks.includes(link)) {
         downloadLinks.push(link);
       }
