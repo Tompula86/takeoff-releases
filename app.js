@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLatestReleaseDownload();
   initMobileMenu();
   initAnchorNavigation();
+  initContactForm();
 });
 
 /* ==========================================================================
@@ -101,6 +102,11 @@ function scrollToAnchorTarget(target, behavior = 'smooth') {
     top: Math.max(targetTop, 0),
     behavior
   });
+}
+
+function translate(key) {
+  const activeTranslations = window.translations && window.translations[currentLang];
+  return activeTranslations && activeTranslations[key] ? activeTranslations[key] : key;
 }
 
 /* ==========================================================================
@@ -346,6 +352,8 @@ function setLanguage(lang) {
   document.title = lang === 'fi' 
     ? 'Takeoff — Määrälaskenta ja kustannusarviot ilman kuukausimaksuja' 
     : 'Takeoff — Quantity Takeoff and Estimating without monthly fees';
+
+  updateContactContent();
 }
 
 /* ==========================================================================
@@ -539,6 +547,49 @@ async function handleBetaForm(event) {
    Contact / Feedback Form Handler
    ========================================================================== */
 
+function initContactForm() {
+  const typeInput = document.getElementById('contact-type');
+  if (!typeInput) return;
+
+  typeInput.addEventListener('change', () => {
+    const messageBox = document.getElementById('contact-msg');
+    if (messageBox) messageBox.className = 'contact-message';
+    updateContactContent();
+  });
+
+  updateContactContent();
+}
+
+function updateContactContent() {
+  const typeInput = document.getElementById('contact-type');
+  const title = document.getElementById('contact-copy-title');
+  const body = document.getElementById('contact-copy-body');
+  const replyLabel = document.getElementById('contact-reply-label');
+  const replyInput = document.getElementById('contact-reply');
+
+  if (!typeInput || !title || !body || !replyLabel || !replyInput) return;
+
+  const type = getContactType(typeInput.value);
+  const replyRequired = type !== 'bug';
+
+  title.textContent = translate(`contact.copy.${type}.title`);
+  body.textContent = translate(`contact.copy.${type}.body`);
+  replyLabel.textContent = translate(replyRequired ? 'contact.reply.label.required' : 'contact.reply.label.optional');
+  replyInput.placeholder = translate(replyRequired ? 'contact.reply.placeholder.required' : 'contact.reply.placeholder.optional');
+  replyInput.setAttribute('aria-required', replyRequired ? 'true' : 'false');
+
+  if (replyRequired) {
+    replyInput.setAttribute('required', 'required');
+  } else {
+    replyInput.removeAttribute('required');
+  }
+}
+
+function getContactType(value) {
+  const allowedTypes = ['bug', 'question', 'feedback', 'other'];
+  return allowedTypes.includes(value) ? value : 'bug';
+}
+
 async function handleContactForm(event) {
   event.preventDefault();
 
@@ -550,23 +601,32 @@ async function handleContactForm(event) {
   const submitBtn = document.getElementById('contact-submit-btn');
   const honeypot = document.getElementById('contact-company');
 
-  const type = typeInput.value;
+  const type = getContactType(typeInput.value);
   const replyTo = replyInput.value.trim();
   const message = messageInput.value.trim();
+  const replyRequired = type !== 'bug';
 
   messageBox.className = 'contact-message';
 
   if (!message) {
     messageBox.classList.add('error');
-    messageBox.innerHTML = window.translations[currentLang]["contact.validation.messageRequired"];
+    messageBox.innerHTML = translate("contact.validation.messageRequired");
     messageInput.focus();
+    return;
+  }
+
+  if (replyRequired && !replyTo) {
+    messageBox.classList.add('error');
+    messageBox.innerHTML = translate("contact.validation.replyRequired");
+    replyInput.focus();
     return;
   }
 
   if (honeypot && honeypot.value.trim()) {
     messageBox.classList.add('success');
-    messageBox.innerHTML = window.translations[currentLang]["contact.validation.success"];
+    messageBox.innerHTML = translate("contact.validation.success");
     form.reset();
+    updateContactContent();
     return;
   }
 
@@ -591,12 +651,13 @@ async function handleContactForm(event) {
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
     messageBox.classList.add('success');
-    messageBox.innerHTML = window.translations[currentLang]["contact.validation.success"];
+    messageBox.innerHTML = translate("contact.validation.success");
     form.reset();
+    updateContactContent();
   } catch (err) {
     console.error('Contact request failed:', err);
     messageBox.classList.add('error');
-    messageBox.innerHTML = window.translations[currentLang]["contact.validation.networkError"];
+    messageBox.innerHTML = translate("contact.validation.networkError");
   } finally {
     submitBtn.disabled = false;
   }

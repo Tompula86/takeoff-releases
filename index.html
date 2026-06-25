@@ -378,8 +378,8 @@
         <div class="contact-panel">
           <div class="contact-copy">
             <span class="contact-kicker" data-i18n="contact.kicker">Palaute ja tuki</span>
-            <h3 data-i18n="contact.copy.title">Kerro mikä jumittaa tai mitä tarvitset seuraavaksi</h3>
-            <p data-i18n="contact.copy.body">Bugiraportin voi lähettää myös ilman yhteystietoa. Jos haluat vastauksen, jätä sähköposti, puhelin tai muu sopiva yhteystapa.</p>
+            <h3 id="contact-copy-title" data-i18n="contact.copy.bug.title">Kerro mikä jumittaa tai mitä olit tekemässä</h3>
+            <p id="contact-copy-body" data-i18n="contact.copy.bug.body">Bugiraportin voi lähettää myös ilman yhteystietoa. Lisää yhteystieto vain, jos haluat että palaamme asiaan.</p>
           </div>
 
           <form class="contact-form" id="contact-form" onsubmit="handleContactForm(event)" novalidate>
@@ -394,8 +394,8 @@
             </div>
 
             <div class="contact-field">
-              <label for="contact-reply" data-i18n="contact.reply.label">Yhteystieto (valinnainen)</label>
-              <input type="text" id="contact-reply" class="contact-input" maxlength="200" autocomplete="email" placeholder="Sähköposti, puhelin tai muu yhteystapa" data-i18n-placeholder="contact.reply.placeholder">
+              <label for="contact-reply" id="contact-reply-label" data-i18n="contact.reply.label.optional">Yhteystieto (valinnainen)</label>
+              <input type="text" id="contact-reply" class="contact-input" maxlength="200" autocomplete="email" placeholder="Sähköposti, puhelin tai muu yhteystapa (jos haluat vastauksen)" data-i18n-placeholder="contact.reply.placeholder.optional">
             </div>
 
             <div class="contact-field">
