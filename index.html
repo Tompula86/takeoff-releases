@@ -33,6 +33,7 @@
         <a href="#features" data-i18n="nav.features" id="nav-features-link">Ominaisuudet</a>
         <a href="#mcp" data-i18n="nav.mcp" id="nav-mcp-link">AI & MCP</a>
         <a href="#pricing" data-i18n="nav.pricing" id="nav-pricing-link">Hinnoittelu</a>
+        <a href="#contact" data-i18n="nav.contact" id="nav-contact-link">Yhteys</a>
         <a href="#faq" data-i18n="nav.faq" id="nav-faq-link">UKK</a>
         <a href="ohjeet.html" id="nav-docs-link" data-i18n="nav.docs">Ohjeet</a>
       </nav>
@@ -366,6 +367,50 @@
       </div>
     </section>
 
+    <!-- Contact Section -->
+    <section class="contact section-padding" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2 data-i18n="contact.title">Ota yhteyttä</h2>
+          <p data-i18n="contact.subtitle">Lähetä bugiraportti, kysymys tai palaute suoraan kehittäjälle.</p>
+        </div>
+
+        <div class="contact-panel">
+          <div class="contact-copy">
+            <span class="contact-kicker" data-i18n="contact.kicker">Palaute ja tuki</span>
+            <h3 data-i18n="contact.copy.title">Kerro mikä jumittaa tai mitä tarvitset seuraavaksi</h3>
+            <p data-i18n="contact.copy.body">Bugiraportin voi lähettää myös ilman yhteystietoa. Jos haluat vastauksen, jätä sähköposti, puhelin tai muu sopiva yhteystapa.</p>
+          </div>
+
+          <form class="contact-form" id="contact-form" onsubmit="handleContactForm(event)" novalidate>
+            <div class="contact-field">
+              <label for="contact-type" data-i18n="contact.type.label">Aihe</label>
+              <select id="contact-type" class="contact-input" required>
+                <option value="bug" data-i18n="contact.type.bug">Bugiraportti</option>
+                <option value="question" data-i18n="contact.type.question">Kysymys</option>
+                <option value="feedback" data-i18n="contact.type.feedback">Palaute</option>
+                <option value="other" data-i18n="contact.type.other">Muu</option>
+              </select>
+            </div>
+
+            <div class="contact-field">
+              <label for="contact-reply" data-i18n="contact.reply.label">Yhteystieto (valinnainen)</label>
+              <input type="text" id="contact-reply" class="contact-input" maxlength="200" autocomplete="email" placeholder="Sähköposti, puhelin tai muu yhteystapa" data-i18n-placeholder="contact.reply.placeholder">
+            </div>
+
+            <div class="contact-field">
+              <label for="contact-message" data-i18n="contact.message.label">Viesti</label>
+              <textarea id="contact-message" class="contact-input contact-textarea" maxlength="4000" required placeholder="Kerro lyhyesti mitä tapahtui, mitä olit tekemässä tai mitä haluaisit kysyä." data-i18n-placeholder="contact.message.placeholder"></textarea>
+            </div>
+
+            <input type="text" id="contact-company" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
+            <button type="submit" class="btn btn-teal" id="contact-submit-btn" data-i18n="contact.cta">Lähetä viesti</button>
+            <div class="contact-message" id="contact-msg"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
     <!-- FAQ Section -->
     <section class="faq section-padding" id="faq">
       <div class="container">
@@ -457,6 +502,7 @@
       
       <div class="footer-links-grid">
         <a href="ohjeet.html" id="footer-docs-link" data-i18n="nav.docs">Ohjeet</a>
+        <a href="#contact" id="footer-contact-link" data-i18n="nav.contact">Yhteys</a>
         <a href="tietosuoja.html" id="privacy-link" data-i18n="footer.links.privacy">Tietosuojaseloste</a>
         <a href="ehdot.html" id="terms-link" data-i18n="footer.links.terms">Käyttöehdot</a>
         <a href="evasteet.html" id="cookies-link" data-i18n="footer.links.cookies">Evästekäytäntö</a>

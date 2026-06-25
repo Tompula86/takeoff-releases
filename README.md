@@ -2,7 +2,7 @@
 
 > **Premium Construction Estimating & PDF Takeoff Software**
 > 
-> 🌐 Website: [ptakeoff.com](https://ptakeoff.com) | 📥 [Download 30-day Free Trial](https://poitakeoff.com/download/latest)
+> 🌐 Website: [ptakeoff.com](https://ptakeoff.com) | 📥 [Download 30-day Free Trial](https://ptakeoff.com/download/latest)
 
 Takeoff (technical identifier: `poitakeoff`, developed under the `PQuant` brand) is a high-performance, offline-first desktop application designed for blueprint quantity takeoff, recipe-driven estimation, and dynamic project planning. 
 

@@ -2,13 +2,13 @@
 let currentLang = 'fi';
 
 /* ==========================================================================
-   Configuration — Beta Request Notifications
+   Configuration — Website Form Notifications
    ========================================================================== */
 
-// The beta form POSTs the email to the takeoff-license-api backend (Vercel),
-// which stores it in Supabase and notifies the owner. No secrets live in this
-// public file. apiBase is the Vercel production URL (verified via /api/health).
-const BETA_CONFIG = {
+// Public forms POST to the takeoff-license-api backend (Vercel), which stores
+// requests in Supabase and notifies the owner. No secrets live in this file.
+// apiBase is the Vercel production URL (verified via /api/health).
+const API_CONFIG = {
   apiBase: 'https://project-qax4f.vercel.app'
 };
 
@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCookies();
   initLatestReleaseDownload();
   initMobileMenu();
+  initAnchorNavigation();
 });
 
 /* ==========================================================================
@@ -52,6 +53,54 @@ function initMobileMenu() {
       });
     });
   }
+}
+
+function initAnchorNavigation() {
+  const anchorLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+
+  anchorLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+      const hash = link.getAttribute('href');
+      const target = getAnchorTarget(hash);
+
+      if (!target) return;
+
+      event.preventDefault();
+      scrollToAnchorTarget(target);
+      window.setTimeout(() => scrollToAnchorTarget(target, 'auto'), 450);
+      window.setTimeout(() => scrollToAnchorTarget(target, 'auto'), 1200);
+      history.pushState(null, '', hash);
+    });
+  });
+
+  window.addEventListener('load', () => {
+    const target = getAnchorTarget(window.location.hash);
+    if (target) {
+      window.setTimeout(() => scrollToAnchorTarget(target, 'auto'), 100);
+      window.setTimeout(() => scrollToAnchorTarget(target, 'auto'), 800);
+    }
+  });
+}
+
+function getAnchorTarget(hash) {
+  if (!hash || hash === '#') return null;
+
+  try {
+    return document.getElementById(decodeURIComponent(hash.slice(1)));
+  } catch (err) {
+    return null;
+  }
+}
+
+function scrollToAnchorTarget(target, behavior = 'smooth') {
+  const header = document.querySelector('.header');
+  const headerOffset = header ? header.getBoundingClientRect().height : 0;
+  const targetTop = target.getBoundingClientRect().top + window.pageYOffset - headerOffset - 16;
+
+  window.scrollTo({
+    top: Math.max(targetTop, 0),
+    behavior
+  });
 }
 
 /* ==========================================================================
@@ -462,7 +511,7 @@ async function handleBetaForm(event) {
   submitBtn.disabled = true;
 
   try {
-    const response = await fetch(`${BETA_CONFIG.apiBase}/api/request-beta`, {
+    const response = await fetch(`${API_CONFIG.apiBase}/api/request-beta`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -483,6 +532,73 @@ async function handleBetaForm(event) {
     submitBtn.disabled = false;
     messageBox.classList.add('error');
     messageBox.innerHTML = window.translations[currentLang]["pricing.beta.validation.networkError"];
+  }
+}
+
+/* ==========================================================================
+   Contact / Feedback Form Handler
+   ========================================================================== */
+
+async function handleContactForm(event) {
+  event.preventDefault();
+
+  const form = document.getElementById('contact-form');
+  const typeInput = document.getElementById('contact-type');
+  const replyInput = document.getElementById('contact-reply');
+  const messageInput = document.getElementById('contact-message');
+  const messageBox = document.getElementById('contact-msg');
+  const submitBtn = document.getElementById('contact-submit-btn');
+  const honeypot = document.getElementById('contact-company');
+
+  const type = typeInput.value;
+  const replyTo = replyInput.value.trim();
+  const message = messageInput.value.trim();
+
+  messageBox.className = 'contact-message';
+
+  if (!message) {
+    messageBox.classList.add('error');
+    messageBox.innerHTML = window.translations[currentLang]["contact.validation.messageRequired"];
+    messageInput.focus();
+    return;
+  }
+
+  if (honeypot && honeypot.value.trim()) {
+    messageBox.classList.add('success');
+    messageBox.innerHTML = window.translations[currentLang]["contact.validation.success"];
+    form.reset();
+    return;
+  }
+
+  submitBtn.disabled = true;
+
+  try {
+    const response = await fetch(`${API_CONFIG.apiBase}/api/contact`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        type: type,
+        message: message,
+        replyTo: replyTo,
+        language: currentLang,
+        source: 'takeoff-website-contact-form',
+        page: window.location.href,
+        userAgent: navigator.userAgent,
+        company: honeypot ? honeypot.value : ''
+      })
+    });
+
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+    messageBox.classList.add('success');
+    messageBox.innerHTML = window.translations[currentLang]["contact.validation.success"];
+    form.reset();
+  } catch (err) {
+    console.error('Contact request failed:', err);
+    messageBox.classList.add('error');
+    messageBox.innerHTML = window.translations[currentLang]["contact.validation.networkError"];
+  } finally {
+    submitBtn.disabled = false;
   }
 }
 

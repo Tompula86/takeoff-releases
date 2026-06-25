@@ -126,6 +126,7 @@ img, video {
 
 .section-padding {
   padding: 8rem 0;
+  scroll-margin-top: 96px;
 }
 
 .section-header {
@@ -1250,6 +1251,119 @@ html[lang="en"] .primary-offer::before {
   border-color: var(--accent-blue);
 }
 
+/* Contact Section */
+.contact {
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, #fffaf2 52%, var(--bg-primary) 100%);
+}
+
+.contact-panel {
+  max-width: 980px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 3rem;
+  align-items: stretch;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 3rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: 1px solid var(--border-color);
+  padding-right: 3rem;
+}
+
+.contact-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-teal);
+  margin-bottom: 1rem;
+}
+
+.contact-copy h3 {
+  font-size: 1.8rem;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+.contact-copy p {
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.contact-form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.contact-field label {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.contact-input {
+  width: 100%;
+  background-color: rgba(255, 253, 248, 0.92);
+  border: 1px solid var(--border-color);
+  padding: 0.875rem 1rem;
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.contact-input:focus {
+  outline: none;
+  border-color: var(--accent-teal);
+  box-shadow: 0 0 0 3px rgba(47, 155, 137, 0.12);
+}
+
+.contact-textarea {
+  min-height: 160px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.contact-message {
+  font-size: 0.85rem;
+  padding: 0.875rem;
+  border-radius: 8px;
+  display: none;
+  line-height: 1.5;
+}
+
+.contact-message.success {
+  background-color: rgba(35, 133, 111, 0.08);
+  color: var(--success);
+  border: 1px solid rgba(35, 133, 111, 0.18);
+  display: block;
+}
+
+.contact-message.error {
+  background-color: rgba(197, 69, 63, 0.08);
+  color: var(--danger);
+  border: 1px solid rgba(197, 69, 63, 0.18);
+  display: block;
+}
+
 /* FAQ Section */
 .faq-list {
   max-width: 800px;
@@ -2152,6 +2266,18 @@ input:disabled + .slider {
     max-width: 500px;
     margin: 0 auto;
   }
+
+  .contact-panel {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-copy {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding-right: 0;
+    padding-bottom: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -2487,12 +2613,21 @@ input:disabled + .slider {
 
   .mcp-examples-card,
   .pricing-card,
-  .collab-card {
+  .collab-card,
+  .contact-panel {
     border-radius: 10px;
   }
 
   .pricing-card {
     padding: 2rem 1.5rem;
+  }
+
+  .contact-panel {
+    padding: 2rem 1.5rem;
+  }
+
+  .contact-copy h3 {
+    font-size: 1.35rem;
   }
 
   .pricing-price {

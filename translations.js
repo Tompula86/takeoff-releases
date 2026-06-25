@@ -7,6 +7,7 @@ window.translations = {
     "nav.features": "Ominaisuudet",
     "nav.mcp": "AI & MCP",
     "nav.pricing": "Hinnoittelu",
+    "nav.contact": "Yhteys",
     "nav.faq": "UKK",
     "nav.docs": "Ohjeet",
 
@@ -121,6 +122,26 @@ window.translations = {
     "pricing.beta.copy.copied": "Kopioitu!",
     "pricing.beta.github.info": "Voit myös automatisoida ilmoitukset GitHubissa lisäämällä personal access tokenin app.js-tiedostoon.",
 
+    // Yhteydenotto
+    "contact.title": "Ota yhteyttä",
+    "contact.subtitle": "Lähetä bugiraportti, kysymys tai palaute suoraan kehittäjälle.",
+    "contact.kicker": "Palaute ja tuki",
+    "contact.copy.title": "Kerro mikä jumittaa tai mitä tarvitset seuraavaksi",
+    "contact.copy.body": "Bugiraportin voi lähettää myös ilman yhteystietoa. Jos haluat vastauksen, jätä sähköposti, puhelin tai muu sopiva yhteystapa.",
+    "contact.type.label": "Aihe",
+    "contact.type.bug": "Bugiraportti",
+    "contact.type.question": "Kysymys",
+    "contact.type.feedback": "Palaute",
+    "contact.type.other": "Muu",
+    "contact.reply.label": "Yhteystieto (valinnainen)",
+    "contact.reply.placeholder": "Sähköposti, puhelin tai muu yhteystapa",
+    "contact.message.label": "Viesti",
+    "contact.message.placeholder": "Kerro lyhyesti mitä tapahtui, mitä olit tekemässä tai mitä haluaisit kysyä.",
+    "contact.cta": "Lähetä viesti",
+    "contact.validation.messageRequired": "Kirjoita viesti ennen lähettämistä.",
+    "contact.validation.success": "Kiitos! Viesti lähetettiin.",
+    "contact.validation.networkError": "Viestiä ei voitu lähettää juuri nyt. Yritä hetken kuluttua uudelleen.",
+
     // FAQ
     "faq.title": "Usein kysytyt kysymykset",
     "faq.subtitle": "Onko diili liian hyvä ollakseen totta? Vastaamme kysymyksiisi täysin avoimesti.",
@@ -175,6 +196,7 @@ window.translations = {
     "nav.features": "Features",
     "nav.mcp": "AI & MCP",
     "nav.pricing": "Pricing",
+    "nav.contact": "Contact",
     "nav.faq": "FAQ",
     "nav.docs": "Docs",
 
@@ -288,6 +310,26 @@ window.translations = {
     "pricing.beta.copy.btn": "Copy",
     "pricing.beta.copy.copied": "Copied!",
     "pricing.beta.github.info": "You can also automate notifications on GitHub by adding a personal access token in the app.js file.",
+
+    // Contact
+    "contact.title": "Contact",
+    "contact.subtitle": "Send a bug report, question, or feedback directly to the developer.",
+    "contact.kicker": "Feedback and support",
+    "contact.copy.title": "Tell us what is not working or what you need next",
+    "contact.copy.body": "You can send a bug report without contact details. If you want a reply, leave an email, phone number, or any other preferred contact method.",
+    "contact.type.label": "Topic",
+    "contact.type.bug": "Bug report",
+    "contact.type.question": "Question",
+    "contact.type.feedback": "Feedback",
+    "contact.type.other": "Other",
+    "contact.reply.label": "Contact detail (optional)",
+    "contact.reply.placeholder": "Email, phone, or another contact method",
+    "contact.message.label": "Message",
+    "contact.message.placeholder": "Briefly describe what happened, what you were doing, or what you want to ask.",
+    "contact.cta": "Send message",
+    "contact.validation.messageRequired": "Write a message before sending.",
+    "contact.validation.success": "Thank you! Your message was sent.",
+    "contact.validation.networkError": "Couldn't send your message right now. Please try again in a moment.",
 
     // FAQ
     "faq.title": "Frequently Asked Questions",
