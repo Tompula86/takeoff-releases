@@ -27,3 +27,6 @@ coverage/
 
 # Local analysis output
 graphify-out/
+
+# Mockups and drafts
+mockups/
