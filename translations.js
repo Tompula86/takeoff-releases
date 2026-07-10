@@ -12,8 +12,8 @@ window.translations = {
     "nav.docs": "Ohjeet",
 
     // Hero-alue
-    "hero.title": "Määrälaskenta ja kustannusarviot ilman kuukausimaksuja",
-    "hero.subtitle": "Tuo PDF-kuvat, laske massat ja sido ne resepteihin sekunneissa. Avoin MCP-tuki suosikkitekoälyllesi. Osta kerran — omista ikuisesti.",
+    "hero.title": "Mittaa PDF-piirustuksista määrät ja kustannukset ilman kuukausimaksuja",
+    "hero.subtitle": "Takeoff on rakennus- ja infraprojektien määrälaskentaohjelma: mittaa pituudet, pinta-alat ja kappaleet, tee kustannusarvio ja vie muokattava Exceliin. Kaikki projektidata säilyy omalla koneellasi.",
     "hero.cta.download": "Lataa ilmainen 30 päivän kokeilu",
     "hero.cta.beta": "Katso hinnoittelu",
     "hero.cta.buy": "Osta lisenssi — 250 € (alv 0%)",
@@ -43,7 +43,7 @@ window.translations = {
 
     // Ominaisuudet
     "features.title": "Suoraviivainen ja tehokas työnkulku",
-    "features.audience": "Suunnittelijoille, laskijoille ja pienille urakointitiimeille, jotka haluavat omistaa työkalunsa.",
+    "features.audience": "Suunnittelijoille, tarjouslaskijoille ja urakointitiimeille, jotka haluavat tehdä PDF-määrälaskennan nopeammin ja omistaa työkalunsa.",
     "features.subtitle": "Ei turhaa monimutkaisuutta. Nopeat askeleet suunnitelmasta valmiiseen Excel-määräluetteloon.",
     "features.step1.num": "01",
     "features.step1.title": "Visuaalinen määrälaskenta (Takeoff)",
@@ -211,8 +211,8 @@ window.translations = {
     "nav.docs": "Docs",
 
     // Hero Section
-    "hero.title": "Quantity Takeoff and Estimating without monthly fees",
-    "hero.subtitle": "Import PDF drawings, calculate quantities, and link them to recipes in seconds. Open MCP support for your favorite AI. Buy once — own forever.",
+    "hero.title": "Measure quantities and costs from PDF drawings without monthly fees",
+    "hero.subtitle": "Takeoff is quantity takeoff software for construction and infrastructure projects: measure lengths, areas, and counts, build a cost estimate, and export editable Excel files. Your project data stays on your computer.",
     "hero.cta.download": "Download free 30-day trial",
     "hero.cta.beta": "View pricing",
     "hero.cta.buy": "Buy License — €250 (VAT 0%)",
@@ -243,7 +243,7 @@ window.translations = {
     // Features
     "features.title": "Straightforward and Efficient Workflow",
     "features.subtitle": "No unnecessary complexity. Quick steps from drawing to complete Excel estimation.",
-    "features.audience": "For designers, estimators, and small contractor teams who want to own their tools.",
+    "features.audience": "For designers, estimators, and contractor teams that want faster PDF quantity takeoffs and software they truly own.",
     "features.step1.num": "01",
     "features.step1.title": "Visual Quantity Takeoff",
     "features.step1.desc": "Import PDF drawings. Calibrate and scale the drawing with a single known dimension. Measure lengths, areas, counts, and rectangles by clicking on the canvas. Dynamic Snap locks points precisely to previous vertex groups.",

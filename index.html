@@ -5,15 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- SEO Meta Tags -->
-  <title>Takeoff — Määrälaskenta ja kustannusarviot ilman kuukausimaksuja</title>
-  <meta name="description" content="Laske massat ja kustannukset PDF-kuvista sekunneissa. Avoin MCP-tekoälytuki, kertaostos ilman kuukausimaksuja. Omista työkalusi ja datasi ikuisesti.">
-  <meta name="keywords" content="määrälaskenta, kustannusarvio, takeoff, estimating, rakennuslaskenta, MCP, tekoäly, tauri, pdf-mittaus">
+  <title>Takeoff | Määrälaskentaohjelma PDF-piirustuksille</title>
+  <meta name="description" content="Takeoff on Windows-määrälaskentaohjelma rakennus- ja infraprojekteihin. Mittaa PDF-piirustuksista, tee kustannusarviot ja vie muokattava Exceliin — ilman kuukausimaksuja.">
   <meta name="author" content="PQuant">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#0b1624">
+  <link rel="canonical" href="https://ptakeoff.com/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="any">
   
   <!-- Open Graph -->
-  <meta property="og:title" content="Takeoff — Määrälaskenta ja kustannusarviot ilman kuukausimaksuja">
-  <meta property="og:description" content="Laske massat ja kustannukset PDF-kuvista sekunneissa. Avoin MCP-tekoälytuki, kertaostos ilman kuukausimaksuja.">
+  <meta property="og:title" content="Takeoff | Määrälaskentaohjelma PDF-piirustuksille">
+  <meta property="og:description" content="Mittaa PDF-piirustuksista, tee kustannusarviot ja vie muokattava Exceliin — ilman kuukausimaksuja.">
   <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ptakeoff.com/">
+  <meta property="og:site_name" content="Takeoff by PQuant">
+  <meta property="og:locale" content="fi_FI">
+  <meta property="og:image" content="https://ptakeoff.com/assets/hero_ui.png">
+  <meta property="og:image:alt" content="Takeoff-määrälaskentaohjelman näkymä">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Takeoff | Määrälaskentaohjelma PDF-piirustuksille">
+  <meta name="twitter:description" content="Mittaa PDF-piirustuksista, tee kustannusarviot ja vie muokattava Exceliin — ilman kuukausimaksuja.">
+  <meta name="twitter:image" content="https://ptakeoff.com/assets/hero_ui.png">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Takeoff",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Windows 10 or later",
+      "description": "Windows-määrälaskentaohjelma rakennus- ja infraprojekteihin: PDF-piirustusten mittaus, kustannusarviot ja muokattava Excel-vienti.",
+      "image": "https://ptakeoff.com/assets/hero_ui.png",
+      "url": "https://ptakeoff.com/",
+      "downloadUrl": "https://github.com/Tompula86/takeoff-releases/releases/latest",
+      "offers": {
+        "@type": "Offer",
+        "price": "0.00",
+        "priceCurrency": "EUR",
+        "description": "30 päivän kokeilu ilman tiliä tai luottokorttia"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "PQuant",
+        "url": "https://ptakeoff.com/"
+      }
+    }
+  </script>
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="style.css">
@@ -62,12 +99,12 @@
     <section class="hero section-padding" id="hero-section">
       <div class="container hero-grid">
         <div class="hero-content">
-          <h1 data-i18n="hero.title">Määrälaskenta ja kustannusarviot ilman kuukausimaksuja.</h1>
-          <p data-i18n="hero.subtitle">Tuo PDF-kuvat, laske massat ja sido ne resepteihin sekunneissa. Avoin MCP-tuki suosikkitekoälyllesi. Osta kerran — omista ikuisesti.</p>
+          <h1 data-i18n="hero.title">Mittaa PDF-piirustuksista määrät ja kustannukset ilman kuukausimaksuja.</h1>
+          <p data-i18n="hero.subtitle">Takeoff on rakennus- ja infraprojektien määrälaskentaohjelma: mittaa pituudet, pinta-alat ja kappaleet, tee kustannusarvio ja vie muokattava Exceliin. Kaikki projektidata säilyy omalla koneellasi.</p>
           
           <div class="hero-ctas">
             <div class="btn-row">
-              <a href="https://ptakeoff.com/download/latest" class="btn btn-teal btn-hero-primary" id="hero-download-btn" data-i18n="hero.cta.download">Lataa ilmainen 30 päivän kokeilu</a>
+              <a href="https://github.com/Tompula86/takeoff-releases/releases/latest" class="btn btn-teal btn-hero-primary" id="hero-download-btn" data-i18n="hero.cta.download">Lataa ilmainen 30 päivän kokeilu</a>
               <a href="#pricing" class="btn btn-secondary" id="hero-beta-btn" data-i18n="hero.cta.beta">Katso hinnoittelu</a>
             </div>
 
@@ -320,7 +357,7 @@
               <li data-i18n="pricing.trial.feature3">Ei vaadi sähköpostia tai luottokorttia</li>
               <li data-i18n="pricing.trial.feature4">Päivitä helposti Pro-lisenssiksi</li>
             </ul>
-            <a href="https://ptakeoff.com/download/latest" class="btn btn-teal" style="margin-top: auto; text-align: center;" data-i18n="pricing.trial.cta">Lataa ja kokeile heti</a>
+            <a href="https://github.com/Tompula86/takeoff-releases/releases/latest" class="btn btn-teal" style="margin-top: auto; text-align: center;" data-i18n="pricing.trial.cta">Lataa ja kokeile heti</a>
           </div>
 
           <!-- Beta Card -->
@@ -617,7 +654,7 @@
         
         <div class="download-box">
           <span data-i18n="modal.payment.success.download">Lataa asennustiedosto tästä (.msi / .exe)</span>
-          <a href="https://ptakeoff.com/download/latest" class="btn btn-blue" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Download</a>
+          <a href="https://github.com/Tompula86/takeoff-releases/releases/latest" class="btn btn-blue" style="padding: 0.5rem 1rem; font-size: 0.85rem;">Download</a>
         </div>
         
         <button class="btn btn-secondary" style="width: 100%;" id="success-close-btn" onclick="closeStripeCheckout()" data-i18n="modal.payment.success.close">Sulje ikkuna</button>

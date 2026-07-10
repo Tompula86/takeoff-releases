@@ -349,9 +349,23 @@ function setLanguage(lang) {
   }
 
   // Update browser window title
-  document.title = lang === 'fi' 
-    ? 'Takeoff — Määrälaskenta ja kustannusarviot ilman kuukausimaksuja' 
-    : 'Takeoff — Quantity Takeoff and Estimating without monthly fees';
+  if (document.getElementById('hero-section')) {
+    const pageMetadata = lang === 'fi'
+      ? {
+          title: 'Takeoff | Määrälaskentaohjelma PDF-piirustuksille',
+          description: 'Takeoff on Windows-määrälaskentaohjelma rakennus- ja infraprojekteihin. Mittaa PDF-piirustuksista, tee kustannusarviot ja vie muokattava Exceliin — ilman kuukausimaksuja.'
+        }
+      : {
+          title: 'Takeoff | Quantity Takeoff Software for PDF Drawings',
+          description: 'Takeoff is Windows quantity takeoff software for construction and infrastructure projects. Measure PDF drawings, estimate costs, and export editable Excel files without monthly fees.'
+        };
+    document.title = pageMetadata.title;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', pageMetadata.description);
+    document.querySelector('meta[property="og:title"]')?.setAttribute('content', pageMetadata.title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', pageMetadata.description);
+    document.querySelector('meta[name="twitter:title"]')?.setAttribute('content', pageMetadata.title);
+    document.querySelector('meta[name="twitter:description"]')?.setAttribute('content', pageMetadata.description);
+  }
 
   updateContactContent();
 }
