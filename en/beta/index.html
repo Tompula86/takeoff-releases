@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1018">
+  <meta name="description" content="Check trial and beta availability for pQuant, pField and pSite and send a request.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://ptakeoff.com/en/beta/">
+  <link rel="alternate" hreflang="en" href="https://ptakeoff.com/en/beta/">
+  <link rel="alternate" hreflang="fi" href="https://ptakeoff.com/beta/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/site.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="pTakeoff">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Beta &amp; availability — pTakeoff">
+  <meta property="og:description" content="Check trial and beta availability for pQuant, pField and pSite and send a request.">
+  <meta property="og:url" content="https://ptakeoff.com/en/beta/">
+  <meta property="og:image" content="https://ptakeoff.com/assets/hero_ui.png">
+  <title>Beta &amp; availability — pTakeoff</title>
+  <script src="/site.js" defer></script>
+</head>
+<body class="page-beta">
+
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="/en/" aria-label="pTakeoff — home">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>pTakeoff<span class="brand-dot">.</span></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation"><a href="/en/pquant/">pQuant</a><a href="/en/pfield/">pField</a><a href="/en/psite/">pSite</a><a href="/en/beta/" aria-current="page">Beta &amp; availability</a><a href="/en/contact/">Feedback</a></nav>
+    <div class="header-actions">
+      <div class="language-switch" aria-label="Language">
+        <a href="/beta/" lang="fi">FI</a>
+        <span aria-hidden="true">/</span>
+        <a href="/en/beta/" lang="en" aria-current="true">EN</a>
+      </div>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span></button>
+    </div>
+  </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile navigation" hidden><a href="/en/pquant/">pQuant</a><a href="/en/pfield/">pField</a><a href="/en/psite/">pSite</a><a href="/en/beta/" aria-current="page">Beta &amp; availability</a><a href="/en/contact/">Feedback</a></nav>
+</header>
+<main id="main">
+<section class="page-intro"><div class="shell narrow"><span class="eyebrow"><span class="eyebrow-number">PT / BETA</span>Current status</span><h1>Start with what is <em>available.</em></h1><p class="hero-lede">Each product has its own testing phase. See its platform, trial path and how to request access.</p></div></section>
+<section class="section beta-section"><div class="shell"><div class="status-list">
+  <article class="status-card product-pquant"><div><span class="status-index">01 / pQuant</span><h2>Public trial</h2><p>Windows x64. 30 days from first launch. You can request a beta key using the form below.</p></div><a class="button button-outline" href="https://github.com/Tompula86/takeoff-releases/releases/latest" data-download="pquant">Download trial ↗</a></article>
+  <article class="status-card product-pfield"><div><span class="status-index">02 / pField</span><h2>Limited beta</h2><p>Windows. You can request access below. The GitHub installer link will be added here when the first release is available. Beta access continues 90 days after the owner&#x27;s end notice.</p></div><a class="button button-outline" href="?product=pfield#request">Request access ↓</a></article>
+  <article class="status-card product-psite"><div><span class="status-index">03 / pSite</span><h2>In development</h2><p>Android. Core viewing flows have been exercised on a real phone, but a public download is not yet available. You can send an interest message.</p></div><a class="button button-outline" href="?product=psite#request">Send interest ↓</a></article>
+</div></div></section>
+<section class="section form-section" id="request"><div class="shell form-layout"><div><span class="eyebrow"><span class="eyebrow-number">PT / ACCESS</span>Beta request</span><h2>Interested in testing?</h2><p>Choose a product and leave your email. pQuant requests use the existing beta registry. pField and pSite interest messages use the current feedback channel, which notifies the developer.</p><p class="form-disclaimer">A request does not issue a key or guarantee access. We will reply when that product&#x27;s testing phase allows it.</p></div>
+<form id="beta-form" class="form-card" novalidate>
+  <label for="beta-product">Product</label><select id="beta-product" name="product" required><option value="pquant">pQuant — beta key</option><option value="pfield">pField — beta access</option><option value="psite">pSite — interest message</option></select>
+  <label for="beta-email">Email address</label><input id="beta-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com" required>
+  <div class="trap" aria-hidden="true"><label for="beta-company">Company</label><input id="beta-company" name="company" type="text" tabindex="-1" autocomplete="off"></div>
+  <p class="form-privacy">We use your address to process the request and contact you. <a href="/privacy.html">Privacy</a>.</p>
+  <button class="button button-primary" type="submit">Send request ↗</button><p id="beta-result" class="form-result" role="status" aria-live="polite"></p>
+</form></div></section></main>
+
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div><a class="brand footer-brand" href="/en/"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>pTakeoff<span class="brand-dot">.</span></span></a>
+      <p>Tools from plan to site.</p></div>
+    <div><strong>Products</strong><a href="/en/pquant/">pQuant</a><a href="/en/pfield/">pField</a><a href="/en/psite/">pSite</a></div>
+    <div><strong>Explore</strong><a href="/en/beta/">Beta &amp; availability</a><a href="/en/contact/">Feedback &amp; contact</a><a href="/docs.html">pQuant documentation</a></div>
+    <div><strong>Information</strong><a href="/privacy.html">Privacy</a><a href="/terms.html">pQuant license terms</a><a href="/cookies.html">Cookies</a></div>
+  </div>
+  <div class="shell footer-bottom"><span>© 2026 pTakeoff</span><span>Product status updated 26 Sep 2026</span></div>
+</footer>
+</body>
+</html>

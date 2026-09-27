@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1018">
+  <meta name="description" content="Katso pQuantin, pFieldin ja pSiten kokeilu- ja beta-tilanne ja lähetä pyyntö.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://ptakeoff.com/beta/">
+  <link rel="alternate" hreflang="fi" href="https://ptakeoff.com/beta/">
+  <link rel="alternate" hreflang="en" href="https://ptakeoff.com/en/beta/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/site.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="pTakeoff">
+  <meta property="og:locale" content="fi_FI">
+  <meta property="og:title" content="Beta ja saatavuus — pTakeoff">
+  <meta property="og:description" content="Katso pQuantin, pFieldin ja pSiten kokeilu- ja beta-tilanne ja lähetä pyyntö.">
+  <meta property="og:url" content="https://ptakeoff.com/beta/">
+  <meta property="og:image" content="https://ptakeoff.com/assets/hero_ui.png">
+  <title>Beta ja saatavuus — pTakeoff</title>
+  <script src="/site.js" defer></script>
+</head>
+<body class="page-beta">
+
+<a class="skip-link" href="#main">Siirry sisältöön</a>
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="/" aria-label="pTakeoff — etusivu">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>pTakeoff<span class="brand-dot">.</span></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Päänavigaatio"><a href="/pquant/">pQuant</a><a href="/pfield/">pField</a><a href="/psite/">pSite</a><a href="/beta/" aria-current="page">Beta ja saatavuus</a><a href="/contact/">Palaute</a></nav>
+    <div class="header-actions">
+      <div class="language-switch" aria-label="Kieli">
+        <a href="/beta/" lang="fi" aria-current="true">FI</a>
+        <span aria-hidden="true">/</span>
+        <a href="/en/beta/" lang="en">EN</a>
+      </div>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Avaa valikko"><span></span><span></span></button>
+    </div>
+  </div>
+  <nav id="mobile-nav" class="mobile-nav" aria-label="Mobiilinavigaatio" hidden><a href="/pquant/">pQuant</a><a href="/pfield/">pField</a><a href="/psite/">pSite</a><a href="/beta/" aria-current="page">Beta ja saatavuus</a><a href="/contact/">Palaute</a></nav>
+</header>
+<main id="main">
+<section class="page-intro"><div class="shell narrow"><span class="eyebrow"><span class="eyebrow-number">PT / BETA</span>Nykyinen tilanne</span><h1>Aloita siitä, mikä on <em>saatavilla.</em></h1><p class="hero-lede">Jokaisella tuotteella on oma testivaiheensa. Alla näet alustat, kokeilutavan ja sen, milloin voit pyytää pääsyä.</p></div></section>
+<section class="section beta-section"><div class="shell"><div class="status-list">
+  <article class="status-card product-pquant"><div><span class="status-index">01 / pQuant</span><h2>Julkinen kokeilu</h2><p>Windows x64. 30 päivää ensimmäisestä käynnistyksestä. Beta-avainta voi pyytää alla olevalla lomakkeella.</p></div><a class="button button-outline" href="https://github.com/Tompula86/takeoff-releases/releases/latest" data-download="pquant">Lataa kokeilu ↗</a></article>
+  <article class="status-card product-pfield"><div><span class="status-index">02 / pField</span><h2>Rajattu beta</h2><p>Windows. Voit lähettää kiinnostuksesi alla. Ensimmäisen julkaisun GitHub-asentimen latauslinkki lisätään tälle sivulle, kun julkaisu on saatavilla. Beta jatkuu 90 päivää omistajan päättymisilmoituksen jälkeen.</p></div><a class="button button-outline" href="?product=pfield#request">Hae pääsyä ↓</a></article>
+  <article class="status-card product-psite"><div><span class="status-index">03 / pSite</span><h2>Kehitysvaihe</h2><p>Android. Oikealla puhelimella on kokeiltu keskeisiä katselupolkuja, mutta julkista latausta ei ole vielä tarjolla. Voit jättää kiinnostusviestin.</p></div><a class="button button-outline" href="?product=psite#request">Jätä viesti ↓</a></article>
+</div></div></section>
+<section class="section form-section" id="request"><div class="shell form-layout"><div><span class="eyebrow"><span class="eyebrow-number">PT / ACCESS</span>Beta-pyyntö</span><h2>Haluatko mukaan testaamaan?</h2><p>Valitse tuote ja jätä sähköpostiosoitteesi. pQuantin beta-pyyntö käyttää nykyistä beta-rekisteriä. pFieldin ja pSiten kiinnostusviestit lähetetään nykyiseen palautekanavaan, joka ilmoittaa niistä kehittäjälle.</p><p class="form-disclaimer">Pyyntö ei vielä myönnä avainta tai takaa pääsyä. Vastaamme, kun tuotteen testausvaihe sallii sen.</p></div>
+<form id="beta-form" class="form-card" novalidate>
+  <label for="beta-product">Tuote</label><select id="beta-product" name="product" required><option value="pquant">pQuant — beta-avain</option><option value="pfield">pField — beta-pääsy</option><option value="psite">pSite — kiinnostusviesti</option></select>
+  <label for="beta-email">Sähköpostiosoite</label><input id="beta-email" name="email" type="email" autocomplete="email" maxlength="254" placeholder="name@example.com" required>
+  <div class="trap" aria-hidden="true"><label for="beta-company">Company</label><input id="beta-company" name="company" type="text" tabindex="-1" autocomplete="off"></div>
+  <p class="form-privacy">Käsittelemme osoitteen pyyntöä ja yhteydenottoa varten. <a href="/tietosuoja.html">Tietosuoja</a>.</p>
+  <button class="button button-primary" type="submit">Lähetä pyyntö ↗</button><p id="beta-result" class="form-result" role="status" aria-live="polite"></p>
+</form></div></section></main>
+
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div><a class="brand footer-brand" href="/"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><span>pTakeoff<span class="brand-dot">.</span></span></a>
+      <p>Työkaluja suunnitelmasta työmaalle.</p></div>
+    <div><strong>Tuotteet</strong><a href="/pquant/">pQuant</a><a href="/pfield/">pField</a><a href="/psite/">pSite</a></div>
+    <div><strong>Tutustu</strong><a href="/beta/">Beta ja saatavuus</a><a href="/contact/">Palaute ja yhteys</a><a href="/ohjeet.html">pQuant-ohjeet</a></div>
+    <div><strong>Tietoa</strong><a href="/tietosuoja.html">Tietosuoja</a><a href="/ehdot.html">pQuantin lisenssiehdot</a><a href="/evasteet.html">Evästeet</a></div>
+  </div>
+  <div class="shell footer-bottom"><span>© 2026 pTakeoff</span><span>Sivun tuotetilanne päivitetty 26.9.2026</span></div>
+</footer>
+</body>
+</html>

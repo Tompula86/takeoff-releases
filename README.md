@@ -1,5 +1,47 @@
 # Takeoff
 
+## pTakeoff.com website
+
+The root of this repository now serves the bilingual pTakeoff product-family
+website. Finnish pages are at `/`, `/pquant/`, `/pfield/`, `/psite/`,
+`/beta/` and `/contact/`; English equivalents live under `/en/`.
+The older `ohjeet.html` / `docs.html` documentation and legal pages remain
+available at their existing URLs.
+
+Edit `scripts/build_site.py`, `site.css` and `site.js`, then regenerate and
+verify the static HTML:
+
+```powershell
+python scripts/build_site.py
+python scripts/verify_site.py
+node scripts/test_site_forms.mjs
+python -m http.server 8765
+```
+
+The beta and feedback forms use the existing
+`https://project-qax4f.vercel.app` API. pQuant beta requests go to
+`/api/request-beta`; pField and pSite interest requests and all feedback go to
+`/api/contact`. The latter route stores each accepted message and notifies the
+owner using the API's current email configuration. A successful API response
+does not itself prove delivery to the inbox, so check the notification path in
+the deployed environment before publishing. The beta endpoint only sends a
+new notification for a previously unseen email address.
+
+Before public launch, review the older FI/EN privacy, cookie and pQuant
+license pages against the current services and commercial terms. In particular,
+the old pages still mention Stripe and a fixed license price. Confirm the
+notification email reaches the owner inbox with a non-test submission.
+
+pField and pSite currently use dark, labelled image slots. Capture the real
+application screens ourselves from the release builds before adding those
+images. The pField Windows installer is expected in the first GitHub release;
+add its verified release URL to the pField and beta pages once it exists.
+
+The content and visual direction are documented in
+[`docs/ptakeoff_website_blueprint.md`](docs/ptakeoff_website_blueprint.md).
+
+---
+
 > **Premium Construction Estimating & PDF Takeoff Software**
 > 
 > 🌐 Website: [ptakeoff.com](https://ptakeoff.com) | 📥 [Download 30-day Free Trial](https://github.com/Tompula86/takeoff-releases/releases/latest)

@@ -24,6 +24,8 @@ build/
 coverage/
 .cache/
 .vite/
+__pycache__/
+*.pyc
 
 # Local analysis output
 graphify-out/
